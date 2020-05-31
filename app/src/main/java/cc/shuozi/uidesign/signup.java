@@ -2,19 +2,20 @@ package cc.shuozi.uidesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -28,6 +29,27 @@ public class signup extends AppCompatActivity {
     private Button signup;
     private int shortAnimationDuration;
 
+    public void JSONmaker(String fname, String lname,String email,String passwd) throws JSONException
+    {
+        String FILENAME = "signup.json";
+        String jsonsentence;
+        JSONObject information=new JSONObject();
+        information.put("First Name",fname);
+        information.put("Last Name",lname);
+        information.put("Email",email);
+        information.put("Password",passwd);
+        jsonsentence=information.toString();
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            fos.write(jsonsentence.getBytes());
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +116,19 @@ public class signup extends AppCompatActivity {
             }
         },8000);
 
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    JSONmaker(editbox_fname.getText().toString(),editbox_lname.getText().toString(),editbox_email.getText().toString(),editbox_passwd.getText().toString());
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
     }
 
-}
+
