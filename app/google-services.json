@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "652964409750",
+    "firebase_url": "https://siloscare-and-design.firebaseio.com",
+    "project_id": "siloscare-and-design",
+    "storage_bucket": "siloscare-and-design.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652964409750:android:40cf92bf704475dc9b6db7",
+        "android_client_info": {
+          "package_name": "cc.shuozi.uidesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652964409750-echmekmpb5rgfvmt8lld5ovk7dp5s523.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cc.shuozi.uidesign",
+            "certificate_hash": "c2325b410ee1a1e19ebeba50bc80db937ba00914"
+          }
+        },
+        {
+          "client_id": "652964409750-5umr694gcbq6a8vr7o2c26n5a0lp4mgk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cc.shuozi.uidesign",
+            "certificate_hash": "1ef98beb0abc1246e813e38ef0983fdb86dd3230"
+          }
+        },
+        {
+          "client_id": "652964409750-mienqahr2bcdvvksemnvie94dsk021e8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzpKOnvqrGPZywTbhYiIwaXgrO7qtlW78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652964409750-mienqahr2bcdvvksemnvie94dsk021e8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

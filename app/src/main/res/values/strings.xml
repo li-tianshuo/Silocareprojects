@@ -6,4 +6,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="remember_me">Remember me</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="where_health_tracking_is_made_easy">Where Health Tracking is Made Easy!</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup">
+    tools:context=".signup"
 
+    >
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
@@ -20,7 +20,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello there"
+            android:text="Hello There!"
             android:textColor="#000000"
             android:textSize="50sp" />
 
@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:text="Please Enter your Email"
+            android:textColorHint="#aaa"
+            android:hint =" Enter your Email"
             android:textColor="@color/black_overlay"
             />
 
@@ -48,7 +49,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
-            android:text="Please Enter your Password"
+            android:textColorHint="#aaa"
+            android:hint ="Please Enter your Password"
             android:textColor="@color/black_overlay"
             />
 
@@ -58,7 +60,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="First Name"
+            android:hint="First Name"
+            android:textColorHint="#aaa"
             android:textColor="@color/black_overlay"
             />
 
@@ -68,14 +71,18 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Last Name"
+            android:hint="Last Name"
+            android:textColorHint="#aaa"
             android:textColor="@color/black_overlay"
             />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign up now!" />
+            android:layout_width="316dp"
+            android:layout_height="50dp"
+            android:text="Sign up now!"
+
+
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

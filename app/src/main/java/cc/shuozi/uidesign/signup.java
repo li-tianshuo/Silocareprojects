@@ -1,14 +1,13 @@
 package cc.shuozi.uidesign;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,6 +19,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class signup extends AppCompatActivity {
+
     private TextView text1 ;
     private TextView text2 ;
     private EditText editbox_email;
@@ -55,13 +55,16 @@ public class signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        text1=(TextView)findViewById(R.id.textView3);
-        text2=(TextView)findViewById(R.id.textView6);
-        editbox_email=(EditText)findViewById(R.id.editText);
-        editbox_passwd=(EditText)findViewById(R.id.editText2);
-        editbox_fname=(EditText)findViewById(R.id.editText3);
-        editbox_lname=(EditText)findViewById(R.id.editText4);
-        signup=(Button)findViewById(R.id.button);
+
+
+
+        text1 = findViewById(R.id.textView3);
+        text2 = findViewById(R.id.textView6);
+        editbox_email = findViewById(R.id.editText);
+        editbox_passwd = findViewById(R.id.editText2);
+        editbox_fname = findViewById(R.id.editText3);
+        editbox_lname = findViewById(R.id.editText4);
+        signup = findViewById(R.id.button);
 
         text1.setAlpha(0.0f);
         text2.setAlpha(0.0f);
@@ -79,56 +82,69 @@ public class signup extends AppCompatActivity {
             public void run() {
                 text2.animate().alpha(1).setDuration(3000);
             }
-        },2000);
+        }, 2000);
 
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 editbox_email.animate().alpha(1).setDuration(3000);
             }
-        },4000);
+        }, 4000);
 
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 editbox_passwd.animate().alpha(1).setDuration(3000);
             }
-        },5000);
+        }, 5000);
 
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 editbox_fname.animate().alpha(1).setDuration(3000);
             }
-        },6000);
+        }, 6000);
 
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 editbox_lname.animate().alpha(1).setDuration(3000);
             }
-        },7000);
+        }, 7000);
 
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 signup.animate().alpha(1).setDuration(3000);
             }
-        },8000);
+        }, 8000);
 
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    JSONmaker(editbox_fname.getText().toString(),editbox_lname.getText().toString(),editbox_email.getText().toString(),editbox_passwd.getText().toString());
+
+
+                    JSONmaker(editbox_fname.getText().toString(), editbox_lname.getText().toString(), editbox_email.getText().toString(), editbox_passwd.getText().toString());
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
+
+
+
     }
-    }
+
+
+}
+
+
+
+
+
 
 
