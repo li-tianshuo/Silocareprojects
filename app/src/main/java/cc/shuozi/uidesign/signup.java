@@ -55,9 +55,6 @@ public class signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-
-
-
         text1 = findViewById(R.id.textView3);
         text2 = findViewById(R.id.textView6);
         editbox_email = findViewById(R.id.editText);
@@ -73,7 +70,6 @@ public class signup extends AppCompatActivity {
         editbox_fname.setAlpha(0.0f);
         editbox_lname.setAlpha(0.0f);
         signup.setAlpha(0.0f);
-
 
         text1.animate().alpha(1).setDuration(6000);
         Timer timer = new Timer();
@@ -124,11 +120,7 @@ public class signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-
-
                     JSONmaker(editbox_fname.getText().toString(), editbox_lname.getText().toString(), editbox_email.getText().toString(), editbox_passwd.getText().toString());
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
