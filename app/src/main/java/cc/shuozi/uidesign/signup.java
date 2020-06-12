@@ -1,13 +1,28 @@
 package cc.shuozi.uidesign;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,11 +30,13 @@ import org.json.JSONObject;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class signup extends AppCompatActivity {
-
+    private FirebaseAuth mAuth;
     private TextView text1 ;
     private TextView text2 ;
     private EditText editbox_email;
@@ -28,7 +45,33 @@ public class signup extends AppCompatActivity {
     private EditText editbox_lname;
     private Button signup;
     private int shortAnimationDuration;
+    private void informationupdate(FirebaseUser user,String f_name,String l_name)
+    {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        // Create a new user with a first, middle, and last name
+        Map<String, Object> userinformation = new HashMap<>();
+        userinformation.put("uid",user.getUid());
+        userinformation.put("First Name", f_name);
+        userinformation.put("Last Name", l_name);
 
+
+
+// Add a new document with a generated ID
+        db.collection("users")
+                .add(userinformation)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("Status", "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("Status", "Error adding document", e);
+                    }
+                });
+    }
     public void JSONmaker(String fname, String lname,String email,String passwd) throws JSONException
     {
         String FILENAME = "signup.json";
@@ -50,11 +93,21 @@ public class signup extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    private void updateUI(FirebaseUser user)
+    {
+        if (user!=null)
+        {
+            Intent intent=new Intent(signup.this, MainMenu.class);
+            intent.putExtra("uid",user.getUid());
+            startActivity(intent);
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        mAuth = FirebaseAuth.getInstance();
         text1 = findViewById(R.id.textView3);
         text2 = findViewById(R.id.textView6);
         editbox_email = findViewById(R.id.editText);
@@ -117,23 +170,51 @@ public class signup extends AppCompatActivity {
 
 
         signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
+                                      @Override
+                                      public void onClick(View v) {
+                                          String email = editbox_email.getText().toString();
+                                          String password = editbox_passwd.getText().toString();
+                                          final String f_name=editbox_fname.getText().toString();
+                                          final String l_name=editbox_lname.getText().toString();
+
+
+                                          mAuth.createUserWithEmailAndPassword(email, password)
+                                                  .addOnCompleteListener(signup. this, new OnCompleteListener<AuthResult>() {
+                                                      @Override
+                                                      public void onComplete(@NonNull Task<AuthResult> task) {
+                                                          if (task.isSuccessful()) {
+                                                              // Sign in success, update UI with the signed-in user's information
+                                                              Log.d("Status", "createUserWithEmail:success");
+                                                              FirebaseUser user = mAuth.getCurrentUser();
+                                                              informationupdate(user,f_name,l_name);
+                                                              updateUI(user);
+                                                          } else {
+                                                              // If sign in fails, display a message to the user.
+                                                              Log.w("Status", "createUserWithEmail:failure", task.getException());
+                                                              Toast.makeText(signup.this, "Authentication failed.",
+                                                                      Toast.LENGTH_SHORT).show();
+                                                              updateUI(null);
+                                                          }
+
+
+                                                      }
+                                                  });
+
+                                          /*
+
+                   try {
                     JSONmaker(editbox_fname.getText().toString(), editbox_lname.getText().toString(), editbox_email.getText().toString(), editbox_passwd.getText().toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
+        */
 
-
-
-    }
-
+                                      }
+                                  });}
 
 }
-
 
 
 

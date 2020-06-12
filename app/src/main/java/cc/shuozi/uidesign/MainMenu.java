@@ -1,17 +1,20 @@
 package cc.shuozi.uidesign;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,6 +26,10 @@ public class MainMenu extends AppCompatActivity {
     private String messagecon;
     private ViewFlipper message;
     private String Filename="message.json";
+    private TextView username;
+    private String value;
+    private String name=null;
+
 
     public void getmessage()
     {
@@ -65,7 +72,6 @@ public class MainMenu extends AppCompatActivity {
         int c=0;
         while((b =str.indexOf("{"))!=-1)
         {
-            Log.i("success",str+c);
             a++;
             c=str.indexOf(":");
             if (a==num)
@@ -100,10 +106,40 @@ public class MainMenu extends AppCompatActivity {
             }
         }
     }
+    private void getName()
+    {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("users")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.i("status",document.getString("First Name"));
+                                Log.i("status",document.getString("Last Name"));
+                            }
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        username=findViewById(R.id.textView);
+        Intent intent = getIntent();
+
+        if (intent != null) {
+            value = intent.getStringExtra("uid");
+        }
+
+
+
         message=(ViewFlipper) findViewById(R.id.view_flipper);
         fileexist();
         getmessage();

@@ -1,12 +1,23 @@
 package cc.shuozi.uidesign;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -17,12 +28,16 @@ public class Login extends AppCompatActivity {
     private EditText P_name;
     private CheckBox CHECK;
     private Button Login;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+        mAuth = FirebaseAuth.getInstance();
         Logo = findViewById(R.id.Logo);
         U_name = findViewById(R.id.u_name);
         P_name = findViewById(R.id.pass_wd);
@@ -36,8 +51,6 @@ public class Login extends AppCompatActivity {
         CHECK.setAlpha(0.0f);
 
         Login.setAlpha(0.0f);
-
-
 
 
         Logo.animate().alpha(1).setDuration(3000);
@@ -73,6 +86,43 @@ public class Login extends AppCompatActivity {
             }
         }, 3000);
 
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email=U_name.getText().toString();
+                String password=P_name.getText().toString();
 
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(Login. this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d("Status", "signInWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    updateUI(user);
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w("Status", "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(Login.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                    updateUI(null);
+                                }
+
+                            }
+                        });
+            }
+        });
+
+
+    }
+
+    private void updateUI(FirebaseUser user) {
+        if (user!=null)
+        {
+            Intent intent=new Intent(Login.this, MainMenu.class);
+            intent.putExtra("uid",user.getUid());
+            startActivity(intent);
+        }
     }
 }
