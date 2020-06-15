@@ -29,90 +29,109 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/login" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:weightSum="2">
+            android:weightSum="2"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="167dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                android:orientation="horizontal"
-                android:weightSum="1">
 
-                <ImageView
-                    android:id="@+id/Logo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:contentDescription="@string/app_name"
-                    app:srcCompat="@drawable/logo" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/Logo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="128dp"
+                android:layout_marginBottom="129dp"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintBottom_toTopOf="@+id/u_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1.25"
-                android:orientation="vertical"
-                android:weightSum="2">
 
-                <EditText
-                    android:id="@+id/u_name"
-                    android:layout_width="350dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginEnd="36dp"
-                    android:autofillHints=""
-                    android:hint="@string/user_name"
-                    android:inputType="text"
-                    android:padding="5dip"
-                    android:singleLine="true"
-                    android:textColorHint="#ffffffff"
-                    android:textSize="15sp" />
+            <EditText
+                android:id="@+id/u_name"
+                android:layout_width="361dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="25dp"
+                android:autofillHints=""
+                android:hint="@string/user_name"
+                android:inputType="text"
+                android:padding="5dip"
+                android:singleLine="true"
+                android:textColorHint="#ffffffff"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Logo" />
 
-                <EditText
-                    android:id="@+id/pass_wd"
-                    android:layout_width="350dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="36dp"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:hint="@string/password"
-                    android:inputType="text"
-                    android:layout_marginEnd="36dp"
-                    android:padding="5dip"
-                    android:singleLine="true"
-                    android:textColorHint="@android:color/white"
-                    android:textSize="15sp" />
+            <EditText
+                android:id="@+id/pass_wd"
+                android:layout_width="360dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="25dp"
+                android:autofillHints=""
+                android:hint="@string/password"
+                android:inputType="text"
+                android:padding="5dip"
+                android:singleLine="true"
+                android:textColorHint="@android:color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/u_name" />
 
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginEnd="250dp"
-                    android:layout_marginBottom="17dp"
-                    android:layout_weight="1"
-                    android:shadowColor="@android:color/black"
-                    android:text="@string/remember_me" />
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="261dp"
+                android:shadowColor="@android:color/black"
+                android:text="@string/remember_me"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pass_wd" />
 
-                <Button
-                    android:id="@+id/Login_Button"
-                    android:layout_width="303dp"
-                    android:layout_height="49dp"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_background"
-                    android:text="@string/login" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/Login_Button"
+                android:layout_width="361dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/button_background"
+                android:text="@string/login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
-        </LinearLayout>
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/sign_in_button"
+                android:layout_width="353dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="123dp"
+                android:layout_marginEnd="161dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.408"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
