@@ -7,20 +7,30 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.Source;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainMenu extends AppCompatActivity {
     private String messagecon;
@@ -29,7 +39,10 @@ public class MainMenu extends AppCompatActivity {
     private TextView username;
     private String value;
     private String name=null;
-
+    private ImageButton information_button;
+    private ImageButton decision_making_button;
+    private ImageButton implementation_button;
+    private ImageButton setting_button;
 
     public void getmessage()
     {
@@ -87,6 +100,7 @@ public class MainMenu extends AppCompatActivity {
         return title;
     }
 
+
     public void fileexist()
     {
         FileOutputStream fos = null;
@@ -106,10 +120,10 @@ public class MainMenu extends AppCompatActivity {
             }
         }
     }
-    private void getName()
+    private void getname(final callback oncallback)
     {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("users")
                 .whereEqualTo("uid", value)
                 .get()
@@ -117,27 +131,33 @@ public class MainMenu extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.i("status",document.getString("First Name"));
-                                Log.i("status",document.getString("Last Name"));
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                name=doc.getString("First Name")+" "+doc.getString("Last Name");
                             }
+                            oncallback.onCallback(name);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
                         }
                     }
+
                 });
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        information_button=findViewById(R.id.information);
+        decision_making_button=findViewById(R.id.decision);
+        implementation_button=findViewById(R.id.implementaion);
+        setting_button=findViewById(R.id.setting);
         username=findViewById(R.id.textView);
+
         Intent intent = getIntent();
 
         if (intent != null) {
             value = intent.getStringExtra("uid");
         }
-
 
 
         message=(ViewFlipper) findViewById(R.id.view_flipper);
@@ -150,6 +170,32 @@ public class MainMenu extends AppCompatActivity {
         }
         message.setFlipInterval(2000);
         message.startFlipping();
+
+        getname(new callback() {
+            @Override
+            public void onCallback(String string) {
+                username.setText(string);
+            }
+
+            @Override
+            public void onCallbackList(ArrayList<String> list) {
+
+            }
+        });
+
+        setting_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, Setting.class));
+            }
+        });
+
+        information_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, pre_information.class));
+            }
+        });
 
     }
 }

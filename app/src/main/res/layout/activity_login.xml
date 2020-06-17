@@ -81,7 +81,7 @@
                 android:layout_marginEnd="25dp"
                 android:autofillHints=""
                 android:hint="@string/password"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:padding="5dip"
                 android:singleLine="true"
                 android:textColorHint="@android:color/white"
@@ -118,17 +118,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/sign_in_button"
-                android:layout_width="353dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="123dp"
-                android:layout_marginEnd="161dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.408"
-                app:layout_constraintStart_toStartOf="parent" />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

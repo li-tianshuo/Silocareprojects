@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MainMenu"></activity>
+        <activity android:name=".pre_information"></activity>
+        <activity android:name=".Setting" />
+        <activity android:name=".MainMenu" />
         <activity android:name=".DataBase" />
         <activity android:name=".signup" />
         <activity android:name=".Login" />
-        <activity android:name=".Google_signin"/>
+        <activity android:name=".Google_signin" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

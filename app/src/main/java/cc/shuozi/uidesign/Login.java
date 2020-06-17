@@ -29,7 +29,7 @@ public class Login extends AppCompatActivity {
     private CheckBox CHECK;
     private Button Login;
     private FirebaseAuth mAuth;
-
+    private View google_sign_in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity {
         P_name = findViewById(R.id.pass_wd);
         CHECK = findViewById(R.id.checkBox);
         Login = findViewById(R.id.Login_Button);
-
+        google_sign_in=findViewById(R.id.sign_in_button);
 
         Logo.setAlpha(0.0f);
         U_name.setAlpha(0.0f);
@@ -85,6 +85,8 @@ public class Login extends AppCompatActivity {
                 Login.animate().alpha(1).setDuration(1000);
             }
         }, 3000);
+
+
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override

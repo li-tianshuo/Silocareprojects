@@ -17,72 +17,79 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.69"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        android:orientation="vertical"
+        android:weightSum="4">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:weightSum="4">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="522dp"
-            android:layout_height="394dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo"
-            android:contentDescription="Image" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:contentDescription="Image"
+                android:scaleType="center"
+                app:srcCompat="@drawable/logo" />
 
-        <TextView
+            <TextView
 
-            android:id="@+id/Welcoming"
-            android:layout_width="386dp"
-            android:layout_height="188dp"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            android:text="@string/where_health_tracking_is_made_easy"
-            android:textSize="@android:dimen/app_icon_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.64"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.585" />
+                android:id="@+id/Welcoming"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:text="@string/where_health_tracking_is_made_easy"
+                android:textColor="@android:color/white"
+                android:textSize="36sp" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="210dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="6dp"
-            android:alpha="0.8"
-            android:text="@string/sign_up"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="1.0" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="210dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="672dp"
-            android:alpha="0.8"
-            android:text="Log in"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button3"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:alpha="0.8"
+                    android:text="@string/sign_up" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:alpha="0.8"
+                    android:text="Log in" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
