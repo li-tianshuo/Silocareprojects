@@ -16,7 +16,7 @@ public class Setting extends AppCompatActivity {
     private Button logout;
     private ListView information_setting;
     private ListView app_setting;
-    private String datas1[]={"Modify account information", "Set Condition information", "Set Doctor Information"};
+    private String datas1[]={"Modify account information", "Set Condition information", "Set Primary Doctor Information"};
     private String datas2[]={"Support Center", "Contact us", "About us"};
     ArrayAdapter<String> adapter1;
     ArrayAdapter<String> adapter2;

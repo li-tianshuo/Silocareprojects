@@ -27,6 +27,7 @@ public class ListFragment extends Fragment {
     private String[][] data={{"Please wait","","","",""}};
     private FirebaseAuth mAuth;
 
+
     private String datas1[]={"Modify account information", "Set Condition information", "Set Doctor Information"};
 
     public ListFragment() {
