@@ -3,6 +3,7 @@ package cc.shuozi.uidesign;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -106,17 +107,29 @@ public class pre_information extends AppCompatActivity {
         update=findViewById(R.id.update_information);
 
         update.setEnabled(false);
+        update.setClickable(false);
         update.setText("Please wait");
         getid(new callback() {
             @Override
             public void onCallback(String string) {
                 documentid=string;
                 update.setEnabled(true);
+                update.setEnabled(true);
                 update.setText("Set");
             }
 
             @Override
+            public void onCallbacknumber(int i) {
+
+            }
+
+            @Override
             public void onCallbackList(ArrayList<String> list) {
+
+            }
+
+            @Override
+            public void onCallbackListstring(String[][] data) {
 
             }
         });
@@ -124,6 +137,11 @@ public class pre_information extends AppCompatActivity {
         checkcondition(new callback() {
             @Override
             public void onCallback(String string) {
+
+            }
+
+            @Override
+            public void onCallbacknumber(int i) {
 
             }
 
@@ -139,18 +157,24 @@ public class pre_information extends AppCompatActivity {
                     Status=false;
                 }
             }
+
+            @Override
+            public void onCallbackListstring(String[][] data) {
+
+            }
         });
 
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 condition1=condition1_layout.getSelectedItem().toString();
                 condition2=condition2_layout.getSelectedItem().toString();
                 condition3=condition3_layout.getText().toString();
                 condition4=condition4_layout.getText().toString();
-
+                startActivity(new Intent(pre_information.this, MainMenu.class));
                 DocumentReference updateref = db.collection("users").document(documentid);
 
                 updateref

@@ -11,12 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6c6d8c-10af-482c-815c-2fb21f24dca0" name="Default Changelist" comment="Google sign in Version">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/pre_information.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/buttonsharp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edittextsharp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pre_information.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/ListFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MyAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MyAdapter_doc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/doctor_information.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/information.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/list_doc_Fragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_doctor_information.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_information.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/information_fragment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/itlist_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/itlist_item_doc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -27,22 +32,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Setting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/callback.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/callback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/pre_information.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/pre_information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setting.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,9 +91,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="resourceFile" />
         <option value="valueResourceFile" />
+        <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -135,6 +137,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.689006390">
+      <recent name="cc.shuozi.uidesign" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="cc.shuozi.uidesign" />
     </key>
@@ -357,10 +362,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="517" y="249" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824@0.0.1536.824" timestamp="1591500775879" />
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1592353226330">
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1592443234776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592353226330" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592443234776" />
     <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591483156513">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -373,10 +378,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591483066736" />
-    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1592330538949">
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1592444298925">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1592330538949" />
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1592444298925" />
     <state x="627" y="225" key="AndroidCreateXmlResourceDialog" timestamp="1591499383739">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -393,22 +398,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="626" y="306" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1591500514169" />
-    <state width="745" height="164" key="GridCell.Tab.0.bottom" timestamp="1592354526395">
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom" timestamp="1592444818875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="164" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592354526395" />
-    <state width="745" height="164" key="GridCell.Tab.0.center" timestamp="1592354526395">
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592444818875" />
+    <state width="1493" height="163" key="GridCell.Tab.0.center" timestamp="1592444818875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="164" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592354526395" />
-    <state width="745" height="164" key="GridCell.Tab.0.left" timestamp="1592354526395">
+    <state width="1493" height="163" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592444818875" />
+    <state width="1493" height="163" key="GridCell.Tab.0.left" timestamp="1592444818875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="164" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592354526395" />
-    <state width="745" height="164" key="GridCell.Tab.0.right" timestamp="1592354526395">
+    <state width="1493" height="163" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592444818875" />
+    <state width="1493" height="163" key="GridCell.Tab.0.right" timestamp="1592444818875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="164" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592354526395" />
+    <state width="1493" height="163" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592444818875" />
     <state width="768" height="270" key="GridCell.Tab.1.bottom" timestamp="1591496047087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -445,10 +450,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="168" y="120" width="1200" height="584" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1592235688046" />
-    <state x="82" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1592327735040">
+    <state x="82" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1592407872343">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="82" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592327735040" />
+    <state x="82" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592407872343" />
     <state x="558" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592189092805">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

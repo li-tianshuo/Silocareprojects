@@ -44,6 +44,7 @@ public class MainMenu extends AppCompatActivity {
     private ImageButton implementation_button;
     private ImageButton setting_button;
 
+
     public void getmessage()
     {
         FileInputStream inputStream;
@@ -178,7 +179,17 @@ public class MainMenu extends AppCompatActivity {
             }
 
             @Override
+            public void onCallbacknumber(int i) {
+
+            }
+
+            @Override
             public void onCallbackList(ArrayList<String> list) {
+
+            }
+
+            @Override
+            public void onCallbackListstring(String[][] data) {
 
             }
         });
@@ -193,7 +204,7 @@ public class MainMenu extends AppCompatActivity {
         information_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenu.this, pre_information.class));
+                startActivity(new Intent(MainMenu.this, information.class));
             }
         });
 

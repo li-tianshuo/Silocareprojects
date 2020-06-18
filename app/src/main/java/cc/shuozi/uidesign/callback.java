@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface callback {
     void onCallback(String string);
+    void onCallbacknumber(int i);
     void onCallbackList(ArrayList<String> list);
+    void onCallbackListstring(String[][] data);
 }
