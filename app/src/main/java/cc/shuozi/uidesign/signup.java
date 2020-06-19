@@ -1,7 +1,9 @@
 package cc.shuozi.uidesign;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -12,7 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -45,6 +50,7 @@ public class signup extends AppCompatActivity {
     private EditText editbox_lname;
     private Button signup;
     private int shortAnimationDuration;
+    private int STORAGE_PERMISSION_CODE = 1;
     private void informationupdate(FirebaseUser user,String f_name,String l_name)
     {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -188,6 +194,12 @@ public class signup extends AppCompatActivity {
                                                               FirebaseUser user = mAuth.getCurrentUser();
                                                               informationupdate(user,f_name,l_name);
                                                               updateUI(user);
+                                                              if(ContextCompat.checkSelfPermission(signup.this, Manifest.permission.READ_EXTERNAL_STORAGE )== PackageManager.PERMISSION_GRANTED){
+                                                                 Toast.makeText(signup.this, "Permissions has already been granted",Toast.LENGTH_SHORT).show();
+
+                                                              }else {
+                                                                  requestStoragePermission();
+                                                              }
                                                           } else {
                                                               // If sign in fails, display a message to the user.
                                                               Log.w("Status", "createUserWithEmail:failure", task.getException());
@@ -213,6 +225,14 @@ public class signup extends AppCompatActivity {
 
                                       }
                                   });}
+
+    private void requestStoragePermission() {
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_EXTERNAL_STORAGE)){
+
+        } else{
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},STORAGE_PERMISSION_CODE);
+        }
+    }
 
 }
 
