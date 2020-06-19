@@ -13,6 +13,7 @@
     <string name="where_health_tracking_is_made_easy">Where Health Tracking is Made Easy!</string>
     <string name="sign_up">Sign Up</string>
     <string name="choose_conditions">Please choose your conditions</string>
+    <string name="silos_care_amp_design"><![CDATA[Silos Care & Design]]></string>
 
     <string-array name="diease_name">
         <item>Please choose your conditions</item>

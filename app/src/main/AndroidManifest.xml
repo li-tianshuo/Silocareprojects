@@ -17,8 +17,9 @@
         <activity android:name=".DataBase" />
         <activity android:name=".signup" />
         <activity android:name=".Login" />
-        <activity android:name=".Google_signin" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Splash_screen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

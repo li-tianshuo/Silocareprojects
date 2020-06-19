@@ -41,17 +41,16 @@
 
             <ImageView
                 android:id="@+id/Logo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="128dp"
+                android:layout_width="362dp"
+                android:layout_height="346dp"
                 android:layout_marginBottom="129dp"
                 android:contentDescription="@string/app_name"
                 app:layout_constraintBottom_toTopOf="@+id/u_name"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.39"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo" />
-
+                app:srcCompat="@drawable/h" />
 
             <EditText
                 android:id="@+id/u_name"
