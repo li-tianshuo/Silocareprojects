@@ -85,7 +85,10 @@ public class doctor_information extends AppCompatActivity {
                             for(DocumentSnapshot doc : task.getResult()) {
                                 for (next_available=1;next_available>0;next_available++)
                                 {
-                                    if (doc.getString("Doctor Status"+String.valueOf(next_available))=="false"||doc.getString("Doctor Name "+String.valueOf(next_available))==null)
+                                    if (doc.getString("Doctor Name "+String.valueOf(next_available))==null)
+                                    {
+                                        break;
+                                    }else if (doc.getBoolean("Doctor Status"+String.valueOf(next_available))==false)
                                     {
                                         break;
                                     }
