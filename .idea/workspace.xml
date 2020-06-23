@@ -15,12 +15,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/doctor_information.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/doctor_information.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +32,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_30" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -364,10 +368,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="517" y="249" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824@0.0.1536.824" timestamp="1591500775879" />
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1592578557491">
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1592873353700">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592578557491" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592873353700" />
     <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591483156513">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -408,22 +412,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="626" y="306" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1591500514169" />
-    <state width="884" height="181" key="GridCell.Tab.0.bottom" timestamp="1592525273743">
+    <state width="1478" height="157" key="GridCell.Tab.0.bottom" timestamp="1592845169199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="884" height="181" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592525273743" />
-    <state width="884" height="181" key="GridCell.Tab.0.center" timestamp="1592525273743">
+    <state width="1478" height="157" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592845169199" />
+    <state width="1478" height="157" key="GridCell.Tab.0.center" timestamp="1592845169199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="884" height="181" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592525273743" />
-    <state width="884" height="181" key="GridCell.Tab.0.left" timestamp="1592525273743">
+    <state width="1478" height="157" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592845169199" />
+    <state width="1478" height="157" key="GridCell.Tab.0.left" timestamp="1592845169199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="884" height="181" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592525273743" />
-    <state width="884" height="181" key="GridCell.Tab.0.right" timestamp="1592525273743">
+    <state width="1478" height="157" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592845169199" />
+    <state width="1478" height="157" key="GridCell.Tab.0.right" timestamp="1592845169199">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="884" height="181" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592525273743" />
+    <state width="1478" height="157" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592845169199" />
     <state width="768" height="270" key="GridCell.Tab.1.bottom" timestamp="1591496047087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -468,10 +472,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="168" y="120" width="1200" height="584" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1592529614774" />
-    <state x="82" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1592407872343">
+    <state x="82" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1592864297454">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="82" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592407872343" />
+    <state x="82" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592864297454" />
     <state x="558" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592575805860">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
