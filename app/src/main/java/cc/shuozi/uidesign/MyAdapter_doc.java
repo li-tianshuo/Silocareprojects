@@ -2,6 +2,7 @@ package cc.shuozi.uidesign;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,9 +91,12 @@ public class MyAdapter_doc extends BaseAdapter implements View.OnClickListener {
         TextView text3 = (TextView) convertView.findViewById(R.id.list_t_d_3);
         final Button update=(Button)convertView.findViewById(R.id.list_b_d_1);
         final Button delete=(Button)convertView.findViewById(R.id.list_b_d_2);
+
         text1.setText(data[position][0]);
         text2.setText(data[position][1]);
         text3.setText(data[position][2]);
+        text1.setTag(data[position][3]);
+
         if (text1.getText().toString().substring(0,1).equals("P"))
         {
             delete.setVisibility(View.GONE);
@@ -111,8 +115,7 @@ public class MyAdapter_doc extends BaseAdapter implements View.OnClickListener {
                     intent.putExtra("status","add_major");
                 }else {
                     intent.putExtra("status","update");
-                    intent.putExtra("list",text1.getText().toString().substring(12,13));
-                    Log.e("Status",text1.getText().toString().substring(12,13));
+                    intent.putExtra("list", String.valueOf(text1.getTag()));
                 }
 
                 viewGroup.getContext().startActivity(intent);

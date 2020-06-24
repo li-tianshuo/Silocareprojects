@@ -40,7 +40,7 @@ public class doctor_information extends AppCompatActivity {
     private String dphone_string;
     private int i;
     private int next_available;
-    private int docnnum;
+    private int docnnum=0;
     private ArrayList<String> major = new ArrayList<String>();
     private ArrayList<String> doctor = new ArrayList<String>();
     private String documentid;
@@ -49,6 +49,7 @@ public class doctor_information extends AppCompatActivity {
     private String update_num;
     private String check_email;
     private int position=1;
+    private String doc_documentid;
     private void getdoc(final callback oncallbacklist) {
                 mAuth = FirebaseAuth.getInstance();
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -79,7 +80,7 @@ public class doctor_information extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-        db.collection("users")
+        db.collection("doctors")
                 .whereEqualTo("Doctor Email", demail_string)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -97,7 +98,30 @@ public class doctor_information extends AppCompatActivity {
 
                 });
     }
+    private void getdocdocumentid(final callback oncallback) {
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value = user.getUid();
+        db.collection("doctors")
+                .whereEqualTo("uid", doc_id)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (DocumentSnapshot doc : task.getResult()) {
+                                doc_documentid = doc.getId();
+                            }
+                            oncallback.onCallback(doc_documentid);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
 
+                });
+
+    }
 
 
     private void getid(final callback oncallback) {
@@ -130,18 +154,18 @@ public class doctor_information extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String value = user.getUid();
-        db.collection("doctors")
-                .whereEqualTo("Doctor Email", demail_string)
+        db.collection("users")
+                .whereEqualTo("uid", value)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot doc : task.getResult()) {
-                               for (int i=1;i>0;i++)
+                               for (int a=1;a<=docnnum;a++)
                                {
-                                   if (!doc.getString("Doctor uid "+i).equals(doc_id)){
-                                       position++;
+                                   if (doc.getString("Doctor uid "+i).equals(doc_id)){
+                                           position=i;
                                    }
                                }
                             }
@@ -248,12 +272,14 @@ public class doctor_information extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (DocumentSnapshot doc : task.getResult()) {
                                 for (i = 0; i >= 0; i++) {
-                                    if (doc.getString("Doctor name " + i) == null) {
+                                    if ((doc.getString("Doctor uid " + String.valueOf(i+1))==null)) {
                                         break;
+                                    }else{
+                                        docnnum++;
                                     }
                                 }
                             }
-                            oncallbacknumber.onCallbacknumber(i);
+                            oncallbacknumber.onCallbacknumber(docnnum);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
                         }
@@ -307,6 +333,7 @@ public class doctor_information extends AppCompatActivity {
             @Override
             public void onCallbacknumber(int i) {
                 docnnum = i;
+                Log.e("Status", String.valueOf(docnnum));
             }
 
             @Override
@@ -319,7 +346,27 @@ public class doctor_information extends AppCompatActivity {
 
             }
         });
+        checknextavailable(new callback() {
+            @Override
+            public void onCallback(String string) {
 
+            }
+
+            @Override
+            public void onCallbacknumber(int i) {
+                next_available=i;
+            }
+
+            @Override
+            public void onCallbackList(ArrayList<String> list) {
+
+            }
+
+            @Override
+            public void onCallbackListstring(String[][] data) {
+
+            }
+        });
         if (status.equals("update")) {
             doc_id = intent.getStringExtra("list");
             add_major_doc.setVisibility(View.GONE);
@@ -339,11 +386,33 @@ public class doctor_information extends AppCompatActivity {
 
                 @Override
                 public void onCallbackList(ArrayList<String> list) {
+
                     dname.setText(list.get(0));
                     demail.setText(list.get(1));
                     dphone.setText(list.get(2));
                     update_doc.setEnabled(true);
                     update_doc.setClickable(true);
+                    getdocdocumentid(new callback() {
+                        @Override
+                        public void onCallback(String string) {
+                            doc_documentid=string;
+                        }
+
+                        @Override
+                        public void onCallbacknumber(int i) {
+
+                        }
+
+                        @Override
+                        public void onCallbackList(ArrayList<String> list) {
+
+                        }
+
+                        @Override
+                        public void onCallbackListstring(String[][] data) {
+
+                        }
+                    });
                 }
 
                 @Override
@@ -361,6 +430,7 @@ public class doctor_information extends AppCompatActivity {
             getpridocid(new callback() {
                 @Override
                 public void onCallback(String string) {
+                    doc_id=string;
                     getmajordoc(new callback() {
                         @Override
                         public void onCallback(String string) {
@@ -374,6 +444,8 @@ public class doctor_information extends AppCompatActivity {
 
                         @Override
                         public void onCallbackList(ArrayList<String> list) {
+
+
                             add_major_doc.setClickable(true);
                             add_major_doc.setEnabled(true);
                             if (!list.isEmpty()) {
@@ -381,6 +453,28 @@ public class doctor_information extends AppCompatActivity {
                                 demail.setText(list.get(1));
                                 dphone.setText(list.get(2));
                             }
+                            getdocdocumentid(new callback() {
+                                @Override
+                                public void onCallback(String string) {
+                                    doc_documentid=string;
+                                }
+
+                                @Override
+                                public void onCallbacknumber(int i) {
+
+                                }
+
+                                @Override
+                                public void onCallbackList(ArrayList<String> list) {
+
+                                }
+
+                                @Override
+                                public void onCallbackListstring(String[][] data) {
+
+                                }
+                            });
+
                         }
 
                         @Override
@@ -412,34 +506,16 @@ public class doctor_information extends AppCompatActivity {
             add_major_doc.setVisibility(View.GONE);
             add_doc.setEnabled(false);
             add_doc.setClickable(false);
-
-            checknextavailable(new callback() {
-                @Override
-                public void onCallback(String string) {
-
-                }
-
-                @Override
-                public void onCallbacknumber(int i) {
-                    add_doc.setEnabled(true);
-                    add_doc.setClickable(true);
-                    next_available=i;
-                }
-
-                @Override
-                public void onCallbackList(ArrayList<String> list) {
-
-                }
-
-                @Override
-                public void onCallbackListstring(String[][] data) {
-
-                }
-            });
+            add_doc.setEnabled(true);
+            add_doc.setClickable(true);
         }
 
 
-            update_doc.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        update_doc.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -450,8 +526,8 @@ public class doctor_information extends AppCompatActivity {
                         @Override
                         public void onCallback(String string) {
                             boolean isNull=(string!=null);
-                            FirebaseFirestore db = FirebaseFirestore.getInstance();
-                            DocumentReference updateref = db.collection("doctors").document(doc_id);
+                            final FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            final DocumentReference updateref = db.collection("doctors").document(doc_documentid);
                             if (isNull==true) {
                                 updateref
                                         .update("Doctor Name", dname_string)
@@ -533,7 +609,7 @@ public class doctor_information extends AppCompatActivity {
                                 });
                                 finish();
                             }else{
-                                String uid=UUID.randomUUID().toString();
+                                final String uid=UUID.randomUUID().toString();
                                 Map<String, Object> doc = new HashMap<>();
                                 doc.put("Doctor Name", dname_string);
                                 doc.put("Doctor Email", demail_string);
@@ -553,22 +629,42 @@ public class doctor_information extends AppCompatActivity {
                                                 Log.w("Status", "Error adding document", e);
                                             }
                                         });
+                                getdocposition(new callback() {
+                                    @Override
+                                    public void onCallback(String string) {
 
-                                updateref = db.collection("users").document(documentid);
-                                updateref
-                                        .update("Doctor uid "+next_available, uid)
-                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                            @Override
-                                            public void onSuccess(Void aVoid) {
-                                                Log.d("Status", "DocumentSnapshot successfully updated!");
-                                            }
-                                        })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Log.w("Status", "Error updating document", e);
-                                            }
-                                        });
+                                    }
+
+                                    @Override
+                                    public void onCallbacknumber(int i) {
+                                        DocumentReference updateref = db.collection("users").document(documentid);
+                                        updateref
+                                                .update("Doctor uid "+i, uid)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        Log.d("Status", "DocumentSnapshot successfully updated!");
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Log.w("Status", "Error updating document", e);
+                                                    }
+                                                });
+                                    }
+
+                                    @Override
+                                    public void onCallbackList(ArrayList<String> list) {
+
+                                    }
+
+                                    @Override
+                                    public void onCallbackListstring(String[][] data) {
+
+                                    }
+                                });
+
                                 finish();
                             }
                         }
@@ -607,7 +703,7 @@ public class doctor_information extends AppCompatActivity {
                         public void onCallback(String string) {
                             boolean isNull=(string!=null);
                             if (isNull==true) {
-                                DocumentReference updateref = db.collection("doctors").document(doc_id);
+                                DocumentReference updateref = db.collection("doctors").document(doc_documentid);
                                 updateref
                                         .update("Doctor Name", dname_string)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -741,7 +837,7 @@ public class doctor_information extends AppCompatActivity {
                         public void onCallback(String string) {
                             boolean isNull=(string!=null);
                                 if (isNull==true) {
-                                    DocumentReference updateref = db.collection("doctors").document(doc_id);
+                                    DocumentReference updateref = db.collection("doctors").document(doc_documentid);
                                     updateref
                                             .update("Doctor Name", dname_string)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {

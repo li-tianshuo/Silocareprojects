@@ -24,16 +24,76 @@ import java.util.ArrayList;
 
 public class list_doc_Fragment extends Fragment {
     private ListView list;
-    private String[][] data={{"Please wait","",""}};
-
-    private String[][] docdata={{"","",""}};
-    private String[][] pdocdata={{"","",""}};
+    private String[][] data={{"Please wait","","",""}};
+    private String primaryid;
+    private String[][] docdata={{"","","",""}};
+    private String[][] pdocdata={{"","","",""}};
     private FirebaseAuth mAuth;
     private FloatingActionButton add_doc;
     private int i;
     private int docnum=0;
     private int b;
+    private ArrayList docuidlist=new ArrayList();
 
+    private void primaryid(final callback oncallback)
+    {
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("users")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                primaryid=doc.getString("Primary Doctor uid");
+                            }
+                            oncallback.onCallback(primaryid);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
+    private void getotherdocuid(final callback oncallbacklist)
+    {
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("users")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            int num=0;
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                for (b=0; b>=0; b++)
+                                {
+                                    if (doc.getString("Doctor uid "+String.valueOf(b+1))==null)
+                                    {
+                                        break;
+                                    }else
+                                    {
+                                        docuidlist.add(doc.getString("Doctor uid "+String.valueOf(b+1)));
+                                    }
+
+                                }
+                            }
+                            oncallbacklist.onCallbackList(docuidlist);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
     private void getdocnumber(final callback oncallbacknumber)
     {
         mAuth= FirebaseAuth.getInstance();
@@ -51,14 +111,14 @@ public class list_doc_Fragment extends Fragment {
                             for(DocumentSnapshot doc : task.getResult()) {
                                 for (b=0; b>=0; b++)
                                 {
-                                    if (doc.getString("Doctor Name "+String.valueOf(b+1))==null)
+                                    if (doc.getString("Doctor uid "+String.valueOf(b+1))==null)
                                     {
                                         break;
-                                    }
-                                    if (doc.getBoolean("Doctor Status"+String.valueOf(b+1)))
+                                    }else
                                     {
                                         num++;
                                     }
+
                                 }
                             }
                             oncallbacknumber.onCallbacknumber(num);
@@ -75,17 +135,18 @@ public class list_doc_Fragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String value=user.getUid();
-        db.collection("users")
-                .whereEqualTo("uid", value)
+        db.collection("doctors")
+                .whereEqualTo("uid", primaryid)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for(DocumentSnapshot doc : task.getResult()) {
-                                pdocdata[0][0]=("Primary Doctor Name: "+doc.getString("Primary Doctor Name"));
-                                pdocdata[0][1]=("Primary Doctor Email: "+doc.getString("Primary Doctor Email"));
-                                pdocdata[0][2]=("Primary Doctor Phone: "+doc.getString("Primary Doctor Phone"));
+                                pdocdata[0][0]=("Primary Doctor Name: "+doc.getString("Doctor Name"));
+                                pdocdata[0][1]=("Primary Doctor Email: "+doc.getString("Doctor Email"));
+                                pdocdata[0][2]=("Primary Doctor Phone: "+doc.getString("Doctor Phone"));
+                                pdocdata[0][3]=doc.getString("uid");
                                 Log.d("Status", "Successful get information ", task.getException());
                             }
                             oncallbackString.onCallbackListstring(pdocdata);
@@ -102,42 +163,32 @@ public class list_doc_Fragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String value=user.getUid();
-        db.collection("users")
-                .whereEqualTo("uid", value)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-                        if (task.isSuccessful()) {
-                            for(DocumentSnapshot doc : task.getResult()) {
-                                int c=0;
-                                for (int a=0;a>=0;a++)
-                                {
-                                    if (doc.getString("Doctor Name "+String.valueOf(a+1))!=null){
-                                        Log.e("success", String.valueOf(doc.getBoolean("Doctor Status"+String.valueOf(a+1))));
-                                        if ((doc.getBoolean("Doctor Status"+String.valueOf(a+1)))) {
-                                            Log.e("success", "success");
-                                            docdata[c][0] = ("Doctor Name "+ (a+1)+ ":" + doc.getString("Doctor Name " + String.valueOf(a + 1)));
-                                            docdata[c][1] = ("Doctor Email "+ (a+1)+ ":" + doc.getString("Doctor Email " + String.valueOf(a + 1)));
-                                            docdata[c][2] = ("Doctor Phone "+ (a+1)+ ":" + doc.getString("Doctor Phone " + String.valueOf(a + 1)));
-                                            c++;
-                                        }
-                                    }else{
-                                        break;
-                                    }
+        for (int i=0;i<docnum;i++)
+        {
+            final int finalI = i;
+            db.collection("doctors")
+                    .whereEqualTo("uid", docuidlist.get(i))
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for(DocumentSnapshot doc : task.getResult()) {
+                                    docdata[finalI][0] = ("Doctor Name "+ (finalI+1)+ ":" + doc.getString("Doctor Name"));
+                                    docdata[finalI][1] = ("Doctor Email "+ (finalI+1)+ ":" + doc.getString("Doctor Email"));
+                                    docdata[finalI][2] = ("Doctor Phone "+ (finalI+1)+ ":" + doc.getString("Doctor Phone"));
+                                    docdata[finalI][3] = doc.getString("uid");
+                                    Log.d("Status", "Successful get information ", task.getException());
                                 }
 
-
-                                Log.d("Status", "Successful get information ", task.getException());
+                            } else {
+                                Log.d("Status", "Error getting documents: ", task.getException());
                             }
-                            oncallbackString.onCallbackListstring(docdata);
-                        } else {
-                            Log.d("Status", "Error getting documents: ", task.getException());
                         }
-                    }
 
-                });
+                    });
+        }
+        oncallbackString.onCallbackListstring(docdata);
     }
     public list_doc_Fragment() {
         // Required empty public constructor
@@ -161,8 +212,8 @@ public class list_doc_Fragment extends Fragment {
             public void onCallbacknumber(int b) {
                 Log.e("Success", String.valueOf(b));
                 docnum=b;
-                docdata=new String[b][3];
-                checkPridoc(new callback() {
+                docdata=new String[b][4];
+                getotherdocuid(new callback() {
                     @Override
                     public void onCallback(String string) {
 
@@ -174,12 +225,8 @@ public class list_doc_Fragment extends Fragment {
                     }
 
                     @Override
-                    public void onCallbackList(ArrayList<String> list) {
-
-                    }
-
-                    @Override
-                    public void onCallbackListstring(final String[][] pdocdata) {
+                    public void onCallbackList(ArrayList<String> alist) {
+                        docuidlist= (ArrayList) alist.clone();
                         getotherdoc(new callback() {
                             @Override
                             public void onCallback(String string) {
@@ -197,21 +244,68 @@ public class list_doc_Fragment extends Fragment {
                             }
 
                             @Override
-                            public void onCallbackListstring(String[][] docdata) {
-                                if (docdata[0][0]=="")
-                                {
-                                    MyAdapter_doc ad = new MyAdapter_doc(getActivity(), pdocdata);
-                                    list.setAdapter(ad);
-                                }else{
-                                    String[][] finaldata = new String[pdocdata.length +docdata.length][];
-                                    System.arraycopy(pdocdata, 0, finaldata , 0, pdocdata.length);
-                                    System.arraycopy(docdata, 0, finaldata , pdocdata.length, docdata.length);
-                                    MyAdapter_doc ad = new MyAdapter_doc(getActivity(), finaldata);
-                                    list.setAdapter(ad);
-                                }
+                            public void onCallbackListstring(String[][] data) {
 
+                                docdata=data.clone();
+                                primaryid(new callback() {
+                                    @Override
+                                    public void onCallback(String string) {
+                                        primaryid=string;
+                                        checkPridoc(new callback() {
+                                            @Override
+                                            public void onCallback(String string) {
+
+                                            }
+
+                                            @Override
+                                            public void onCallbacknumber(int i) {
+
+                                            }
+
+                                            @Override
+                                            public void onCallbackList(ArrayList<String> list) {
+
+                                            }
+
+                                            @Override
+                                            public void onCallbackListstring(String[][] data) {
+                                                pdocdata=data.clone();
+                                                if (docdata.length==0)
+                                                {
+                                                    MyAdapter_doc ad = new MyAdapter_doc(getActivity(), pdocdata);
+                                                    list.setAdapter(ad);
+                                                }else{
+                                                    String[][] finaldata = new String[pdocdata.length +docdata.length][];
+                                                    System.arraycopy(pdocdata, 0, finaldata , 0, pdocdata.length);
+                                                    System.arraycopy(docdata, 0, finaldata , pdocdata.length, docdata.length);
+                                                    MyAdapter_doc ad = new MyAdapter_doc(getActivity(), finaldata);
+                                                    list.setAdapter(ad);
+                                                }
+                                            }
+                                        });
+                                    }
+
+                                    @Override
+                                    public void onCallbacknumber(int i) {
+
+                                    }
+
+                                    @Override
+                                    public void onCallbackList(ArrayList<String> alist) {
+
+                                    }
+
+                                    @Override
+                                    public void onCallbackListstring(String[][] data) {
+
+                                    }
+                                });
                             }
                         });
+                    }
+
+                    @Override
+                    public void onCallbackListstring(String[][] data) {
 
                     }
                 });
@@ -238,6 +332,7 @@ public class list_doc_Fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), doctor_information.class);
                 intent.putExtra("status","add_doc");
+
                 startActivity(intent);
             }
         });
