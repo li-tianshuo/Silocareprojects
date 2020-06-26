@@ -1,12 +1,20 @@
 package cc.shuozi.uidesign;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -18,6 +26,7 @@ import android.widget.ViewFlipper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -32,7 +41,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private String messagecon;
     private ViewFlipper message;
     private String Filename="message.json";
@@ -43,6 +52,9 @@ public class MainMenu extends AppCompatActivity {
     private ImageButton decision_making_button;
     private ImageButton implementation_button;
     private ImageButton setting_button;
+    private DrawerLayout drawerLayout;
+    private Toolbar toolbar;
+    private ActionBarDrawerToggle drawerToggle;
 
 
     public void getmessage()
@@ -144,6 +156,70 @@ public class MainMenu extends AppCompatActivity {
                 });
 
     }
+    private void initdrawer() {
+        drawerLayout=findViewById(R.id.drawerlayout);
+        toolbar=findViewById(R.id.toolbar);
+
+
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+            }
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+            }
+
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                super.onDrawerStateChanged(newState);
+            }
+        };
+
+        drawerToggle.syncState();
+
+        drawerLayout.setDrawerListener(drawerToggle);
+
+
+        setSupportActionBar(toolbar);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.side_mainmenu:
+                Intent main1=new Intent(MainMenu.this, ongoing_main_menu.class);
+                startActivity(main1);
+                return true;
+            case R.id.side_setting:
+                Intent main2=new Intent(MainMenu.this, MainMenu.class);
+                startActivity(main2);
+                return true;
+        }
+        return false;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -153,7 +229,7 @@ public class MainMenu extends AppCompatActivity {
         implementation_button=findViewById(R.id.implementaion);
         setting_button=findViewById(R.id.setting);
         username=findViewById(R.id.textView);
-
+        initdrawer();
         Intent intent = getIntent();
 
         if (intent != null) {
@@ -208,5 +284,11 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
+        NavigationView navigationView=findViewById(R.id.main_side);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
     }
+
+
 }
