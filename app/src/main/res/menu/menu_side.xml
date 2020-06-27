@@ -4,7 +4,13 @@
 
     <item
         android:id="@+id/side_mainmenu"
-        android:title="Main Menu" />
+        android:title="Main Menu" ></item>
+    <item
+        android:id="@+id/side_implementation"
+        android:title="Implementation" />
+    <item
+        android:id="@+id/side_decision"
+        android:title="Decision Making" />
     <item
         android:id="@+id/side_setting"
         android:title="Setting" />

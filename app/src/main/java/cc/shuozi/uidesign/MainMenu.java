@@ -217,6 +217,14 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                 Intent main2=new Intent(MainMenu.this, MainMenu.class);
                 startActivity(main2);
                 return true;
+            case R.id.side_implementation:
+                Intent main3=new Intent(MainMenu.this, Implementation.class);
+                startActivity(main3);
+                return true;
+            case R.id.side_decision:
+                Intent main4=new Intent(MainMenu.this, decision_making.class);
+                startActivity(main4);
+                return true;
         }
         return false;
     }
@@ -283,7 +291,18 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(new Intent(MainMenu.this, information.class));
             }
         });
-
+        implementation_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, Implementation.class));
+            }
+        });
+        decision_making_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenu.this, decision_making.class));
+            }
+        });
         NavigationView navigationView=findViewById(R.id.main_side);
         navigationView.setNavigationItemSelectedListener(this);
 

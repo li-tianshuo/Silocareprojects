@@ -79,6 +79,14 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
                 Intent main2=new Intent(ongoing_main_menu.this, MainMenu.class);
                 startActivity(main2);
                 return true;
+            case R.id.side_implementation:
+                Intent main3=new Intent(ongoing_main_menu.this, Implementation.class);
+                startActivity(main3);
+                return true;
+            case R.id.side_decision:
+                Intent main4=new Intent(ongoing_main_menu.this, decision_making.class);
+                startActivity(main4);
+                return true;
         }
         return false;
     }

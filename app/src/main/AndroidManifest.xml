@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".ongoing_main_menu"></activity>
+        <activity android:name=".decision_making"></activity>
+        <activity android:name=".Implementation" />
+        <activity android:name=".ongoing_main_menu" />
         <activity android:name=".information" />
         <activity android:name=".doctor_information" />
         <activity android:name=".pre_information" />
