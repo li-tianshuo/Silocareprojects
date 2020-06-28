@@ -20,7 +20,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
-    private String[][] data={{"Activity"," "},{"Diet"," "},{"Px"," "}};
+    private String[][] data={{"Px"," "},{"Diet"," "},{"Physical Activity"," "}, {"Mental Activity"," "}};
     private void initdrawer() {
         drawerLayout=findViewById(R.id.drawerlayout_implementation);
         toolbar=findViewById(R.id.toolbar_implementation);

@@ -43,13 +43,34 @@ public class my_adapter_imp extends BaseAdapter {
     public View getView(int position, View convertView, final ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.implementation_list_view, parent, false);
-        TextView text1 = (TextView) convertView.findViewById(R.id.text_imp_title);
+        final TextView text1 = (TextView) convertView.findViewById(R.id.text_imp_title);
         TextView text2 = (TextView) convertView.findViewById(R.id.context_imp);
         Button view=(Button)convertView.findViewById(R.id.imp_button);
         FloatingActionButton add=(FloatingActionButton)convertView.findViewById(R.id.imp_float_button);
         text1.setText(data[position][0]);
         text2.setText(data[position][1]);
-
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ("Mental Activity".equals(text1.getText())) {
+                    Intent intent = new Intent(parent.getContext(),decision_making.class);
+                    intent.putExtra("mode",4);
+                    parent.getContext().startActivity(intent);
+                }else if("Diet".equals(text1.getText())){
+                    Intent intent = new Intent(parent.getContext(),decision_making.class);
+                    intent.putExtra("mode",2);
+                    parent.getContext().startActivity(intent);
+                }else if ("Px".equals(text1.getText())){
+                    Intent intent = new Intent(parent.getContext(),decision_making.class);
+                    intent.putExtra("mode",1);
+                    parent.getContext().startActivity(intent);
+                }else if ("Physical Activity".equals(text1.getText())) {
+                    Intent intent = new Intent(parent.getContext(),decision_making.class);
+                    intent.putExtra("mode",3);
+                    parent.getContext().startActivity(intent);
+                }
+            }
+        });
 
 
         return convertView;

@@ -6,18 +6,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.material.bottomnavigation.BottomNavigationMenu;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class decision_making extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
+    private ViewPager2 viewPager;
+    private BottomNavigationView bottomNavigationView;
 
     private void initdrawer() {
         drawerLayout=findViewById(R.id.drawerlayout_decision_making);
@@ -73,8 +78,69 @@ public class decision_making extends AppCompatActivity implements NavigationView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decision_making);
         NavigationView navigationView=findViewById(R.id.main_side);
+        viewPager=findViewById(R.id.decison_viewpage);
+        bottomNavigationView=findViewById(R.id.decision_making_bottom_menu);
         initdrawer();
         navigationView.setNavigationItemSelectedListener(this);
+        decision_ViewPagerAdapter decision_viewPagerAdapter=new decision_ViewPagerAdapter(getSupportFragmentManager(),getLifecycle());
+
+        decision_viewPagerAdapter.addFragment(new PrescriptionFragment());
+        decision_viewPagerAdapter.addFragment(new DietFragment());
+        decision_viewPagerAdapter.addFragment(new PhysicalFragment());
+        decision_viewPagerAdapter.addFragment(new MentalFragment());
+        viewPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
+        viewPager.setAdapter(decision_viewPagerAdapter);
+
+        int id = getIntent().getIntExtra("mode", 0);
+        if (id == 1) {
+            viewPager.setCurrentItem(0);
+            bottomNavigationView.getMenu().getItem(0).setChecked(true);
+        }else if (id == 2) {
+            viewPager.setCurrentItem(1);
+            bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        }else if (id == 3) {
+            viewPager.setCurrentItem(2);
+            bottomNavigationView.getMenu().getItem(2).setChecked(true);
+        }else if (id == 4) {
+            viewPager.setCurrentItem(3);
+            bottomNavigationView.getMenu().getItem(3).setChecked(true);
+        }
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId())
+                {
+                    case R.id.menu_decision_prescription:
+                        viewPager.setCurrentItem(0);
+                        break;
+                    case R.id.menu_decision_diet:
+                        viewPager.setCurrentItem(1);
+                        break;
+                    case R.id.menu_decision_pa:
+                        viewPager.setCurrentItem(2);
+                        break;
+                    case R.id.menu_decision_ma:
+                        viewPager.setCurrentItem(3);
+                        break;
+                }
+                return true;
+            }
+        });
+
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+                super.onPageSelected(position);
+            }
+        });
+
     }
 
     @Override

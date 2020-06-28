@@ -9,12 +9,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:weightSum="3.4">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="0.25">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar_decision_making"
@@ -35,6 +38,24 @@
                     app:srcCompat="@drawable/avatar" />
             </androidx.appcompat.widget.Toolbar>
         </RelativeLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/decison_viewpage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.9" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/decision_making_bottom_menu"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.25"
+            app:itemRippleColor="#FFFFFF"
+            app:itemTextColor="#FFFFFF"
+            app:menu="@menu/menu_decision_making">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </LinearLayout>
 
