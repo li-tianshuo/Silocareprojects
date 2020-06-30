@@ -42,18 +42,11 @@
 
 
         <EditText
-            android:id="@+id/date_picker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date" />
-
-        <EditText
             android:id="@+id/alarm_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Please Enter the Date you take Prescription"
+            android:focusable="false"
             android:inputType="date" />
 
         <TextView
@@ -66,7 +59,7 @@
         <EditText
             android:id="@+id/px_note"
             android:layout_width="match_parent"
-            android:layout_height="178dp"
+            android:layout_height="174dp"
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine" />
