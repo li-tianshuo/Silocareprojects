@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cc.shuozi.uidesign">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
     <application
         android:allowBackup="true"
@@ -11,7 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".event_information"></activity>
+
+        <receiver android:name="RingReceived" android:process=":remote">
+            <intent-filter>
+                <action android:name="cc.shuozi.uidesign.Ring"></action>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".RingActivity"></activity>
+        <activity android:name=".alarm_information" >
+        </activity>
+        <activity android:name=".event_information" />
         <activity android:name=".decision_making" />
         <activity android:name=".Implementation" />
         <activity android:name=".ongoing_main_menu" />
@@ -31,6 +45,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

@@ -22,7 +22,7 @@ public class PrescriptionFragment extends Fragment {
         fab_px.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), event_information.class));
+                startActivity(new Intent(getActivity(), alarm_information.class));
             }
         });
         return rootView;
