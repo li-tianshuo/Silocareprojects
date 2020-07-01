@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".event_selection">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add a activity"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Time"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/start_time_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="End Time"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="time" />
+
+        <EditText
+            android:id="@+id/end_time_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type of Activity"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/ma_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/mental_activity"
+            />
+
+        <Spinner
+            android:id="@+id/pa_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/physical_activity"
+            />
+
+        <Button
+            android:id="@+id/add_ma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add a Mental Activity" />
+
+        <Button
+            android:id="@+id/update_ma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update a Mental Activity" />
+
+        <Button
+            android:id="@+id/add_pa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add a Physical Activity" />
+
+        <Button
+            android:id="@+id/update_pa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update a Physical Activity" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
