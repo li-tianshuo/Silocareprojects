@@ -10,4 +10,5 @@ public interface callback {
     void onCallbacknumber(int i);
     void onCallbackList(ArrayList<String> list);
     void onCallbackListstring(String[][] data);
+    void onCallbacklistdiet(String[][] data,food[][] foods);
 }

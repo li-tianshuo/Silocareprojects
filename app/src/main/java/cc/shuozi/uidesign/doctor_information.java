@@ -323,6 +323,12 @@ public class doctor_information extends AppCompatActivity {
             public void onCallbackListstring(String[][] data) {
 
             }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+            }
+
         });
         getdocnumber(new callback() {
             @Override
@@ -345,6 +351,12 @@ public class doctor_information extends AppCompatActivity {
             public void onCallbackListstring(String[][] data) {
 
             }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+            }
+
         });
         checknextavailable(new callback() {
             @Override
@@ -366,6 +378,13 @@ public class doctor_information extends AppCompatActivity {
             public void onCallbackListstring(String[][] data) {
 
             }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+            }
+
+
         });
         if (status.equals("update")) {
             doc_id = intent.getStringExtra("list");
@@ -412,6 +431,11 @@ public class doctor_information extends AppCompatActivity {
                         public void onCallbackListstring(String[][] data) {
 
                         }
+
+                        @Override
+                        public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                        }
                     });
                 }
 
@@ -419,6 +443,13 @@ public class doctor_information extends AppCompatActivity {
                 public void onCallbackListstring(String[][] data) {
 
                 }
+
+                @Override
+                public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                }
+
+
             });
 
         } else if (status.equals("add_major")) {
@@ -473,12 +504,22 @@ public class doctor_information extends AppCompatActivity {
                                 public void onCallbackListstring(String[][] data) {
 
                                 }
+
+                                @Override
+                                public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                }
                             });
 
                         }
 
                         @Override
                         public void onCallbackListstring(String[][] data) {
+
+                        }
+
+                        @Override
+                        public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
                         }
                     });
@@ -496,6 +537,11 @@ public class doctor_information extends AppCompatActivity {
 
                 @Override
                 public void onCallbackListstring(String[][] data) {
+
+                }
+
+                @Override
+                public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
                 }
             });
@@ -606,6 +652,11 @@ public class doctor_information extends AppCompatActivity {
                                     public void onCallbackListstring(String[][] data) {
 
                                     }
+
+                                    @Override
+                                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                    }
                                 });
                                 finish();
                             }else{
@@ -663,6 +714,11 @@ public class doctor_information extends AppCompatActivity {
                                     public void onCallbackListstring(String[][] data) {
 
                                     }
+
+                                    @Override
+                                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                    }
                                 });
 
                                 finish();
@@ -682,6 +738,11 @@ public class doctor_information extends AppCompatActivity {
 
                         @Override
                         public void onCallbackListstring(String[][] data) {
+
+                        }
+
+                        @Override
+                        public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
                         }
                     });
@@ -818,6 +879,11 @@ public class doctor_information extends AppCompatActivity {
                         public void onCallbackListstring(String[][] data) {
 
                         }
+
+                        @Override
+                        public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                        }
                     });
 
                 }
@@ -950,6 +1016,11 @@ public class doctor_information extends AppCompatActivity {
 
                         @Override
                         public void onCallbackListstring(String[][] data) {
+
+                        }
+
+                        @Override
+                        public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
                         }
                     });

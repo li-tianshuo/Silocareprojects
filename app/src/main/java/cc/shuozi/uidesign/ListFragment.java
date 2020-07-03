@@ -94,6 +94,11 @@ public class ListFragment extends Fragment {
                 list.setAdapter(ad);
             }
 
+            @Override
+            public void onCallbacklistdiet(String[][] data,food[][] foods) {
+
+            }
+
 
         });
 

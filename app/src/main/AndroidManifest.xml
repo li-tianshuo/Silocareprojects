@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".event_selection"></activity>
+        <activity android:name=".diet_information"></activity>
+        <activity android:name=".event_selection" />
 
         <receiver
             android:name=".RingReceived"
@@ -25,7 +26,7 @@
         </receiver>
 
         <activity android:name=".RingActivity" />
-        <activity android:name=".alarm_information"></activity>
+        <activity android:name=".alarm_information" />
         <activity android:name=".decision_making" />
         <activity android:name=".Implementation" />
         <activity android:name=".ongoing_main_menu" />

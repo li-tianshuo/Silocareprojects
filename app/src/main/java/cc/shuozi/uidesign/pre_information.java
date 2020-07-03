@@ -132,6 +132,11 @@ public class pre_information extends AppCompatActivity {
             public void onCallbackListstring(String[][] data) {
 
             }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+            }
         });
 
         checkcondition(new callback() {
@@ -160,6 +165,11 @@ public class pre_information extends AppCompatActivity {
 
             @Override
             public void onCallbackListstring(String[][] data) {
+
+            }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
             }
         });

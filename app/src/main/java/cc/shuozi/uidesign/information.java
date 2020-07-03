@@ -132,6 +132,11 @@ public class information extends AppCompatActivity {
             public void onCallbackListstring(String[][] data) {
 
             }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+            }
         });
 
     }

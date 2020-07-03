@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -98,6 +100,49 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
         NavigationView navigationView=findViewById(R.id.main_side);
         initdrawer();
         navigationView.setNavigationItemSelectedListener(this);
+        ImageButton ongoing_px=findViewById(R.id.ongoing_px);
+        ImageButton ongoing_pa=findViewById(R.id.ongoing_pa);
+        ImageButton ongoing_ma=findViewById(R.id.ongoing_ma);
+        ImageButton ongoing_diet=findViewById(R.id.ongoing_diet);
+
+
+        ongoing_ma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ongoing_main_menu.this,decision_making.class);
+                intent.putExtra("mode",4);
+                startActivity(intent);
+            }
+        });
+
+        ongoing_pa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ongoing_main_menu.this,decision_making.class);
+                intent.putExtra("mode",3);
+                startActivity(intent);
+            }
+        });
+
+        ongoing_px.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ongoing_main_menu.this,decision_making.class);
+                intent.putExtra("mode",1);
+                startActivity(intent);
+            }
+        });
+
+        ongoing_diet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ongoing_main_menu.this,decision_making.class);
+                intent.putExtra("mode",2);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
 }

@@ -145,6 +145,11 @@ public class MyAdapter_doc extends BaseAdapter implements View.OnClickListener {
             public void onCallbackListstring(String[][] data) {
 
             }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+            }
         });
         delete.setVisibility(View.GONE);
         delete.setOnClickListener(new View.OnClickListener() {

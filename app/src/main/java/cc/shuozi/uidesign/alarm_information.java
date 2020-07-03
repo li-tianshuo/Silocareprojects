@@ -202,6 +202,13 @@ public class alarm_information extends AppCompatActivity {
                             });
 
                         }
+
+                        @Override
+                        public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                        }
+
+
                     });
                 }
 
@@ -219,6 +226,13 @@ public class alarm_information extends AppCompatActivity {
                 public void onCallbackListstring(String[][] data) {
 
                 }
+
+                @Override
+                public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                }
+
+
             });
 
         }else if (id == 1) {

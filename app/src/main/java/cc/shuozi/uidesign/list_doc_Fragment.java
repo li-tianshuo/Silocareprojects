@@ -282,6 +282,11 @@ public class list_doc_Fragment extends Fragment {
                                                     list.setAdapter(ad);
                                                 }
                                             }
+
+                                            @Override
+                                            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                            }
                                         });
                                     }
 
@@ -299,13 +304,28 @@ public class list_doc_Fragment extends Fragment {
                                     public void onCallbackListstring(String[][] data) {
 
                                     }
+
+                                    @Override
+                                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                    }
                                 });
+                            }
+
+                            @Override
+                            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
                             }
                         });
                     }
 
                     @Override
                     public void onCallbackListstring(String[][] data) {
+
+                    }
+
+                    @Override
+                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
                     }
                 });
@@ -319,6 +339,11 @@ public class list_doc_Fragment extends Fragment {
 
             @Override
             public void onCallbackListstring(String[][] data) {
+
+            }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
             }
         });

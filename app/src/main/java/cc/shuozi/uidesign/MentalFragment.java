@@ -140,6 +140,11 @@ public class MentalFragment extends Fragment {
                         my_adapter_activity sc = new my_adapter_activity(getContext(), data);
                         list.setAdapter(sc);
                     }
+
+                    @Override
+                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                    }
                 });
             }
 
@@ -150,6 +155,11 @@ public class MentalFragment extends Fragment {
 
             @Override
             public void onCallbackListstring(String[][] data) {
+
+            }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
             }
         });

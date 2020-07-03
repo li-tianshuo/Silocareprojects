@@ -135,6 +135,11 @@ public class PrescriptionFragment extends Fragment {
                         my_adapter_px sc = new my_adapter_px(getContext(), data);
                         list.setAdapter(sc);
                     }
+
+                    @Override
+                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                    }
                 });
             }
 
@@ -145,6 +150,11 @@ public class PrescriptionFragment extends Fragment {
 
             @Override
             public void onCallbackListstring(String[][] data) {
+
+            }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
             }
         });

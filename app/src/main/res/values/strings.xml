@@ -44,4 +44,12 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="diet_type">
+        <item>Please choose your Type</item>
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Snacks</item>
+        <item>Dinner</item>
+    </string-array>
+
 </resources>

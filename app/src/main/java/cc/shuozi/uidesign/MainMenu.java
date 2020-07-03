@@ -276,6 +276,11 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
             public void onCallbackListstring(String[][] data) {
 
             }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+            }
         });
 
         setting_button.setOnClickListener(new View.OnClickListener() {

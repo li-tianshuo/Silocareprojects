@@ -92,7 +92,7 @@
                         android:layout_weight="0">
 
                         <ImageButton
-                            android:id="@+id/imageButton"
+                            android:id="@+id/ongoing_px"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -120,7 +120,7 @@
                         android:layout_height="match_parent">
 
                         <ImageButton
-                            android:id="@+id/imageButton2"
+                            android:id="@+id/ongoing_pa"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerInside"
@@ -155,7 +155,7 @@
                         android:layout_height="match_parent">
 
                         <ImageButton
-                            android:id="@+id/imageButton5"
+                            android:id="@+id/ongoing_diet"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerInside"
@@ -182,7 +182,7 @@
                         android:layout_height="match_parent">
 
                         <ImageButton
-                            android:id="@+id/imageButton4"
+                            android:id="@+id/ongoing_ma"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:scaleType="centerInside"

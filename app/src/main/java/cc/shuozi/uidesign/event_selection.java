@@ -412,6 +412,11 @@ public class event_selection extends AppCompatActivity {
                             });
 
                         }
+
+                        @Override
+                        public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                        }
                     });
                 }
 
@@ -427,6 +432,11 @@ public class event_selection extends AppCompatActivity {
 
                 @Override
                 public void onCallbackListstring(String[][] data) {
+
+                }
+
+                @Override
+                public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
                 }
             });
@@ -643,6 +653,11 @@ public class event_selection extends AppCompatActivity {
                             });
 
                         }
+
+                        @Override
+                        public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                        }
                     });
                 }
 
@@ -658,6 +673,11 @@ public class event_selection extends AppCompatActivity {
 
                 @Override
                 public void onCallbackListstring(String[][] data) {
+
+                }
+
+                @Override
+                public void onCallbacklistdiet(String[][] data, food[][] foods) {
 
                 }
             });
