@@ -232,11 +232,11 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                  * information[][2]->month
                                  * information[][3]->day
                                  * */
-                                information[0][0] = String.valueOf(doc.get("Time id"));
-                                information[0][1] = String.valueOf(doc.get("Diet year"));
-                                information[0][2] = String.valueOf(doc.get("Diet month"));
-                                information[0][3] = String.valueOf(doc.get("Diet day"));
-                                information[0][4] = doc.getString("Diet type");
+                                information[i][0] = String.valueOf(doc.get("Time id"));
+                                information[i][1] = String.valueOf(doc.get("Diet year"));
+                                information[i][2] = String.valueOf(doc.get("Diet month"));
+                                information[i][3] = String.valueOf(doc.get("Diet day"));
+                                information[i][4] = doc.getString("Diet type");
                                 i++;
 
 
@@ -246,10 +246,10 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                             Arrays.sort(information, new Comparator<String[]>() {
                                 @Override
                                 public int compare(String[] o1, String[] o2) {
-                                    return Integer.parseInt(o2[0])-Integer.parseInt(o1[0]);
+                                    return Integer.parseInt(o2[0]) - Integer.parseInt(o1[0]);
                                 }
                             });
-
+                            
                              */
                             oncallbackString.onCallbackListstring(information);
                         } else {
