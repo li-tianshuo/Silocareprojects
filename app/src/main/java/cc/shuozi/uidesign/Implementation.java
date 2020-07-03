@@ -42,6 +42,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
     private String[][] madata;
     private void getmanum(final callback oncallbackString)
     {
+        a=0;
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -96,7 +97,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 i++;
                                 Log.d("Status", "Success on get Document", task.getException());
                             }
-                            /*
+
                             Arrays.sort(madata, new Comparator<String[]>() {
                                 @Override
                                 public int compare(String[] o1, String[] o2) {
@@ -104,7 +105,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 }
                             });
 
-                             */
+
                             oncallbackString.onCallbackListstring(madata);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
@@ -115,6 +116,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
     }
     private void getpanum(final callback oncallbackString)
     {
+        a=0;
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -169,7 +171,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 i++;
                                 Log.d("Status", "Success on get Document", task.getException());
                             }
-                            /*
+
                             Arrays.sort(padata, new Comparator<String[]>() {
                                 @Override
                                 public int compare(String[] o1, String[] o2) {
@@ -177,7 +179,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 }
                             });
 
-                             */
+
                             oncallbackString.onCallbackListstring(padata);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
@@ -188,6 +190,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
     }
     private void getdietnum(final callback oncallbackString)
     {
+        a=0;
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -242,7 +245,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
                                 Log.d("Status", "Success on get Document", task.getException());
                             }
-                            /*
+
                             Arrays.sort(information, new Comparator<String[]>() {
                                 @Override
                                 public int compare(String[] o1, String[] o2) {
@@ -250,7 +253,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 }
                             });
                             
-                             */
+
                             oncallbackString.onCallbackListstring(information);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
@@ -262,6 +265,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
     private void getpxnum(final callback oncallbackString)
     {
+        a=0;
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -445,8 +449,6 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                                {
                                                    data[0][1] = "Related Activity: None";
                                                }else {
-
-
                                                    data[0][1] = "Related Activity: " + pxdata[0][1];
                                                }
 
@@ -473,7 +475,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                                         {
                                                             data[1][1] = "Related Activity: None";
                                                         }else {
-                                                            data[1][1] ="Related Activity: "+ dietdata[0][2] + "/" + dietdata[0][3] + "/" + dietdata[0][1];
+                                                            data[1][1] ="Related Activity: "+ information[0][2] + "/" + information[0][3] + "/" + information[0][1];
                                                         }
                                                         checkpa(new callback() {
                                                             @Override
