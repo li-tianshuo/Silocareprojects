@@ -68,6 +68,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
     private void checkma(final callback oncallbackString)
     {
+        i=0;
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -95,6 +96,15 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 i++;
                                 Log.d("Status", "Success on get Document", task.getException());
                             }
+                            /*
+                            Arrays.sort(madata, new Comparator<String[]>() {
+                                @Override
+                                public int compare(String[] o1, String[] o2) {
+                                    return Integer.parseInt(o2[0])-Integer.parseInt(o1[0]);
+                                }
+                            });
+
+                             */
                             oncallbackString.onCallbackListstring(madata);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
@@ -131,6 +141,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
     private void checkpa(final callback oncallbackString)
     {
+        i=0;
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -158,6 +169,15 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 i++;
                                 Log.d("Status", "Success on get Document", task.getException());
                             }
+                            /*
+                            Arrays.sort(padata, new Comparator<String[]>() {
+                                @Override
+                                public int compare(String[] o1, String[] o2) {
+                                    return Integer.parseInt(o2[0])-Integer.parseInt(o1[0]);
+                                }
+                            });
+
+                             */
                             oncallbackString.onCallbackListstring(padata);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
@@ -172,7 +192,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String value=user.getUid();
-        db.collection("px")
+        db.collection("diet")
                 .whereEqualTo("uid", value)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -193,6 +213,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
     }
     private void getdietinfo(final callback oncallbackString)
     {
+        i=0;
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -216,12 +237,20 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 information[0][2] = String.valueOf(doc.get("Diet month"));
                                 information[0][3] = String.valueOf(doc.get("Diet day"));
                                 information[0][4] = doc.getString("Diet type");
-
                                 i++;
 
 
                                 Log.d("Status", "Success on get Document", task.getException());
                             }
+                            /*
+                            Arrays.sort(information, new Comparator<String[]>() {
+                                @Override
+                                public int compare(String[] o1, String[] o2) {
+                                    return Integer.parseInt(o2[0])-Integer.parseInt(o1[0]);
+                                }
+                            });
+
+                             */
                             oncallbackString.onCallbackListstring(information);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
@@ -258,6 +287,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
     }
     private void checkalarm(final callback oncallbackString)
     {
+        i=0;
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -282,6 +312,12 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 i++;
                                 Log.d("Status", "Success on get Document", task.getException());
                             }
+                            Arrays.sort(pxdata, new Comparator<String[]>() {
+                                @Override
+                                public int compare(String[] o1, String[] o2) {
+                                    return Integer.parseInt(o2[0]) - Integer.parseInt(o1[0]);
+                                }
+                            });
                             oncallbackString.onCallbackListstring(pxdata);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
@@ -404,17 +440,15 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
                                             @Override
                                             public void onCallbackListstring(String[][] alarmdata) {
-                                                pxdata=alarmdata;
-                                               /*
-                                                Arrays.sort(alarmdata, new Comparator<String[]>() {
-                                                    @Override
-                                                    public int compare(String[] o1, String[] o2) {
-                                                        return Integer.parseInt(o2[0])-Integer.parseInt(o1[0]);
-                                                    }
-                                                });
+                                                pxdata=alarmdata.clone();
+                                               if (pxdata == null)
+                                               {
+                                                   data[0][1] = "Related Activity: None";
+                                               }else {
 
-                                                */
-                                                data[0][1]=alarmdata[0][1];
+
+                                                   data[0][1] = "Related Activity: " + pxdata[0][1];
+                                               }
 
                                                 getdietinfo(new callback() {
                                                     @Override
@@ -434,19 +468,13 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
                                                     @Override
                                                     public void onCallbackListstring(String[][] dietdata) {
-                                                        information=dietdata;
-                                                        /*
-                                                        Arrays.sort(dietdata, new Comparator<String[]>() {
-                                                            @Override
-                                                            public int compare(String[] o1, String[] o2) {
-                                                                return Integer.valueOf(o2[0])-Integer.valueOf(o1[0]);
-                                                            }
-                                                        });
-
-
-                                                         */
-
-                                                        data[1][1]=dietdata[0][2] + "/" + dietdata[0][3] + "/" + dietdata[0][1];
+                                                        information=dietdata.clone();
+                                                        if (information==null)
+                                                        {
+                                                            data[1][1] = "Related Activity: None";
+                                                        }else {
+                                                            data[1][1] ="Related Activity: "+ dietdata[0][2] + "/" + dietdata[0][3] + "/" + dietdata[0][1];
+                                                        }
                                                         checkpa(new callback() {
                                                             @Override
                                                             public void onCallback(String string) {
@@ -465,27 +493,18 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
                                                             @Override
                                                             public void onCallbackListstring(final String[][] pa_data) {
-                                                                padata=pa_data;
-                                                                /*
-                                                                Arrays.sort(padata, new Comparator<String[]>() {
-                                                                    @Override
-                                                                    public int compare(String[] o1, String[] o2) {
-                                                                        return Integer.parseInt(o2[0])-Integer.parseInt(o1[0]);
-                                                                    }
-                                                                });
-
-
-
-                                                                 =
-                                                                if (Integer.parseInt(padata[0][6]) < 10){
-                                                                    data[2][1]=padata[0][3]+"/"+padata[0][4]+"/"+padata[0][2]+"   "+padata[0][5]+":"+"0"+padata[0][6];
+                                                                padata=pa_data.clone();
+                                                                if (padata == null)
+                                                                {
+                                                                    data[2][1] = "Related Activity: None";
                                                                 }else {
-                                                                    data[2][1]=padata[0][3]+"/"+padata[0][4]+"/"+padata[0][2]+"   "+padata[0][5]+":"+padata[0][6];
+                                                                if (Integer.parseInt(padata[0][6]) < 10){
+                                                                    data[2][1]="Related Activity: "+padata[0][3]+"/"+padata[0][4]+"/"+padata[0][2]+"   "+padata[0][5]+":"+"0"+padata[0][6];
+                                                                }else {
+                                                                    data[2][1]="Related Activity: "+padata[0][3]+"/"+padata[0][4]+"/"+padata[0][2]+"   "+padata[0][5]+":"+padata[0][6];
                                                                 }
 
-
-
-                                                                 */
+                                                                }
                                                                 checkma(new callback() {
                                                                     @Override
                                                                     public void onCallback(String string) {
@@ -504,24 +523,20 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
                                                                     @Override
                                                                     public void onCallbackListstring(String[][] ma_data) {
-                                                                        madata=ma_data;
-                                                                        /*
-                                                                        Arrays.sort(madata, new Comparator<String[]>() {
-                                                                            @Override
-                                                                            public int compare(String[] o1, String[] o2) {
-                                                                                return Integer.parseInt(o2[0])-Integer.parseInt(o1[0]);
-                                                                            }
-                                                                        });
-
-
+                                                                        madata=ma_data.clone();
+                                                                        if (madata == null)
+                                                                        {
+                                                                            data[3][1] = "Related Activity: None";
+                                                                        }else
+                                                                        {
                                                                         if (Integer.parseInt(madata[0][6]) < 10){
-                                                                            data[2][1]=madata[0][3]+"/"+madata[0][4]+"/"+madata[0][2]+"   "+madata[0][5]+":"+"0"+madata[0][6];
+                                                                            data[3][1]="Related Activity: "+madata[0][3]+"/"+madata[0][4]+"/"+madata[0][2]+"   "+madata[0][5]+":"+"0"+madata[0][6];
                                                                         }else {
-                                                                            data[2][1]=madata[0][3]+"/"+madata[0][4]+"/"+madata[0][2]+"   "+madata[0][5]+":"+madata[0][6];
+                                                                            data[3][1]="Related Activity: "+madata[0][3]+"/"+madata[0][4]+"/"+madata[0][2]+"   "+madata[0][5]+":"+madata[0][6];
                                                                         }
 
 
-                                                                         */
+                                                                         }
                                                                         my_adapter_imp sc = new my_adapter_imp(Implementation.this, data);
                                                                         list.setAdapter(sc);
                                                                     }

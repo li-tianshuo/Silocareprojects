@@ -71,6 +71,28 @@ public class my_adapter_imp extends BaseAdapter {
                 }
             }
         });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ("Mental Activity".equals(text1.getText())) {
+                    Intent intent = new Intent(parent.getContext(),event_selection.class);
+                    intent.putExtra("status",0);
+                    parent.getContext().startActivity(intent);
+                }else if("Diet".equals(text1.getText())){
+                    Intent intent = new Intent(parent.getContext(),diet_information.class);
+                    intent.putExtra("status",0);
+                    parent.getContext().startActivity(intent);
+                }else if ("Px".equals(text1.getText())){
+                    Intent intent = new Intent(parent.getContext(),alarm_information.class);
+                    intent.putExtra("status",1);
+                    parent.getContext().startActivity(intent);
+                }else if ("Physical Activity".equals(text1.getText())) {
+                    Intent intent = new Intent(parent.getContext(),event_selection.class);
+                    intent.putExtra("status",2);
+                    parent.getContext().startActivity(intent);
+                }
+            }
+        });
 
 
         return convertView;
