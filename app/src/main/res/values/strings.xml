@@ -17,14 +17,10 @@
 
     <string-array name="diease_name">
         <item>Please choose your conditions</item>
-        <item>Autoimmune Diseases.</item>
-        <item>Allergies and Asthma.</item>
-        <item>Cancer.</item>
-        <item>Celiac Disease.</item>
-        <item>Crohn\'s and Colitis.</item>
-        <item>Heart Disease.</item>
-        <item>Infectious Diseases.</item>
-        <item>Liver Disease.</item>
+        <item>Type-2 Diabetes</item>
+        <item>Depression</item>
+        <item>Arthritis</item>
+        <item>End Stage Renal Disease</item>
         <item>None.</item>
     </string-array>
 

@@ -30,6 +30,8 @@ public class PrescriptionFragment extends Fragment {
     private FirebaseAuth mAuth;
     private int i=0;
     private int a=0;
+    private ListView list;
+    private my_adapter_px sc=new my_adapter_px(getContext(), data);;
     private void getnum(final callback oncallbackString)
     {
         mAuth= FirebaseAuth.getInstance();
@@ -90,13 +92,14 @@ public class PrescriptionFragment extends Fragment {
 
                 });
     }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         final View rootView = inflater.inflate(R.layout.prescription_fragment, container, false);
         FloatingActionButton fab_px=rootView.findViewById(R.id.fab_prescription);
-        final ListView list=rootView.findViewById(R.id.list_px_f);
+        list=rootView.findViewById(R.id.list_px_f);
         fab_px.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +108,12 @@ public class PrescriptionFragment extends Fragment {
         });
         my_adapter_px sc = new my_adapter_px(getContext(), data);
         list.setAdapter(sc);
+        getdata();
+
+        return rootView;
+    }
+
+    private void getdata() {
         getnum(new callback() {
             @Override
             public void onCallback(String string) {
@@ -158,7 +167,5 @@ public class PrescriptionFragment extends Fragment {
 
             }
         });
-
-        return rootView;
     }
 }

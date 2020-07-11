@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/menu_decision_prescription"
-        android:icon="@drawable/px"
+        android:icon="@drawable/icon_prescription2"
         android:title="Prescription" />
     <item
         android:id="@+id/menu_decision_diet"
-        android:icon="@drawable/diet"
+        android:icon="@drawable/icon_diet"
         android:title="Diet" />
     <item
         android:id="@+id/menu_decision_pa"
-        android:icon="@drawable/phy_activity"
+        android:icon="@drawable/icon_physical_activity"
         android:title="Physical Activities" />
     <item
         android:id="@+id/menu_decision_ma"
-        android:icon="@drawable/men_activity"
+        android:icon="@drawable/icon_mental_activity"
         android:title="Mental Activities" />
 </menu>

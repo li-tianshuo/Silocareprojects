@@ -225,6 +225,10 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                 Intent main4=new Intent(MainMenu.this, decision_making.class);
                 startActivity(main4);
                 return true;
+            case R.id.goal_menu:
+                Intent main5=new Intent(MainMenu.this, symptoms_goal.class);
+                startActivity(main5);
+                return true;
         }
         return false;
     }

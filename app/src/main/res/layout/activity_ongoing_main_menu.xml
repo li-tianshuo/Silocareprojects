@@ -96,7 +96,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/px" />
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/icon_prescription2" />
 
                         <TextView
                             android:id="@+id/textView13"
@@ -124,7 +125,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerInside"
-                            app:srcCompat="@drawable/phy_activity" />
+                            app:srcCompat="@drawable/icon_physical_activity" />
 
                         <TextView
                             android:id="@+id/textView14"
@@ -159,7 +160,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerInside"
-                            app:srcCompat="@drawable/diet" />
+                            app:srcCompat="@drawable/icon_diet" />
 
                         <TextView
                             android:id="@+id/textView15"
@@ -186,7 +187,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:scaleType="centerInside"
-                            app:srcCompat="@drawable/men_activity" />
+                            app:srcCompat="@drawable/icon_mental_activity" />
 
                         <TextView
                             android:id="@+id/textView23"

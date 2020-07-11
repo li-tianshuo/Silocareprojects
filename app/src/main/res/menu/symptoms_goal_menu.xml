@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/symptoms_item"
+        android:title="Symptoms" />
+    <item
+        android:id="@+id/goal_item"
+        android:title="Goal" />
+</menu>

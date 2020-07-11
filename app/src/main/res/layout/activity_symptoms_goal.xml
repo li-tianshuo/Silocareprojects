@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_goals"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".symptoms_goal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3.4"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_symptoms_goals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:navigationIcon="@mipmap/ic_menu"
+                app:title="Symptoms and Goals">
+
+                <ImageView
+                    android:id="@+id/avatar__symptoms_goals"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/avatar" />
+            </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/goals_viewpage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.9" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/goals_bottom_tab"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            app:menu="@menu/symptoms_goal_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/side" />
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

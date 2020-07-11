@@ -80,6 +80,7 @@ public class decision_making extends AppCompatActivity implements NavigationView
         NavigationView navigationView=findViewById(R.id.main_side);
         viewPager=findViewById(R.id.decison_viewpage);
         bottomNavigationView=findViewById(R.id.decision_making_bottom_menu);
+        bottomNavigationView.setItemIconTintList(null);
         initdrawer();
         navigationView.setNavigationItemSelectedListener(this);
         decision_ViewPagerAdapter decision_viewPagerAdapter=new decision_ViewPagerAdapter(getSupportFragmentManager(),getLifecycle());
@@ -142,7 +143,6 @@ public class decision_making extends AppCompatActivity implements NavigationView
         });
 
     }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId())
@@ -162,6 +162,10 @@ public class decision_making extends AppCompatActivity implements NavigationView
             case R.id.side_decision:
                 Intent main4=new Intent(decision_making.this, decision_making.class);
                 startActivity(main4);
+                return true;
+            case R.id.goal_menu:
+                Intent main5=new Intent(decision_making.this, symptoms_goal.class);
+                startActivity(main5);
                 return true;
         }
         return false;

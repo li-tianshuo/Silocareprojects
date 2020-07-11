@@ -660,6 +660,10 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                 Intent main4=new Intent(Implementation.this, decision_making.class);
                 startActivity(main4);
                 return true;
+            case R.id.goal_menu:
+                Intent main5=new Intent(Implementation.this, symptoms_goal.class);
+                startActivity(main5);
+                return true;
         }
         return false;
     }
