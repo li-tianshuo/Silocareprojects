@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".information">
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/information_bg" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,16 +26,16 @@
             android:layout_weight="0.15"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="#000000"
+            app:tabIndicatorColor="#FFFFFF"
             app:tabSelectedTextColor="#7C7979"
-            app:tabTextColor="#000000">
+            app:tabTextColor="#FFFFFF">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
