@@ -83,8 +83,36 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
 
         goals_viewpageradapter.addFragment(new Symptoms_fragment());
         goals_viewpageradapter.addFragment(new Goals_fragment());
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId())
+                {
+                    case R.id.symptoms_item:
+                        viewPager.setCurrentItem(0);
+                        break;
+                    case R.id.goal_item:
+                        viewPager.setCurrentItem(1);
+                        break;
+                }
+                return true;
+            }
+        });
         viewPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
         viewPager.setAdapter(goals_viewpageradapter);
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+                super.onPageSelected(position);
+            }
+        });
     }
 
     @Override

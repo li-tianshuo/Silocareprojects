@@ -6,13 +6,15 @@ public class goal_like_event {
     private String name;
     private String type;
     private int priority;
-    private ArrayList<String> description;
-    private ArrayList<String> note;
-    public goal_like_event(String name,String type,int priority)
+    private ArrayList<String> description=new ArrayList<>();
+    private ArrayList<String> note=new ArrayList<>();
+    private int color;
+    public goal_like_event(String name,String type,int priority, int color)
     {
         this.name=name;
         this.type=type;
         this.priority=priority;
+        this.color=color;
     }
     public void setName(String name)
     {
@@ -22,6 +24,15 @@ public class goal_like_event {
     {
         return name;
     }
+    public void setColor(int color)
+    {
+        this.color=color;
+    }
+    public int getColor()
+    {
+        return color;
+    }
+
 
     public void setType(String type)
     {
@@ -61,5 +72,13 @@ public class goal_like_event {
     public String get_note(int pos)
     {
         return note.get(pos);
+    }
+    public ArrayList<String> get_description_array()
+    {
+        return description;
+    }
+    public ArrayList<String> get_note_array()
+    {
+        return note;
     }
 }

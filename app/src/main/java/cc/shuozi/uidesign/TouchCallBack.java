@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.graphics.Canvas;
 import android.graphics.Color;
 
 import androidx.annotation.NonNull;
@@ -32,7 +33,11 @@ public class TouchCallBack extends ItemTouchHelper.Callback {
     }
     @Override
     public boolean isLongPressDragEnabled() {
-        return true;
+        return false;
+    }
+    @Override
+    public boolean isItemViewSwipeEnabled() {
+        return false;
     }
 
     @Override
@@ -46,5 +51,18 @@ public class TouchCallBack extends ItemTouchHelper.Callback {
     public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         super.clearView(recyclerView, viewHolder);
         viewHolder.itemView.setBackgroundColor(0);
+    }
+
+    @Override
+    public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        if(actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
+          /*  final float alpha = 80 - Math.abs(dX) / (float) viewHolder.itemView.getWidth();
+            viewHolder.itemView.setAlpha(alpha);
+            viewHolder.itemView.setTranslationX(dX);*/
+
+        }else if(actionState==ItemTouchHelper.ACTION_STATE_IDLE){
+        }else if(actionState==ItemTouchHelper.ACTION_STATE_DRAG){
+        }
     }
 }
