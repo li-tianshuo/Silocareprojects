@@ -674,10 +674,99 @@ public class add_goal extends AppCompatActivity {
                     }
                 }else if(id==2)
                 {
-
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    DocumentReference updateref = db.collection("goal").document(documentid);
+                    updateref
+                            .update("name",name.getText().toString())
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Status", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Status", "Error updating document", e);
+                                }
+                            });
+                    updateref
+                            .update("year",year)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Status", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Status", "Error updating document", e);
+                                }
+                            });
+                    updateref
+                            .update("month",month)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Status", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Status", "Error updating document", e);
+                                }
+                            });
+                    updateref
+                            .update("day",day)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Status", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Status", "Error updating document", e);
+                                }
+                            });
+                    for (int i = 0; i < description.size(); i++) {
+                        updateref
+                                .update("Description " + i,description.get(i).toString())
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d("Status", "DocumentSnapshot successfully updated!");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w("Status", "Error updating document", e);
+                                    }
+                                });
+                        updateref
+                                .update("Note " + i,note.get(i).toString())
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d("Status", "DocumentSnapshot successfully updated!");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w("Status", "Error updating document", e);
+                                    }
+                                });
+                    }
                 }
-            }
-        });
+                finish();
+                }
+            });
+
 
         goal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -723,7 +812,96 @@ public class add_goal extends AppCompatActivity {
                     }
                 }else if(id==3)
                 {
-
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    DocumentReference updateref = db.collection("goal").document(documentid);
+                    updateref
+                            .update("name",name.getText().toString())
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Status", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Status", "Error updating document", e);
+                                }
+                            });
+                    updateref
+                            .update("year",year)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Status", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Status", "Error updating document", e);
+                                }
+                            });
+                    updateref
+                            .update("month",month)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Status", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Status", "Error updating document", e);
+                                }
+                            });
+                    updateref
+                            .update("day",day)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Status", "DocumentSnapshot successfully updated!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Status", "Error updating document", e);
+                                }
+                            });
+                    for (int i = 0; i < description.size(); i++) {
+                        updateref
+                                .update("Description " + i,description.get(i).toString())
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d("Status", "DocumentSnapshot successfully updated!");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w("Status", "Error updating document", e);
+                                    }
+                                });
+                        updateref
+                                .update("Note " + i,note.get(i).toString())
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d("Status", "DocumentSnapshot successfully updated!");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w("Status", "Error updating document", e);
+                                    }
+                                });
+                    }
+                
+                finish();
                 }
             }
         });
