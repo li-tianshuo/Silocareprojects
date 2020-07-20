@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".symptoms_goal"></activity>
+        <activity android:name=".add_goal"></activity>
+        <activity android:name=".symptoms_goal" />
         <activity android:name=".diet_information" />
         <activity android:name=".event_selection" />
 

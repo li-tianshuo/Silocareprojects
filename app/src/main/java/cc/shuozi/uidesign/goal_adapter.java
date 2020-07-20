@@ -2,6 +2,8 @@ package cc.shuozi.uidesign;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,11 @@ import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,7 +68,7 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
         title.setText(mDatas.get(position).getName());
         RelativeLayout goal_background=holder.getView(R.id.goal_background);
         goal_background.setBackgroundColor(mDatas.get(position).getColor());
-        Button view=holder.getView(R.id.goals_view);
+        final Button view=holder.getView(R.id.goals_view);
         Button update=holder.getView(R.id.goals_update);
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -71,16 +78,31 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
                 return true;
             }
         });
-
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mDatas.get(position).getType().equals("Symptom")) {
+                    Intent intent = new Intent(view.getContext(), add_goal.class);
+                    intent.putExtra("status", 2);
+                    intent.putExtra("documentid", mDatas.get(position).getDocumentid());
+                    view.getContext().startActivity(intent);
+                }else if (mDatas.get(position).getType().equals("Goal"))
+                {
+                    Intent intent = new Intent(view.getContext(), add_goal.class);
+                    intent.putExtra("status", 3);
+                    intent.putExtra("documentid", mDatas.get(position).getDocumentid());
+                    view.getContext().startActivity(intent);
+                }
+            }
+        });
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mDatas.get(position).get_description_array().isEmpty())
                 {
-                    Toast.makeText(v.getContext(),mDatas.get(position).getName()+mDatas.get(position).getPriority(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(v.getContext(),"Nothing here",Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(v.getContext(),mDatas.get(position).getName()+mDatas.get(position).get_description_array().toString()+mDatas.get(position).getPriority(),Toast.LENGTH_LONG).show();
-                    /*
+
                     LayoutInflater layoutInflater = LayoutInflater.from(context);
                     View checkView = layoutInflater.inflate(R.layout.food_list, null);
                     ListView listView = checkView.findViewById(R.id.food_listview);
@@ -103,7 +125,7 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
 
                     alertDialog.show();
 
-                     */
+
                 }
 
             }
@@ -119,8 +141,41 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
 
     @Override
     public void itemMoved(int oldPosition, int newPosition) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference updateref = db.collection("goal").document(mDatas.get(oldPosition).getDocumentid());
+        updateref
+                .update("priority",newPosition)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("Status", "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("Status", "Error updating document", e);
+                    }
+                });
+        updateref = db.collection("goal").document(mDatas.get(newPosition).getDocumentid());
+        updateref
+                .update("priority",oldPosition)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("Status", "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("Status", "Error updating document", e);
+                    }
+                });
+
         mDatas.get(newPosition).setPriority(oldPosition);
         mDatas.get(oldPosition).setPriority(newPosition);
+
         Collections.sort(mDatas, new Comparator<goal_like_event>() {
             @Override
             public int compare(goal_like_event o1, goal_like_event o2) {

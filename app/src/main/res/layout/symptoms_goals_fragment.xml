@@ -13,7 +13,19 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/goals_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_goal_main_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

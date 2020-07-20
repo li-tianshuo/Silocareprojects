@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class symptoms_goal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -74,9 +75,11 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symptoms_goal);
         NavigationView navigationView=findViewById(R.id.main_side);
+
         viewPager=findViewById(R.id.goals_viewpage);
         bottomNavigationView=findViewById(R.id.goals_bottom_tab);
         initdrawer();
+
         navigationView.setNavigationItemSelectedListener(this);
 
         decision_ViewPagerAdapter goals_viewpageradapter=new decision_ViewPagerAdapter(getSupportFragmentManager(),getLifecycle());
@@ -113,6 +116,7 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
                 super.onPageSelected(position);
             }
         });
+
     }
 
     @Override

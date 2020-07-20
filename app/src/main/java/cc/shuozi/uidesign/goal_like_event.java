@@ -8,7 +8,13 @@ public class goal_like_event {
     private int priority;
     private ArrayList<String> description=new ArrayList<>();
     private ArrayList<String> note=new ArrayList<>();
+    private int year;
+    private int day;
+    private int month;
+    private int hour;
+    private int minute;
     private int color;
+    private String documentid;
     public goal_like_event(String name,String type,int priority, int color)
     {
         this.name=name;
@@ -60,6 +66,33 @@ public class goal_like_event {
     public void update_description(String description_string)
     {
         description.add(description_string);
+    }
+
+    public void setDocumentid(String documentid)
+    {
+        this.documentid=documentid;
+    }
+    public String getDocumentid()
+    {
+        return documentid;
+    }
+    public void setTime(int year,int month, int day, int hour,int minute)
+    {
+        this.year=year;
+        this.day=day;
+        this.month=month;
+        this.hour=hour;
+        this.minute=minute;
+    }
+    public String getTime()
+    {
+        String time;
+        if (minute < 10){
+            time=month+"/"+day+"/"+year+"   "+hour+":"+"0"+minute;
+        }else {
+            time=month+"/"+day+"/"+year+"   "+hour+":"+minute;
+        }
+        return time;
     }
     public void update_note(String note_string)
     {

@@ -48,4 +48,9 @@
         <item>Dinner</item>
     </string-array>
 
+    <string-array name="type_goal">
+        <item>Please choose your Type</item>
+        <item>Goal</item>
+        <item>Symptom</item>
+    </string-array>
 </resources>
