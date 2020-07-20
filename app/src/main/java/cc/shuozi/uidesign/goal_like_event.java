@@ -13,9 +13,9 @@ public class goal_like_event {
     private int month;
     private int hour;
     private int minute;
-    private int color;
+    private String color;
     private String documentid;
-    public goal_like_event(String name,String type,int priority, int color)
+    public goal_like_event(String name,String type,int priority, String color)
     {
         this.name=name;
         this.type=type;
@@ -30,11 +30,11 @@ public class goal_like_event {
     {
         return name;
     }
-    public void setColor(int color)
+    public void setColor(String color)
     {
         this.color=color;
     }
-    public int getColor()
+    public String getColor()
     {
         return color;
     }

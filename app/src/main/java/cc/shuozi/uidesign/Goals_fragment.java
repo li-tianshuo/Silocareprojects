@@ -65,7 +65,7 @@ public class Goals_fragment extends Fragment implements goal_adapter.OnStartDrag
                                     data[i][4] = String.valueOf(doc.get("hour"));
                                     data[i][5] = String.valueOf(doc.get("minute"));
                                     data[i][6] = String.valueOf(doc.get("priority"));
-                                    data[i][7] = String.valueOf(doc.get("color"));
+                                    data[i][7] = doc.getString("color");
                                     data[i][8] = doc.getId();
                                     for (int b = 0;b>=0;b++) {
                                         if (doc.getString("Description " + b)==null) {
@@ -190,7 +190,7 @@ public class Goals_fragment extends Fragment implements goal_adapter.OnStartDrag
                             data_array=new ArrayList<goal_like_event>();
                             for (int c=0;c<num;c++)
                             {
-                                data_array.add(new goal_like_event(data[c][0],"Goal",Integer.parseInt(data[c][6]),Integer.parseInt(data[c][7],16)));
+                                data_array.add(new goal_like_event(data[c][0],"Goal",Integer.parseInt(data[c][6]),data[c][7]));
                                 data_array.get(c).setTime(Integer.parseInt(data[c][1]),Integer.parseInt(data[c][2]),Integer.parseInt(data[c][3]),Integer.parseInt(data[c][4]),Integer.parseInt(data[c][5]));
                                 data_array.get(c).setDocumentid(data[c][8]);
                                 int z=9;
@@ -246,7 +246,7 @@ public class Goals_fragment extends Fragment implements goal_adapter.OnStartDrag
 
     private ArrayList<goal_like_event> getData() {
         ArrayList<goal_like_event> data_=new ArrayList<goal_like_event>();
-        data_.add(new goal_like_event("Please wait","0",0,0xFFFFFFF));
+        data_.add(new goal_like_event("Please wait","0",0,"#00000f"));
         return data_;
     }
 

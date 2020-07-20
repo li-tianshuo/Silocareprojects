@@ -3,6 +3,7 @@ package cc.shuozi.uidesign;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -67,7 +68,7 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
         TextView title=holder.getView(R.id.goal_title);
         title.setText(mDatas.get(position).getName());
         RelativeLayout goal_background=holder.getView(R.id.goal_background);
-        goal_background.setBackgroundColor(mDatas.get(position).getColor());
+        goal_background.setBackgroundColor(Color.parseColor(String.valueOf(mDatas.get(position).getColor())));
         final Button view=holder.getView(R.id.goals_view);
         Button update=holder.getView(R.id.goals_update);
 

@@ -649,7 +649,7 @@ public class add_goal extends AppCompatActivity {
                         event.put("type", "Symptom");
                         event.put("uid", uid);
                         event.put("priority", priority);
-                        event.put("color",0x000000);
+                        event.put("color","#00000f");
 
                         for (int i = 0; i < description.size(); i++) {
                             event.put("Description " + i, description.get(i).toString());
@@ -787,7 +787,7 @@ public class add_goal extends AppCompatActivity {
                         event.put("type", "Goal");
                         event.put("uid", uid);
                         event.put("priority", priority);
-                        event.put("color",0x000000);
+                        event.put("color","#00000f");
 
                         for (int i = 0; i < description.size(); i++) {
                             event.put("Description " + i, description.get(i).toString());
