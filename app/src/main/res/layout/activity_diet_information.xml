@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#004e90"
     tools:context=".diet_information">
 
     <FrameLayout
@@ -37,7 +38,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Diet Page"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+
+                    />
 
                 <TextView
                     android:id="@+id/textView37"
@@ -85,11 +88,12 @@
                     android:id="@+id/textView16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Click on the lower right corner to add FOOD"
+                    android:text="Click on the lower right corner to add a food selection"
                     android:textSize="24sp" />
 
                 <ListView
                     android:id="@+id/food_thing"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -106,12 +110,14 @@
                     android:id="@+id/update_diet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#004e90"
                     android:text="Update Diet" />
 
                 <Button
                     android:id="@+id/add_diet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#004e90"
                     android:text="Add a diet menu" />
             </LinearLayout>
 

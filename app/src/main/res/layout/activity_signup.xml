@@ -3,25 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".signup"
 
     >
+
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:background="#FFFFFF"
+        android:layout_width="459dp"
+        android:layout_height="831dp"
+        android:background="@drawable/login_page"
         android:gravity="center_vertical"
         android:orientation="vertical"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="1dp">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hello There!"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="50sp" />
 
 
@@ -30,58 +32,54 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="We need some information to complete registration."
-            android:textColor="#000000" />
+            android:textColor="#ffffff" />
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint=" Enter your Email"
             android:inputType="textEmailAddress"
-            android:textColorHint="#aaa"
-            android:hint =" Enter your Email"
             android:textColor="@color/black_overlay"
-            />
+            android:textColorHint="#aaa" />
 
         <EditText
             android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Please Enter your Password"
             android:inputType="textPassword"
-            android:textColorHint="#aaa"
-            android:hint ="Please Enter your Password"
             android:textColor="@color/black_overlay"
-            />
+            android:textColorHint="#aaa" />
 
         <EditText
             android:id="@+id/editText3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="First Name"
-            android:textColorHint="#aaa"
+            android:inputType="textPersonName"
             android:textColor="@color/black_overlay"
-            />
+            android:textColorHint="#aaa" />
 
         <EditText
             android:id="@+id/editText4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="Last Name"
-            android:textColorHint="#aaa"
+            android:inputType="textPersonName"
             android:textColor="@color/black_overlay"
-            />
+            android:textColorHint="#aaa" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="316dp"
             android:layout_height="50dp"
+            android:background="#004e90"
             android:text="Sign up now!"
-
 
             />
     </LinearLayout>

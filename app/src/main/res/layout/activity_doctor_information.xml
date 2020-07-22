@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#004e90"
+
     tools:context=".doctor_information">
 
     <LinearLayout
@@ -119,7 +121,9 @@
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
-            android:text="Set Attending Physician" />
+            android:text="Set Attending Physician"
+            android:background="@color/colorHint"
+            />
 
         <Button
             android:id="@+id/add_doc"
@@ -128,7 +132,8 @@
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
-            android:text="Add a new doctor" />
+            android:text="Add a new doctor"
+            android:background="#004e90"/>
 
         <Button
             android:id="@+id/update_doc"
@@ -137,7 +142,8 @@
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
-            android:text="Update Doctor Information" />
+            android:text="Update Doctor Information"
+            android:background="#004e90"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

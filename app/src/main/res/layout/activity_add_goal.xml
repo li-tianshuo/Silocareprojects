@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorHint"
     tools:context=".add_goal">
 
     <LinearLayout
@@ -103,12 +104,14 @@
                         android:id="@+id/goal_button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorHint"
                         android:text="Add goal" />
 
                     <Button
                         android:id="@+id/symptoms_button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorHint"
                         android:text="Add Symptoms" />
                 </LinearLayout>
             </LinearLayout>

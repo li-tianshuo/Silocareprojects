@@ -7,7 +7,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#004e90"
+        >
 
         <TextView
             android:id="@+id/text_imp_title"
@@ -36,6 +38,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="80dp"
             android:focusable="false"
+            android:background="#004e90"
             android:text="View" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

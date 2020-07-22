@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorHint"
     tools:context=".event_selection">
 
     <LinearLayout
@@ -89,25 +90,33 @@
             android:id="@+id/add_ma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add a Mental Activity" />
+            android:text="Add a Mental Activity"
+            android:background="@color/colorHint"
+            />
 
         <Button
             android:id="@+id/update_ma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update a Mental Activity" />
+            android:text="Update a Mental Activity"
+            android:background="@color/colorHint"
+            />
 
         <Button
             android:id="@+id/add_pa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add a Physical Activity" />
+            android:text="Add a Physical Activity"
+            android:background="@color/colorHint"
+            />
 
         <Button
             android:id="@+id/update_pa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update a Physical Activity" />
+            android:text="Update a Physical Activity"
+            android:background="@color/colorHint"
+            />
 
     </LinearLayout>
 

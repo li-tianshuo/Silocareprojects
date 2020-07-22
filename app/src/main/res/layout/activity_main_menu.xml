@@ -24,10 +24,10 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@mipmap/ic_menu"
+                android:background="#004e90"
                 app:title="Setting" />
 
         </LinearLayout>
@@ -46,6 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_weight="0.15"
+                android:background="#004e90"
                 app:srcCompat="@drawable/comment" />
 
             <ViewFlipper
@@ -71,7 +72,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.85"
-                app:srcCompat="@drawable/avatar" />
+                app:srcCompat="@drawable/avatar"
+
+                />
 
             <TextView
                 android:id="@+id/textView"

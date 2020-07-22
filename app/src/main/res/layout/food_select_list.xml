@@ -5,7 +5,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorHint"
+        >
 
         <TextView
             android:id="@+id/food_name_on_list"
@@ -30,6 +32,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
+            android:background="@color/colorHint"
             android:text="Delete" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

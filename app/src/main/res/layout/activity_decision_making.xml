@@ -23,7 +23,7 @@
                 android:id="@+id/toolbar_decision_making"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
+                android:background='#004087'
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@mipmap/ic_menu"
@@ -43,11 +43,13 @@
             android:id="@+id/decison_viewpage"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@android:color/white"
             android:layout_weight="2.9" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/decision_making_bottom_menu"
             android:layout_width="match_parent"
+            android:background="#004087"
             android:layout_height="0dp"
             android:layout_gravity="bottom"
             android:layout_weight="0.25"

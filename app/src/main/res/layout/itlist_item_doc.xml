@@ -7,7 +7,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#004e90"
+        >
 
         <TextView
             android:id="@+id/list_t_d_1"
@@ -48,7 +50,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="40dp"
             android:focusable="false"
-            android:text="Update" />
+            android:text="Update"
+            android:background="#004e90"
+            />
 
         <Button
             android:id="@+id/list_b_d_2"
@@ -58,6 +62,8 @@
             android:layout_marginTop="70dp"
             android:layout_marginEnd="40dp"
             android:focusable="false"
-            android:text="Delete" />
+            android:text="Delete"
+            android:background="#004e90"
+            />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

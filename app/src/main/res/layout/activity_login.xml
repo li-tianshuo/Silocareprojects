@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Login">
 
 
@@ -20,14 +21,14 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="522dp"
+            android:layout_height="951dp"
             android:contentDescription="Image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/login" />
+            app:srcCompat="@drawable/login_page" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout5"
@@ -111,7 +112,7 @@
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="24dp"
-                android:background="@drawable/button_background"
+                android:background="@color/colorHint"
                 android:text="@string/login"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

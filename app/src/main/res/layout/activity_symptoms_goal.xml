@@ -24,7 +24,7 @@
                 android:id="@+id/toolbar_symptoms_goals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
+                android:background="#004e90"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@mipmap/ic_menu"
@@ -51,7 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.25"
-            app:menu="@menu/symptoms_goal_menu">
+            app:menu="@menu/symptoms_goal_menu"
+            android:background="#004e90"
+            >
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>

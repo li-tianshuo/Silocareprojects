@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
-        myVideo = (myvideo) findViewById(R.id.videoView);
-        initView();
+
+
         button = (Button) findViewById(R.id.button4);
         signinRequest();
         findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {

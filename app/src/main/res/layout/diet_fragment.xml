@@ -28,7 +28,9 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_diet"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="#004e90"
+                >
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
@@ -55,7 +57,9 @@
             <FrameLayout
                 android:id="@+id/layout_diet"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#004e90"
+                >
 
             </FrameLayout>
         </LinearLayout>

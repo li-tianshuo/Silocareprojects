@@ -7,17 +7,12 @@
 
     tools:context=".pre_information">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/smilingman" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#33000000"
+        android:background="#004e90"
 
         />
 
@@ -179,8 +174,8 @@
             android:layout_height="0dp"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
-            android:layout_weight="0.5"
-            android:background="@drawable/button_background"
+            android:layout_weight=".5"
+            android:background="#004e90"
             android:text="Update" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

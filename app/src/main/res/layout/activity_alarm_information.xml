@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#004e90"
     tools:context=".alarm_information">
 
     <LinearLayout
@@ -11,11 +12,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+
         <TextView
             android:id="@+id/textView20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Prescription Set"
+            android:textColor="@android:color/white"
             android:textSize="30sp" />
 
         <TextView
@@ -23,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Please tell us the time you want to take prescripton"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <EditText
@@ -38,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Date"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
 
@@ -54,7 +60,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Prescription Note "
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
+
+
 
         <EditText
             android:id="@+id/px_note"
@@ -64,16 +73,21 @@
             android:gravity="start|top"
             android:inputType="textMultiLine" />
 
+
+
+
         <Button
             android:id="@+id/update_alarm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:background="#004e90"
             android:text="Update Alarm" />
 
         <Button
             android:id="@+id/add_alarm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
+            android:background="#004e90"
             android:text="Add an Alarm" />
 
     </LinearLayout>
