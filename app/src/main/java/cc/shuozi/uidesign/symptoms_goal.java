@@ -128,22 +128,32 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
             case R.id.side_mainmenu:
                 Intent main1=new Intent(symptoms_goal.this, ongoing_main_menu.class);
                 startActivity(main1);
+                finish();
                 return true;
             case R.id.side_setting:
                 Intent main2=new Intent(symptoms_goal.this, MainMenu.class);
                 startActivity(main2);
+                finish();
                 return true;
             case R.id.side_implementation:
                 Intent main3=new Intent(symptoms_goal.this, Implementation.class);
                 startActivity(main3);
+                finish();
                 return true;
             case R.id.side_decision:
                 Intent main4=new Intent(symptoms_goal.this, decision_making.class);
                 startActivity(main4);
+                finish();
                 return true;
             case R.id.goal_menu:
                 Intent main5=new Intent(symptoms_goal.this, symptoms_goal.class);
                 startActivity(main5);
+                finish();
+                return true;
+            case R.id.information_menu:
+                Intent main6=new Intent(symptoms_goal.this, information.class);
+                startActivity(main6);
+                finish();
                 return true;
         }
         return false;

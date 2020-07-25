@@ -647,22 +647,32 @@ public class Implementation extends AppCompatActivity implements NavigationView.
             case R.id.side_mainmenu:
                 Intent main1=new Intent(Implementation.this, ongoing_main_menu.class);
                 startActivity(main1);
+                finish();
                 return true;
             case R.id.side_setting:
                 Intent main2=new Intent(Implementation.this, MainMenu.class);
                 startActivity(main2);
+                finish();
                 return true;
             case R.id.side_implementation:
                 Intent main3=new Intent(Implementation.this, Implementation.class);
                 startActivity(main3);
+                finish();
                 return true;
             case R.id.side_decision:
                 Intent main4=new Intent(Implementation.this, decision_making.class);
                 startActivity(main4);
+                finish();
                 return true;
             case R.id.goal_menu:
                 Intent main5=new Intent(Implementation.this, symptoms_goal.class);
                 startActivity(main5);
+                finish();
+                return true;
+            case R.id.information_menu:
+                Intent main6=new Intent(Implementation.this, information.class);
+                startActivity(main6);
+                finish();
                 return true;
         }
         return false;

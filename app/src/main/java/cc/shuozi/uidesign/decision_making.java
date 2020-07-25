@@ -150,22 +150,32 @@ public class decision_making extends AppCompatActivity implements NavigationView
             case R.id.side_mainmenu:
                 Intent main1=new Intent(decision_making.this, ongoing_main_menu.class);
                 startActivity(main1);
+                finish();
                 return true;
             case R.id.side_setting:
                 Intent main2=new Intent(decision_making.this, MainMenu.class);
                 startActivity(main2);
+                finish();
                 return true;
             case R.id.side_implementation:
                 Intent main3=new Intent(decision_making.this, Implementation.class);
                 startActivity(main3);
+                finish();
                 return true;
             case R.id.side_decision:
                 Intent main4=new Intent(decision_making.this, decision_making.class);
                 startActivity(main4);
+                finish();
                 return true;
             case R.id.goal_menu:
                 Intent main5=new Intent(decision_making.this, symptoms_goal.class);
                 startActivity(main5);
+                finish();
+                return true;
+            case R.id.information_menu:
+                Intent main6=new Intent(decision_making.this, information.class);
+                startActivity(main6);
+                finish();
                 return true;
         }
         return false;

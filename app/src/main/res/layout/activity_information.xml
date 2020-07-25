@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/information_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".information">
@@ -10,7 +11,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="3.15">
+        android:weightSum="3.4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/information_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background='#004087'
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:navigationIcon="@mipmap/ic_menu"
+                app:title="Information">
+
+                <ImageView
+                    android:id="@+id/avatar_decision_making"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/avatar" />
+            </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/imageView5"
@@ -25,22 +51,20 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.15"
+            android:background="#004e90"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:background="#004e90"
-            />
+            android:textSize="18sp" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
+            android:background="#004e90"
             app:tabIndicatorColor="#FFFFFF"
             app:tabSelectedTextColor="#7C7979"
-            app:tabTextColor="#FFFFFF"
-            android:background="#004e90"
-            >
+            app:tabTextColor="#FFFFFF">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -56,13 +80,21 @@
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:background="#004e90"
             android:layout_height="0dp"
-            android:layout_weight="2.15">
+            android:layout_weight="2.15"
+            android:background="#004e90">
 
         </FrameLayout>
 
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/side" />
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

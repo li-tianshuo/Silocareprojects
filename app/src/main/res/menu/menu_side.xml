@@ -6,6 +6,9 @@
         android:id="@+id/side_mainmenu"
         android:title="Main Menu" ></item>
     <item
+        android:id="@+id/information_menu"
+        android:title="Information" />
+    <item
         android:id="@+id/side_implementation"
         android:title="Implementation" />
     <item
