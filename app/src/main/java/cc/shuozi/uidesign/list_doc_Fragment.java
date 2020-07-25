@@ -357,8 +357,8 @@ public class list_doc_Fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), doctor_information.class);
                 intent.putExtra("status","add_doc");
-
                 startActivity(intent);
+                getActivity().finish();
             }
         });
         return rootView;

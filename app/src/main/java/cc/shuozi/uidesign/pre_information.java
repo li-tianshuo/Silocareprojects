@@ -96,6 +96,12 @@ public class pre_information extends AppCompatActivity {
 
     }
     @Override
+    public void onBackPressed() {
+        startActivity(new Intent(pre_information.this, information.class));
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_information);
@@ -178,13 +184,11 @@ public class pre_information extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 condition1=condition1_layout.getSelectedItem().toString();
                 condition2=condition2_layout.getSelectedItem().toString();
                 condition3=condition3_layout.getText().toString();
                 condition4=condition4_layout.getText().toString();
-                startActivity(new Intent(pre_information.this, MainMenu.class));
                 DocumentReference updateref = db.collection("users").document(documentid);
 
                 updateref
@@ -246,7 +250,8 @@ public class pre_information extends AppCompatActivity {
                                 Log.w("Status", "Error updating document", e);
                             }
                         });
-
+                startActivity(new Intent(pre_information.this, information.class));
+                finish();
             }
         });
     }

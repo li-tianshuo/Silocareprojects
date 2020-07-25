@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.icu.util.Calendar;
@@ -118,6 +119,7 @@ public class my_adapter_activity extends BaseAdapter {
                 intent.putExtra("status",type);
                 intent.putExtra("time_id",Integer.parseInt(event.getTag().toString()));
                 parent.getContext().startActivity(intent);
+                ((Activity)context).finish();
             }
         });
         return convertView;

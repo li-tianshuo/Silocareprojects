@@ -18,7 +18,9 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:clickable="true"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            app:backgroundTint="#FFFFFF"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/recurring_add" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#004e90"
+                android:scaleType="center"
                 >
 
                 <com.google.android.material.tabs.TabItem

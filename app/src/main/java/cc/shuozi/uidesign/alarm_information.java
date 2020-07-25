@@ -106,6 +106,14 @@ public class alarm_information extends AppCompatActivity {
                 });
     }
     @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(alarm_information.this,decision_making.class);
+        intent.putExtra("mode",1);
+        startActivity(intent);
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         mAuth=FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -394,6 +402,9 @@ public class alarm_information extends AppCompatActivity {
                                 Log.w("Status", "Error updating document", e);
                             }
                         });
+                Intent intent1 = new Intent(alarm_information.this,decision_making.class);
+                intent.putExtra("mode",1);
+                startActivity(intent1);
                 finish();
             }
         });
@@ -447,6 +458,10 @@ public class alarm_information extends AppCompatActivity {
                             }
                         });
                 Log.e("Status","Set Successful!");
+
+                Intent intent1 = new Intent(alarm_information.this,decision_making.class);
+                intent.putExtra("mode",1);
+                startActivity(intent1);
                 finish();
             }
         });

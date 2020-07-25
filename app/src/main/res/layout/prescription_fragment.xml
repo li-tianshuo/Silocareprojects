@@ -32,7 +32,9 @@
                 android:layout_gravity="bottom|right"
                 android:baselineAlignBottom="false"
                 android:clickable="true"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:backgroundTint="#FFFFFF"
+                app:maxImageSize="40dp"
+                app:srcCompat="@drawable/recurring_add" />
 
         </FrameLayout>
 

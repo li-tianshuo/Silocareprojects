@@ -11,14 +11,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6c6d8c-10af-482c-815c-2fb21f24dca0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goals.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/goals_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/recurring_add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/symptoms.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/symptoms_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/DietFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/DietFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Goals_fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Goals_fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MentalFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MentalFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/MyAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/PhysicalFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/PhysicalFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/PrescriptionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/PrescriptionFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Symptoms_fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/Symptoms_fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/add_goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/add_goal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/alarm_information.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/alarm_information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/diet_information.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/diet_information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/doctor_information.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/doctor_information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/event_selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/event_selection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/goal_adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/goal_adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/list_doc_Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/list_doc_Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/my_adapter_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/my_adapter_activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/my_adapter_diet.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/my_adapter_diet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/my_adapter_px.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/my_adapter_px.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/pre_information.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/pre_information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/symptoms_goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cc/shuozi/uidesign/symptoms_goal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_goal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_diet_information.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_diet_information.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_symptoms_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_symptoms_goal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/diet_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/diet_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/goals_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/goals_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/implementation_list_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/implementation_list_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/information_fragment_doc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/information_fragment_doc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/mental_activities_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/mental_activities_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/physical_activities_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/physical_activities_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/prescription_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/prescription_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/symptoms_goals_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/symptoms_goals_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/symptoms_goal_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/symptoms_goal_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_R" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -120,6 +172,9 @@
     <key name="android.template.-249759348">
       <recent name="cc.shuozi.uidesign" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cc.shuozi.uidesign" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\bradr\OneDrive\Documents\GitHub\Silocareprojects\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\bradr\StudioProjects\version2\app\src\main\res\drawable-v24" />
@@ -144,6 +199,12 @@
     <key name="android.template.-2106712953">
       <recent name="cc.shuozi.uidesign" />
     </key>
+    <key name="android.template.-486950977">
+      <recent name="cc.shuozi.uidesign" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="cc.shuozi.uidesign" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\darth\AndroidStudioProjects\UIdesign\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\darth\AndroidStudioProjects\UIdesign\app\src\main\res\layout" />
@@ -151,22 +212,13 @@
       <recent name="C:\Users\darth\AndroidStudioProjects\UIdesign\app\src\main\res\mipmap-hdpi" />
       <recent name="C:\Users\darth\AndroidStudioProjects\UIdesign\app\src\main\res\raw" />
     </key>
-    <key name="android.template.packageName">
-      <recent name="cc.shuozi.uidesign" />
-    </key>
-    <key name="android.template.-1188533339">
-      <recent name="cc.shuozi.uidesign" />
-    </key>
-    <key name="android.template.-486950977">
-      <recent name="cc.shuozi.uidesign" />
-    </key>
     <key name="android.template.689006390">
       <recent name="cc.shuozi.uidesign" />
     </key>
     <key name="android.template.-1845168000">
       <recent name="cc.shuozi.uidesign" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
+    <key name="android.template.-1188533339">
       <recent name="cc.shuozi.uidesign" />
     </key>
   </component>
@@ -445,38 +497,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="626" y="306" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1591500514169" />
-    <state width="1491" height="196" key="GridCell.Tab.0.bottom" timestamp="1595476324823">
+    <state width="1478" height="133" key="GridCell.Tab.0.bottom" timestamp="1595688059321">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="159" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1593014690898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="159" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1536.824@0.0.1536.824" timestamp="1593014690898" />
-    <state width="1491" height="196" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595476324823" />
-    <state width="1491" height="196" key="GridCell.Tab.0.center" timestamp="1595476324823">
+    <state width="1478" height="133" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595688059321" />
+    <state width="1478" height="133" key="GridCell.Tab.0.center" timestamp="1595688059321">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="159" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1593014690898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="159" key="GridCell.Tab.0.center.inPresentationMode/0.0.1536.824@0.0.1536.824" timestamp="1593014690898" />
-    <state width="1491" height="196" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595476324823" />
-    <state width="1491" height="196" key="GridCell.Tab.0.left" timestamp="1595476324823">
+    <state width="1478" height="133" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595688059321" />
+    <state width="1478" height="133" key="GridCell.Tab.0.left" timestamp="1595688059321">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="159" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1593014690898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="159" key="GridCell.Tab.0.left.inPresentationMode/0.0.1536.824@0.0.1536.824" timestamp="1593014690898" />
-    <state width="1491" height="196" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595476324823" />
-    <state width="1491" height="196" key="GridCell.Tab.0.right" timestamp="1595476324823">
+    <state width="1478" height="133" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595688059321" />
+    <state width="1478" height="133" key="GridCell.Tab.0.right" timestamp="1595688059321">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="159" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1593014690898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="159" key="GridCell.Tab.0.right.inPresentationMode/0.0.1536.824@0.0.1536.824" timestamp="1593014690898" />
-    <state width="1491" height="196" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595476324823" />
+    <state width="1478" height="133" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595688059321" />
     <state width="768" height="270" key="GridCell.Tab.1.bottom" timestamp="1591496047087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -521,10 +573,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="168" y="120" width="1200" height="584" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1593475822218" />
-    <state x="82" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1595257372284">
+    <state x="82" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1595688058409">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="82" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1595257372284" />
+    <state x="82" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1595688058409" />
     <state x="558" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595325703435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

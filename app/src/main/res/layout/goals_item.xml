@@ -16,7 +16,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
-            android:background="#004e90"
             android:layout_marginTop="20sp" />
 
         <Button

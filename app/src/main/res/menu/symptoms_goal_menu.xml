@@ -3,8 +3,10 @@
 
     <item
         android:id="@+id/symptoms_item"
+        android:icon="@drawable/symptoms_1"
         android:title="Symptoms" />
     <item
         android:id="@+id/goal_item"
+        android:icon="@drawable/goals_1"
         android:title="Goal" />
 </menu>

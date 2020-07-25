@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.util.Log;
@@ -132,6 +133,13 @@ public class diet_information extends AppCompatActivity {
                 });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(diet_information.this,decision_making.class);
+        intent.putExtra("mode",2);
+        startActivity(intent);
+        super.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -367,7 +375,10 @@ public class diet_information extends AppCompatActivity {
                                 });
                     }
                 }
-            finish();
+                Intent intent = new Intent(diet_information.this,decision_making.class);
+                intent.putExtra("mode",2);
+                startActivity(intent);
+                finish();
             }
 
         });
@@ -408,6 +419,9 @@ public class diet_information extends AppCompatActivity {
                                 }
                             });
                     Log.e("Status", "Set Successful!");
+                    Intent intent = new Intent(diet_information.this,decision_making.class);
+                    intent.putExtra("mode",2);
+                    startActivity(intent);
                     finish();
                 }
             }

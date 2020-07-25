@@ -8,6 +8,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.util.Log;
@@ -244,6 +245,11 @@ public class add_goal extends AppCompatActivity {
             return convertView;
         }
     }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(add_goal.this,symptoms_goal.class));
+        super.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -251,6 +257,7 @@ public class add_goal extends AppCompatActivity {
         setContentView(R.layout.activity_add_goal);
         ListView listview=findViewById(R.id.goal_thing);
         listview.setAdapter(my_adapter);
+        TextView symptoms_title=findViewById(R.id.symptom_title);
         FloatingActionButton add_goal_fab=findViewById(R.id.add_goal_fab);
         final Button symptoms=findViewById(R.id.symptoms_button);
         final Button goal=findViewById(R.id.goal_button);
@@ -275,7 +282,8 @@ public class add_goal extends AppCompatActivity {
         documentid=getIntent().getStringExtra("documentid");
         if (id==0) //add symptoms
         {
-
+            symptoms_title.setText("Add a Symptoms Here");
+            name.setHint("Please Enter Symptom's Name");
             if (minute < 10){
                 time.setText(hour+":"+"0"+minute);
             }else {
@@ -350,7 +358,8 @@ public class add_goal extends AppCompatActivity {
             });
         }else if (id==1) //add goal
         {
-
+            symptoms_title.setText("Add a Goal Here");
+            name.setHint("Please Enter Goal's Name");
             if (minute < 10){
             time.setText(hour+":"+"0"+minute);
         }else {
@@ -424,7 +433,8 @@ public class add_goal extends AppCompatActivity {
 
         }else if (id==2) //update symptoms
         {
-
+            symptoms_title.setText("Update a Symptoms Here");
+            name.setHint("Please Enter Symptom's Name");
             symptoms.setClickable(false);
             symptoms.setEnabled(false);
             symptoms.setText("Update Symptom");
@@ -528,6 +538,8 @@ public class add_goal extends AppCompatActivity {
 
         }else if (id==3) //update goal
         {
+            symptoms_title.setText("Update a Goal Here");
+            name.setHint("Please Enter Goal's Name");
             goal.setClickable(false);
             goal.setEnabled(false);
             goal.setText("Update Goal");
@@ -670,6 +682,7 @@ public class add_goal extends AppCompatActivity {
                                     }
                                 });
                         Log.e("Status", "Set Successful!");
+                        startActivity(new Intent(add_goal.this,symptoms_goal.class));
                         finish();
                     }
                 }else if(id==2)
@@ -763,6 +776,7 @@ public class add_goal extends AppCompatActivity {
                                 });
                     }
                 }
+                startActivity(new Intent(add_goal.this,symptoms_goal.class));
                 finish();
                 }
             });
@@ -808,6 +822,7 @@ public class add_goal extends AppCompatActivity {
                                     }
                                 });
                         Log.e("Status", "Set Successful!");
+                        startActivity(new Intent(add_goal.this,symptoms_goal.class));
                         finish();
                     }
                 }else if(id==3)
@@ -900,8 +915,9 @@ public class add_goal extends AppCompatActivity {
                                     }
                                 });
                     }
-                
-                finish();
+
+                    startActivity(new Intent(add_goal.this,symptoms_goal.class));
+                    finish();
                 }
             }
         });

@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -100,6 +101,7 @@ public class DietFragment extends Fragment {
                 Intent intent=new Intent(getActivity(), diet_information.class);
                 intent.putExtra("status",0);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
         return rootView;

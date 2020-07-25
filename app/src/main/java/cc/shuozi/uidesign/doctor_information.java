@@ -287,7 +287,11 @@ public class doctor_information extends AppCompatActivity {
 
                 });
     }
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(doctor_information.this, information.class));
+        super.onBackPressed();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -961,6 +965,7 @@ public class doctor_information extends AppCompatActivity {
                                                     Log.w("Status", "Error updating document", e);
                                                 }
                                             });
+                                    startActivity(new Intent(doctor_information.this,information.class));
                                     finish();
                                 }else{
                                     String uid=UUID.randomUUID().toString();
@@ -999,6 +1004,7 @@ public class doctor_information extends AppCompatActivity {
                                                     Log.w("Status", "Error updating document", e);
                                                 }
                                             });
+                                    startActivity(new Intent(doctor_information.this,information.class));
                                     finish();
                                 }
                             }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.util.Log;
@@ -169,6 +170,14 @@ public class event_selection extends AppCompatActivity {
                 });
 
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(event_selection.this,decision_making.class);
+        intent.putExtra("mode",3);
+        startActivity(intent);
+        super.onBackPressed();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -718,6 +727,9 @@ public class event_selection extends AppCompatActivity {
                             }
                         });
                 Log.e("Status","Set Successful!");
+                Intent intent = new Intent(event_selection.this,decision_making.class);
+                intent.putExtra("mode",3);
+                startActivity(intent);
                 finish();
             }
         });
@@ -756,6 +768,9 @@ public class event_selection extends AppCompatActivity {
                             }
                         });
                 Log.e("Status","Set Successful!");
+                Intent intent = new Intent(event_selection.this,decision_making.class);
+                intent.putExtra("mode",4);
+                startActivity(intent);
                 finish();
             }
         });
@@ -930,6 +945,9 @@ public class event_selection extends AppCompatActivity {
                                 Log.w("Status", "Error updating document", e);
                             }
                         });
+                Intent intent = new Intent(event_selection.this,decision_making.class);
+                intent.putExtra("mode",3);
+                startActivity(intent);
                 finish();
             }
         });
@@ -1102,6 +1120,9 @@ public class event_selection extends AppCompatActivity {
                                 Log.w("Status", "Error updating document", e);
                             }
                         });
+                Intent intent = new Intent(event_selection.this,decision_making.class);
+                intent.putExtra("mode",4);
+                startActivity(intent);
                 finish();
             }
         });

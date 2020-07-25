@@ -109,7 +109,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:clickable="true"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            app:backgroundTint="#FFFFFF"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/recurring_add" />
 
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

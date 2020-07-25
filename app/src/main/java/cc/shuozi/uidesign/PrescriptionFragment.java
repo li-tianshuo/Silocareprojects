@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -104,6 +105,7 @@ public class PrescriptionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), alarm_information.class));
+                getActivity().finish();
             }
         });
         my_adapter_px sc = new my_adapter_px(getContext(), data);

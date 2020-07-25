@@ -51,9 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.25"
-            app:menu="@menu/symptoms_goal_menu"
             android:background="#004e90"
-            >
+            app:itemRippleColor="#FFFFFF"
+            app:menu="@menu/symptoms_goal_menu">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>

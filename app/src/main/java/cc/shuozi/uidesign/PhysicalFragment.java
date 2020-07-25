@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -106,6 +107,7 @@ public class PhysicalFragment extends Fragment {
                 Intent intent=new Intent(getActivity(), event_selection.class);
                 intent.putExtra("status",2);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
         my_adapter_activity sc = new my_adapter_activity(getContext(), data);

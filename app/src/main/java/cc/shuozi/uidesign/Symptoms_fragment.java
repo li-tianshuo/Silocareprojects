@@ -139,6 +139,7 @@ public class Symptoms_fragment extends Fragment implements goal_adapter.OnStartD
                 Intent intent=new Intent(getActivity(), add_goal.class);
                 intent.putExtra("status",0);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

@@ -28,7 +28,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:clickable="true"
-            app:srcCompat="@android:drawable/ic_menu_add" />
+            app:backgroundTint="#FFFFFF"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/recurring_add" />
 
     </RelativeLayout>
 

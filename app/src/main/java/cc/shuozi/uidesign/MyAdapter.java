@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -72,6 +73,7 @@ public class MyAdapter extends BaseAdapter implements View.OnClickListener  {
                 Intent intent=new Intent(viewGroup.getContext(), pre_information.class);
                 //intent.putExtra("status","add_major");
                 viewGroup.getContext().startActivity(intent);
+                ((Activity)context).finish();
             }
         });
 

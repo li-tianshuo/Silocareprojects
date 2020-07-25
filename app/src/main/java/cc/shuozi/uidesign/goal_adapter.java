@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -68,7 +69,27 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
         TextView title=holder.getView(R.id.goal_title);
         title.setText(mDatas.get(position).getName());
         RelativeLayout goal_background=holder.getView(R.id.goal_background);
-        goal_background.setBackgroundColor(Color.parseColor(String.valueOf(mDatas.get(position).getColor())));
+        int num=position%4;
+        switch (num)
+        {
+            case 0:
+                goal_background.setBackgroundColor(Color.parseColor("#aa2e25"));
+                title.setTextColor(Color.parseColor("#ffffff"));
+                break;
+            case 1:
+                goal_background.setBackgroundColor(Color.parseColor("#e91e63"));
+                title.setTextColor(Color.parseColor("#ffffff"));
+                break;
+            case 2:
+                goal_background.setBackgroundColor(Color.parseColor("#9c27b0"));
+                title.setTextColor(Color.parseColor("#ffffff"));
+                break;
+            case 3:
+                goal_background.setBackgroundColor(Color.parseColor("#673ab7"));
+                title.setTextColor(Color.parseColor("#ffffff"));
+                break;
+        }
+
         final Button view=holder.getView(R.id.goals_view);
         Button update=holder.getView(R.id.goals_update);
 
@@ -87,12 +108,14 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
                     intent.putExtra("status", 2);
                     intent.putExtra("documentid", mDatas.get(position).getDocumentid());
                     view.getContext().startActivity(intent);
+                    ((Activity)context).finish();
                 }else if (mDatas.get(position).getType().equals("Goal"))
                 {
                     Intent intent = new Intent(view.getContext(), add_goal.class);
                     intent.putExtra("status", 3);
                     intent.putExtra("documentid", mDatas.get(position).getDocumentid());
                     view.getContext().startActivity(intent);
+                    ((Activity)context).finish();
                 }
             }
         });

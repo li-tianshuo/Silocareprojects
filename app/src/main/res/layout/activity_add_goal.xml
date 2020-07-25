@@ -16,14 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/add_goal_fab"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|right"
-                android:clickable="true"
-                app:srcCompat="@android:drawable/ic_menu_add" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -37,7 +29,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView43"
+                        android:id="@+id/symptom_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Add Symptoms or Goals Here"
@@ -74,12 +66,31 @@
                         android:focusable="false"
                         android:inputType="date" />
 
-                    <TextView
-                        android:id="@+id/textView44"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Click on the lower right corner to add Event"
-                        android:textSize="24sp" />
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/add_goal_fab"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="10dp"
+                            android:clickable="true"
+                            app:backgroundTint="#FFFFFF"
+                            app:maxImageSize="40dp"
+                            app:srcCompat="@drawable/add" />
+
+                        <TextView
+                            android:id="@+id/textView44"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="80dp"
+                            android:text="Click the Button right to Add something"
+                            android:textSize="24sp" />
+
+                    </RelativeLayout>
+
                 </LinearLayout>
 
                 <LinearLayout

@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -133,6 +134,7 @@ public class Goals_fragment extends Fragment implements goal_adapter.OnStartDrag
                 Intent intent=new Intent(getActivity(), add_goal.class);
                 intent.putExtra("status",1);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
         list.setLayoutManager(new LinearLayoutManager(getContext()));

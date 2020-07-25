@@ -11,16 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_food"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_input_add" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -76,6 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/diet_type" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -84,12 +75,30 @@
                 android:layout_weight="1.5"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView16"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Click on the lower right corner to add a food selection"
-                    android:textSize="24sp" />
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="80dp"
+                        android:text="Click the Button right to Add something"
+                        android:textSize="24sp" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/add_food"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginEnd="10dp"
+                        android:clickable="true"
+                        app:backgroundTint="#FFFFFF"
+                        app:maxImageSize="40dp"
+                        app:srcCompat="@drawable/add" />
+                </RelativeLayout>
 
                 <ListView
                     android:id="@+id/food_thing"

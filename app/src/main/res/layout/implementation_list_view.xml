@@ -46,9 +46,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/imp_button"
+
             android:layout_alignParentRight="true"
-            android:focusable="false"
             android:clickable="true"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            android:focusable="false"
+            app:backgroundTint="#FFFFFF"
+            app:maxImageSize="40dp"
+
+            app:srcCompat="@drawable/recurring_add" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package cc.shuozi.uidesign;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.icu.util.Calendar;
@@ -78,6 +79,7 @@ public class my_adapter_px extends BaseAdapter {
                 intent.putExtra("status",0);
                 intent.putExtra("time_id",Integer.parseInt(time.getTag().toString()));
                 parent.getContext().startActivity(intent);
+                ((Activity)context).finish();
             }
         });
 
