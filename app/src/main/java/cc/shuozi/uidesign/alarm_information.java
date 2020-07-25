@@ -194,7 +194,7 @@ public class alarm_information extends AppCompatActivity {
                             px_time.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    new TimePickerDialog(alarm_information.this, new TimePickerDialog.OnTimeSetListener() {
+                                    new TimePickerDialog(alarm_information.this,2, new TimePickerDialog.OnTimeSetListener() {
                                         @Override
                                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                                             hour = hourOfDay;
@@ -270,7 +270,7 @@ public class alarm_information extends AppCompatActivity {
             px_time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new TimePickerDialog(alarm_information.this, new TimePickerDialog.OnTimeSetListener() {
+                    new TimePickerDialog(alarm_information.this,2, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             hour = hourOfDay;

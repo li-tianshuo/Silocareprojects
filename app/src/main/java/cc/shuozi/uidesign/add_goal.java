@@ -295,7 +295,7 @@ public class add_goal extends AppCompatActivity {
             time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new TimePickerDialog(add_goal.this, new TimePickerDialog.OnTimeSetListener() {
+                    new TimePickerDialog(add_goal.this,2, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             hour = hourOfDay;
@@ -371,7 +371,7 @@ public class add_goal extends AppCompatActivity {
             time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new TimePickerDialog(add_goal.this, new TimePickerDialog.OnTimeSetListener() {
+                    new TimePickerDialog(add_goal.this,2, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             hour = hourOfDay;
@@ -486,7 +486,7 @@ public class add_goal extends AppCompatActivity {
                     time.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            new TimePickerDialog(add_goal.this, new TimePickerDialog.OnTimeSetListener() {
+                            new TimePickerDialog(add_goal.this,2, new TimePickerDialog.OnTimeSetListener() {
                                 @Override
                                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                                     hour = hourOfDay;
@@ -591,7 +591,7 @@ public class add_goal extends AppCompatActivity {
                     time.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            new TimePickerDialog(add_goal.this, new TimePickerDialog.OnTimeSetListener() {
+                            new TimePickerDialog(add_goal.this,2, new TimePickerDialog.OnTimeSetListener() {
                                 @Override
                                 public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                                     hour = hourOfDay;

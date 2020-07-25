@@ -243,7 +243,7 @@ public class event_selection extends AppCompatActivity {
             start_time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new TimePickerDialog(event_selection.this, new TimePickerDialog.OnTimeSetListener() {
+                    new TimePickerDialog(event_selection.this,2, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             start_hour = hourOfDay;
@@ -274,7 +274,7 @@ public class event_selection extends AppCompatActivity {
             end_time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new TimePickerDialog(event_selection.this, new TimePickerDialog.OnTimeSetListener() {
+                    new TimePickerDialog(event_selection.this,2, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             end_hour = hourOfDay;
@@ -373,7 +373,7 @@ public class event_selection extends AppCompatActivity {
                             start_time.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    new TimePickerDialog(event_selection.this, new TimePickerDialog.OnTimeSetListener() {
+                                    new TimePickerDialog(event_selection.this,2, new TimePickerDialog.OnTimeSetListener() {
                                         @Override
                                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                                             start_hour = hourOfDay;
@@ -404,7 +404,7 @@ public class event_selection extends AppCompatActivity {
                             end_time.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    new TimePickerDialog(event_selection.this, new TimePickerDialog.OnTimeSetListener() {
+                                    new TimePickerDialog(event_selection.this,2, new TimePickerDialog.OnTimeSetListener() {
                                         @Override
                                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                                             end_hour = hourOfDay;
@@ -484,7 +484,7 @@ public class event_selection extends AppCompatActivity {
             start_time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new TimePickerDialog(event_selection.this, new TimePickerDialog.OnTimeSetListener() {
+                    new TimePickerDialog(event_selection.this,2 , new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             start_hour = hourOfDay;
@@ -515,7 +515,7 @@ public class event_selection extends AppCompatActivity {
             end_time.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new TimePickerDialog(event_selection.this, new TimePickerDialog.OnTimeSetListener() {
+                    new TimePickerDialog(event_selection.this,2, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             end_hour = hourOfDay;
@@ -615,7 +615,7 @@ public class event_selection extends AppCompatActivity {
                             start_time.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    new TimePickerDialog(event_selection.this, new TimePickerDialog.OnTimeSetListener() {
+                                    new TimePickerDialog(event_selection.this,2, new TimePickerDialog.OnTimeSetListener() {
                                         @Override
                                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                                             start_hour = hourOfDay;
@@ -646,7 +646,7 @@ public class event_selection extends AppCompatActivity {
                             end_time.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    new TimePickerDialog(event_selection.this, new TimePickerDialog.OnTimeSetListener() {
+                                    new TimePickerDialog(event_selection.this,2, new TimePickerDialog.OnTimeSetListener() {
                                         @Override
                                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                                             end_hour = hourOfDay;
