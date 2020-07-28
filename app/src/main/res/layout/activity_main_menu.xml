@@ -90,175 +90,62 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical"
             android:weightSum="2">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/decision"
+                android:layout_width="347dp"
+                android:layout_height="75dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/decision_making_image" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/Information_layout"
-                    android:layout_width="240dp"
-                    android:layout_height="75dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#00000000" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:id="@+id/information"
+                android:layout_width="347dp"
+                android:layout_height="75dp"
+                android:background="@drawable/information_image"
+                android:scaleType="fitXY" />
+                <!---app:srcCompat="@drawable/information_image" -->
 
-                <ImageButton
-                    android:id="@+id/decision"
-                    android:layout_width="380dp"
-                    android:layout_height="92dp"
-                    android:scaleType="centerInside"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:srcCompat="@drawable/decision" />
 
-                <TextView
-                    android:id="@+id/information_text"
-                    android:layout_width="380dp"
-                    android:layout_height="92dp"
-                    android:gravity="center"
-                    android:text="Information"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.956"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/information"
-                    app:layout_constraintVertical_bias="1.0" />
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#00000000" />
 
-                <ImageButton
-                    android:id="@+id/information"
-                    android:layout_width="380dp"
-                    android:layout_height="92dp"
-                    android:scaleType="centerInside"
-                    app:layout_constraintBottom_toTopOf="@+id/decision"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:srcCompat="@drawable/information" />
+            <ImageButton
+                android:id="@+id/implementaion"
+                android:layout_width="347dp"
+                android:layout_height="75dp"
 
-                <TextView
-                    android:id="@+id/decision_text"
-                    android:layout_width="380dp"
-                    android:layout_height="92dp"
-                    android:gravity="center"
-                    android:text="Decision Making"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBottom_toTopOf="@+id/decision"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/information" />
+                android:background="@drawable/implementation_image"
+                android:scaleType="fitXY" />
+            <View
+                android:layout_height="10dp"
+                android:layout_width="match_parent"
+                android:background="#00000000"
+                />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:id="@+id/setting"
+                android:layout_width="347dp"
+                android:layout_height="75dp"
+                android:background="@drawable/settings_image"
+                android:scaleType="fitXY"
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:textColor="@android:color/white" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/decision_making_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="538dp"
-                android:layout_height="200dp"
-                android:layout_marginEnd="3dp"
-                android:layout_marginBottom="2dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/implementation_layout"
-                    android:layout_width="415dp"
-                    android:layout_height="196dp"
-                    android:layout_marginEnd="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <ImageButton
-                        android:id="@+id/setting"
-                        android:layout_width="380dp"
-                        android:layout_height="93dp"
-                        android:scaleType="centerInside"
-                        android:textColor="@android:color/white"
-
-                        app:layout_constraintBottom_toTopOf="@+id/implementaion"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:srcCompat="@drawable/setting" />
-
-                    <ImageButton
-                        android:id="@+id/implementaion"
-                        android:layout_width="380dp"
-                        android:layout_height="92dp"
-
-                        android:layout_marginBottom="8dp"
-                        android:scaleType="centerInside"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.485"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:srcCompat="@drawable/implementation" />
-
-                    <TextView
-                        android:id="@+id/implementaion_text"
-                        android:layout_width="380dp"
-                        android:layout_height="91dp"
-                        android:layout_marginStart="16dp"
-                        android:gravity="center"
-                        android:text="Implementation"
-                        android:textColor="@android:color/white"
-                        app:layout_constraintBottom_toBottomOf="@+id/implementaion"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.954"
-                        app:layout_constraintStart_toEndOf="@+id/implementaion"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/implementaion"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <TextView
-                        android:id="@+id/setting_text"
-                        android:layout_width="386dp"
-                        android:layout_height="83dp"
-                        android:gravity="center"
-                        android:text="Setting"
-                        android:textColor="@android:color/white"
-                        app:layout_constraintBottom_toTopOf="@+id/implementaion"
-                        app:layout_constraintEnd_toEndOf="@+id/setting"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.476" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
