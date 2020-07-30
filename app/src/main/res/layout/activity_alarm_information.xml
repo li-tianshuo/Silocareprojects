@@ -74,21 +74,19 @@
             android:inputType="textMultiLine" />
 
 
-
-
         <Button
             android:id="@+id/update_alarm"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="#004e90"
-            android:text="Update Alarm" />
+            android:text="Update Prescription" />
 
         <Button
             android:id="@+id/add_alarm"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:background="#004e90"
-            android:text="Add an Alarm" />
+            android:text="Add a Prescription" />
 
     </LinearLayout>
 

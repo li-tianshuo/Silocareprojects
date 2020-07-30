@@ -23,8 +23,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/diet_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/diet_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/goals_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/goals_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_alarm_information.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_alarm_information.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_diet_information.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_diet_information.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -534,10 +534,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="168" y="120" width="1200" height="584" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1593475822218" />
-    <state x="82" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1595980196396">
+    <state x="82" y="219" key="com.intellij.ide.util.TipDialog" timestamp="1596121813983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="82" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1595980196396" />
+    <state x="82" y="219" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596121813983" />
     <state x="558" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595325703435">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
