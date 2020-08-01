@@ -100,6 +100,22 @@ public class DietFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), diet_information.class);
                 intent.putExtra("status",0);
+                intent.putExtra("diet","");
+                String mode=getFragmentManager().findFragmentById(R.id.layout_diet).toString().substring(0,1);
+                Log.e("Success",mode);
+                if (mode.equals("B"))
+                {
+                    intent.putExtra("diet","Breakfast");
+                }else if (mode.equals("L"))
+                {
+                    intent.putExtra("diet","Lunch");
+                }else if (mode.equals("S"))
+                {
+                    intent.putExtra("diet","Snacks");
+                }else if (mode.equals("D"))
+                {
+                    intent.putExtra("diet","Dinner");
+                }
                 startActivity(intent);
                 getActivity().finish();
             }

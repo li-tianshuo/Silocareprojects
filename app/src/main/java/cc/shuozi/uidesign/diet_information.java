@@ -154,6 +154,8 @@ public class diet_information extends AppCompatActivity {
         final Button update_diet=findViewById(R.id.update_diet);
         final EditText diet_date=findViewById(R.id.diet_date);
         int id = getIntent().getIntExtra("status",0);
+        String mode=getIntent().getStringExtra("diet");
+        diet_type.setSelection(((ArrayAdapter) diet_type.getAdapter()).getPosition(mode));
         mAuth = FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();

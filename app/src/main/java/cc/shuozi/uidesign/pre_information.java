@@ -159,7 +159,7 @@ public class pre_information extends AppCompatActivity {
             @Override
             public void onCallbackList(ArrayList<String> list) {
                 if (list.get(0)!=null) {
-                    condition1_layout.setSelection(((ArrayAdapter) condition2_layout.getAdapter()).getPosition(list.get(0)));
+                    condition1_layout.setSelection(((ArrayAdapter) condition1_layout.getAdapter()).getPosition(list.get(0)));
                     condition2_layout.setSelection(((ArrayAdapter) condition2_layout.getAdapter()).getPosition(list.get(1)));
                     condition3_layout.setText(list.get(2));
                     condition4_layout.setText(list.get(3));

@@ -79,6 +79,7 @@ public class my_adapter_diet extends BaseAdapter {
                         Intent intent = new Intent(parent.getContext(), diet_information.class);
                         intent.putExtra("status", 1);
                         intent.putExtra("time_id", Integer.parseInt(diet_time.getTag().toString()));
+                        intent.putExtra("diet",information[position][4]);
                         parent.getContext().startActivity(intent);
                         ((Activity)context).finish();
                     }
