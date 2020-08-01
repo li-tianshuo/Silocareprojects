@@ -143,10 +143,10 @@ public class list_doc_Fragment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for(DocumentSnapshot doc : task.getResult()) {
-                                pdocdata[0][0]=("Primary Doctor Name: "+doc.getString("Doctor Name"));
-                                pdocdata[0][1]=("Primary Doctor Email: "+doc.getString("Doctor Email"));
-                                pdocdata[0][2]=("Primary Doctor Phone: "+doc.getString("Doctor Phone"));
-                                pdocdata[0][3]=doc.getString("uid");
+                                    pdocdata[0][0] = ("Primary Doctor Name: " + doc.getString("Doctor Name"));
+                                    pdocdata[0][1] = ("Primary Doctor Email: " + doc.getString("Doctor Email"));
+                                    pdocdata[0][2] = ("Primary Doctor Phone: " + doc.getString("Doctor Phone"));
+                                    pdocdata[0][3] = doc.getString("uid");
                                 Log.d("Status", "Successful get information ", task.getException());
                             }
                             oncallbackString.onCallbackListstring(pdocdata);
@@ -210,7 +210,6 @@ public class list_doc_Fragment extends Fragment {
 
             @Override
             public void onCallbacknumber(int b) {
-                Log.e("Success", String.valueOf(b));
                 docnum=b;
                 docdata=new String[b][4];
                 getotherdocuid(new callback() {
@@ -245,51 +244,57 @@ public class list_doc_Fragment extends Fragment {
 
                             @Override
                             public void onCallbackListstring(String[][] data) {
-
                                 docdata=data.clone();
                                 primaryid(new callback() {
                                     @Override
                                     public void onCallback(String string) {
-                                        primaryid=string;
-                                        checkPridoc(new callback() {
-                                            @Override
-                                            public void onCallback(String string) {
+                                        primaryid = string;
+                                        if (primaryid == null) {
+                                            pdocdata[0][0] = "Primary Doctor Not setup";
+                                            pdocdata[0][1] = "";
+                                            pdocdata[0][2] = "";
+                                            pdocdata[0][3] = mAuth.getUid();
+                                            MyAdapter_doc ad = new MyAdapter_doc(getActivity(), pdocdata);
+                                            list.setAdapter(ad);
+                                        } else {
+                                            checkPridoc(new callback() {
+                                                @Override
+                                                public void onCallback(String string) {
 
-                                            }
-
-                                            @Override
-                                            public void onCallbacknumber(int i) {
-
-                                            }
-
-                                            @Override
-                                            public void onCallbackList(ArrayList<String> list) {
-
-                                            }
-
-                                            @Override
-                                            public void onCallbackListstring(String[][] data) {
-                                                pdocdata=data.clone();
-                                                if (docdata.length==0)
-                                                {
-                                                    MyAdapter_doc ad = new MyAdapter_doc(getActivity(), pdocdata);
-                                                    list.setAdapter(ad);
-                                                }else{
-                                                    String[][] finaldata = new String[pdocdata.length +docdata.length][];
-                                                    System.arraycopy(pdocdata, 0, finaldata , 0, pdocdata.length);
-                                                    System.arraycopy(docdata, 0, finaldata , pdocdata.length, docdata.length);
-                                                    MyAdapter_doc ad = new MyAdapter_doc(getActivity(), finaldata);
-                                                    list.setAdapter(ad);
                                                 }
-                                            }
 
-                                            @Override
-                                            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+                                                @Override
+                                                public void onCallbacknumber(int i) {
 
-                                            }
-                                        });
+                                                }
+
+                                                @Override
+                                                public void onCallbackList(ArrayList<String> list) {
+
+                                                }
+
+                                                @Override
+                                                public void onCallbackListstring(String[][] pdata) {
+                                                    pdocdata = pdata.clone();
+                                                    if (docdata.length == 0) {
+                                                        MyAdapter_doc ad = new MyAdapter_doc(getActivity(), pdocdata);
+                                                        list.setAdapter(ad);
+                                                    } else {
+                                                        String[][] finaldata = new String[pdocdata.length + docdata.length][];
+                                                        System.arraycopy(pdocdata, 0, finaldata, 0, pdocdata.length);
+                                                        System.arraycopy(docdata, 0, finaldata, pdocdata.length, docdata.length);
+                                                        MyAdapter_doc ad = new MyAdapter_doc(getActivity(), finaldata);
+                                                        list.setAdapter(ad);
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                                }
+                                            });
+                                        }
                                     }
-
                                     @Override
                                     public void onCallbacknumber(int i) {
 

@@ -316,12 +316,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                 i++;
                                 Log.d("Status", "Success on get Document", task.getException());
                             }
-                            Arrays.sort(pxdata, new Comparator<String[]>() {
-                                @Override
-                                public int compare(String[] o1, String[] o2) {
-                                    return Integer.parseInt(o2[0]) - Integer.parseInt(o1[0]);
-                                }
-                            });
+
                             oncallbackString.onCallbackListstring(pxdata);
                         } else {
                             Log.d("Status", "Error getting documents: ", task.getException());
@@ -444,11 +439,18 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
                                             @Override
                                             public void onCallbackListstring(String[][] alarmdata) {
+
                                                 pxdata=alarmdata.clone();
-                                               if (pxdata == null)
+                                               if (pxdata.length==0)
                                                {
                                                    data[0][1] = "Related Activity: None";
                                                }else {
+                                                   Arrays.sort(pxdata, new Comparator<String[]>() {
+                                                       @Override
+                                                       public int compare(String[] o1, String[] o2) {
+                                                           return Integer.parseInt(o2[0]) - Integer.parseInt(o1[0]);
+                                                       }
+                                                   });
                                                    data[0][1] = "Related Activity: " + pxdata[0][1];
                                                }
 
@@ -471,7 +473,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                                     @Override
                                                     public void onCallbackListstring(String[][] dietdata) {
                                                         information=dietdata.clone();
-                                                        if (information==null)
+                                                        if (information.length==0)
                                                         {
                                                             data[1][1] = "Related Activity: None";
                                                         }else {
@@ -496,7 +498,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                                             @Override
                                                             public void onCallbackListstring(final String[][] pa_data) {
                                                                 padata=pa_data.clone();
-                                                                if (padata == null)
+                                                                if (padata.length==0)
                                                                 {
                                                                     data[2][1] = "Related Activity: None";
                                                                 }else {
@@ -526,7 +528,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
                                                                     @Override
                                                                     public void onCallbackListstring(String[][] ma_data) {
                                                                         madata=ma_data.clone();
-                                                                        if (madata == null)
+                                                                        if (madata.length==0)
                                                                         {
                                                                             data[3][1] = "Related Activity: None";
                                                                         }else

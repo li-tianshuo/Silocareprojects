@@ -97,10 +97,9 @@ public class MyAdapter_doc extends BaseAdapter implements View.OnClickListener {
         text3.setText(data[position][2]);
         text1.setTag(data[position][3]);
 
-        if (text1.getText().toString().substring(0,1).equals("P"))
-        {
-            delete.setVisibility(View.GONE);
-        }
+
+        delete.setVisibility(View.GONE);
+
         update.setClickable(false);
         update.setEnabled(false);
         delete.setClickable(false);

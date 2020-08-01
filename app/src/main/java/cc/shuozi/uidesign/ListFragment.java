@@ -47,11 +47,37 @@ public class ListFragment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for(DocumentSnapshot doc : task.getResult()) {
-                                data[0][0]=("Condition 1"+doc.getString("Condition 1"));
-                                data[0][1]=("Condition 2"+doc.getString("Condition 2"));
-                                data[0][2]=("Condition 3"+doc.getString("Condition 3"));
-                                data[0][3]=("Condition 4"+doc.getString("Condition 4"));
+                                if (doc.getString("Condition 1")!=null)
+                                {
+                                    data[0][0]=("Condition 1 "+doc.getString("Condition 1"));
+                                }else{
+                                    data[0][0]=("Condition 1"+" Not setup");
+                                }
+
+                                if (doc.getString("Condition 2")!=null)
+                                {
+                                    data[0][1]=("Condition 2 "+doc.getString("Condition 2"));
+                                }else{
+                                    data[0][1]=("Condition 2"+" Not setup");
+                                }
+
+                                if (doc.getString("Condition 3")!=null)
+                                {
+                                    data[0][2]=("Condition 3 "+doc.getString("Condition 3"));
+                                }else{
+                                    data[0][2]=("Condition 3"+" Not setup");
+                                }
+
+                                if (doc.getString("Condition 4")!=null)
+                                {
+                                    data[0][3]=("Condition 4 "+doc.getString("Condition 4"));
+                                }else{
+                                    data[0][3]=("Condition 4"+" Not setup");
+                                }
+
+
                                 data[0][4]="";
+
                                 Log.d("Status", "Successful get information ", task.getException());
                             }
                             oncallbackString.onCallbackListstring(data);
