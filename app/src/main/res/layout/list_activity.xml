@@ -2,12 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorHint"
+    android:background="@android:color/white"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+
+        >
 
         <TextView
             android:id="@+id/activity_type"
@@ -16,7 +18,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:text="TextView"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@color/colorHint"
+            />
 
         <TextView
             android:id="@+id/duration"
@@ -25,7 +29,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
             android:text="TextView"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@color/colorHint"
+            />
 
         <TextView
             android:id="@+id/list_start_time"
@@ -34,7 +40,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="90dp"
             android:text="TextView"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@color/colorHint"
+            />
 
         <Button
             android:id="@+id/update_activity"
@@ -43,8 +51,10 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@color/colorHint"
-            android:text="UPDATE" />
+            android:background="@android:color/transparent"
+            android:text="UPDATE"
+            android:textColor="@color/colorHint"
+            />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

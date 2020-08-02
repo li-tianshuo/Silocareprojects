@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorHint"
+    android:background="@android:color/white"
     >
 
     <RelativeLayout
@@ -18,7 +18,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10sp"
-            android:text="time" />
+            android:text="time"
+            android:textColor="@color/colorHint"
+            />
 
         <TextView
             android:id="@+id/note"
@@ -26,7 +28,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
             android:layout_marginTop="50sp"
-            android:text="note" />
+            android:text="note"
+            android:textColor="@color/colorHint"
+            />
 
         <Button
             android:id="@+id/update_px"
@@ -36,7 +40,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:text="Update"
-            android:background="@color/colorHint"
+            android:textColor="@color/colorHint"
+            android:background="@android:color/white"
             />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

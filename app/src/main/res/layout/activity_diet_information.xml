@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#004e90"
+    android:background="@android:color/white"
     tools:context=".diet_information">
 
     <FrameLayout
@@ -21,7 +21,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+
+                >
 
                 <TextView
                     android:id="@+id/textView36"
@@ -29,6 +31,7 @@
                     android:layout_height="wrap_content"
                     android:text="Diet Page"
                     android:textSize="30sp"
+                    android:textColor="@color/colorHint"
 
                     />
 
@@ -37,7 +40,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Food(Enter button to add)"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="@color/colorHint"
+                    />
 
                 <EditText
                     android:id="@+id/diet_date"
@@ -45,20 +50,26 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:focusable="false"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:textColor="@color/colorHint"
+                    />
 
                 <TextView
                     android:id="@+id/textView38"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Diet Type"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="@color/colorHint"
+                    />
 
                 <Spinner
                     android:id="@+id/diet_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/diet_type" />
+                    android:entries="@array/diet_type"
+
+                    />
 
             </LinearLayout>
 
@@ -77,8 +88,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="80dp"
-                        android:text="Click the Button right to Add something"
-                        android:textSize="24sp" />
+                        android:text="Click to add"
+                        android:textSize="24sp"
+                        android:textColor="@color/colorHint"
+                        />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/add_food"
@@ -112,15 +125,20 @@
                     android:id="@+id/update_diet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#004e90"
-                    android:text="Update Diet" />
+                    android:background="@android:color/transparent"
+                    android:text="Update Diet"
+                    android:textColor="@color/colorHint"
+                    />
 
                 <Button
                     android:id="@+id/add_diet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#004e90"
-                    android:text="Add a diet menu" />
+                    android:background="@android:color/transparent"
+                    android:text="Add a diet menu"
+                    android:textColor="@color/colorHint"
+
+                    />
             </LinearLayout>
 
         </LinearLayout>

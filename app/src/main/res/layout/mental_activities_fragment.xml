@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorHint"
+    android:background="@android:color/white"
     >
 
     <FrameLayout
@@ -40,12 +40,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Activity Benefit"
+                        android:textStyle="italic"
+                        android:textColor="@android:color/darker_gray"
                         android:textSize="24sp" />
 
                     <TextView
                         android:id="@+id/textView19"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@android:color/darker_gray"
+                        android:textStyle="bold"
                         android:text="Sleep"
                         android:textSize="20sp" />
 
@@ -53,6 +57,8 @@
                         android:id="@+id/textView29"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@android:color/darker_gray"
+                        android:textStyle="italic"
                         android:text="It may seem obvious that sleep is beneficial. Even without fully grasping what sleep does for us, we know that going without sleep for too long makes us feel terrible, and that getting a good night's sleep can make us feel ready to take on the world."
                         android:textSize="18sp" />
 
@@ -60,6 +66,8 @@
                         android:id="@+id/textView30"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@android:color/darker_gray"
+                        android:textStyle="bold"
                         android:text="Yoga"
                         android:textSize="20sp" />
 
@@ -67,7 +75,9 @@
                         android:id="@+id/textView31"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="increased flexibility. increased muscle strength and tone. improved respiration, energy and vitality. maintaining a balanced metabolism. weight reduction. cardio and circulatory health. improved athletic performance. protection from injury."
+                        android:textColor="@android:color/darker_gray"
+                        android:textStyle="italic"
+                        android:text="Increased flexibility. increased muscle strength and tone. improved respiration, energy and vitality. maintaining a balanced metabolism. weight reduction. cardio and circulatory health. improved athletic performance. protection from injury."
                         android:textSize="18sp" />
 
                 </LinearLayout>

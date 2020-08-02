@@ -6,7 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorHint"
+        android:background="@android:color/white"
         >
 
         <TextView
@@ -15,7 +15,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@color/colorHint"
+            />
 
         <TextView
             android:id="@+id/food_weight_on_list"
@@ -23,7 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@color/colorHint"
+            />
 
         <Button
             android:id="@+id/list_delete_item"
@@ -32,7 +36,8 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:background="@color/colorHint"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorHint"
             android:text="Delete" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

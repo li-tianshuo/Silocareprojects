@@ -5,7 +5,6 @@
     android:id="@+id/drawer_goals"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".symptoms_goal">
 
     <LinearLayout
@@ -55,7 +54,10 @@
             android:layout_weight="0.25"
             android:background="#004e90"
             app:itemRippleColor="#FFFFFF"
-            app:menu="@menu/symptoms_goal_menu">
+            app:menu="@menu/symptoms_goal_menu"
+            app:itemTextColor="@android:color/white"
+
+            >
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>

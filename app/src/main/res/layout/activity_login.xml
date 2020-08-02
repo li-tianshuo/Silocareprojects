@@ -112,7 +112,7 @@
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="24dp"
-                android:background="@color/colorHint"
+                android:background="@android:color/transparent"
                 android:text="@string/login"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

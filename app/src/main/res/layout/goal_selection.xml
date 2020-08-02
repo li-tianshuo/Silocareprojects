@@ -5,14 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorHint"
+    android:background="@android:color/white"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +27,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:gravity="center"
-                android:text="Title" />
+                android:text="Title"
+                android:textColor="@color/colorHint"
+                />
 
             <EditText
                 android:id="@+id/goal_description"
@@ -34,14 +38,18 @@
                 android:layout_weight="1.5"
                 android:ems="10"
                 android:gravity="start|top"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textColor="@color/colorHint"
+                />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+
+            >
 
             <TextView
                 android:id="@+id/textView45"
@@ -49,7 +57,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:gravity="center"
-                android:text="Note" />
+                android:text="Note"
+                android:textColor="@color/colorHint"
+                />
 
             <EditText
                 android:id="@+id/goal_note"
@@ -58,7 +68,9 @@
                 android:layout_weight="1.5"
                 android:ems="10"
                 android:gravity="start|top"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textColor="@color/colorHint"
+                />
         </LinearLayout>
 
     </LinearLayout>

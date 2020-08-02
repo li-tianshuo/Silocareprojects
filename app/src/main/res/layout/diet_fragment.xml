@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    >
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -61,7 +63,7 @@
                 android:id="@+id/layout_diet"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#004e90"
+                android:background="@android:color/white"
                 >
 
             </FrameLayout>

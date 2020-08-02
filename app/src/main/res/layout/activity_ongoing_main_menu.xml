@@ -5,7 +5,7 @@
     android:id="@+id/drawerlayout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_page"
+    android:background="@drawable/information_bg"
     tools:context=".ongoing_main_menu">
 
     <LinearLayout
@@ -65,49 +65,49 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:background="#00000000" />
 
             <ImageButton
                 android:id="@+id/ongoing_px"
-                android:layout_width="346dp"
-                android:layout_height="64dp"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
                 android:background="@drawable/prescription_image"
                 android:scaleType="centerCrop" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:background="#00000000" />
 
             <ImageButton
                 android:id="@+id/ongoing_diet"
-                android:layout_width="346dp"
-                android:layout_height="64dp"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
                 android:background="@drawable/diet_image"
                 android:scaleType="fitXY" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:background="#00000000" />
 
             <ImageButton
                 android:id="@+id/ongoing_pa"
-                android:layout_width="346dp"
-                android:layout_height="64dp"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
                 android:background="@drawable/physical_image"
                 android:scaleType="centerCrop" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="30dp"
                 android:background="#00000000" />
 
             <ImageButton
                 android:id="@+id/ongoing_ma"
-                android:layout_width="346dp"
-                android:layout_height="64dp"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
                 android:background="@drawable/mental_image"
                 android:scaleType="fitXY" />
 

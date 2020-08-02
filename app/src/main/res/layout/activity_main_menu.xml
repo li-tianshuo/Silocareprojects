@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="left"
-    android:background="@drawable/login_page"
+    android:background="@drawable/information_bg"
     tools:context=".MainMenu">
 
     <LinearLayout
@@ -29,7 +29,7 @@
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@mipmap/ic_menu"
                 android:background="#004e90"
-                app:title="Setting" />
+                app:title="Main Menu" />
 
         </LinearLayout>
 
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_weight="0.15"
-                android:background="#004e90"
+                android:background="@android:color/transparent"
                 app:srcCompat="@drawable/comment" />
 
             <ViewFlipper
@@ -71,7 +71,7 @@
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="143dp"
                 android:layout_weight="0.85"
                 app:srcCompat="@drawable/avatar"
 
@@ -97,20 +97,20 @@
 
             <ImageButton
                 android:id="@+id/decision"
-                android:layout_width="347dp"
-                android:layout_height="75dp"
-                android:scaleType="fitXY"
-                android:background="@drawable/decision_making_image" />
+                android:layout_width="351dp"
+                android:layout_height="77dp"
+                android:background="@drawable/decision_making_image"
+                android:scaleType="fitXY" />
 
             <View
                 android:id="@+id/view2"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="20dp"
                 android:background="#00000000" />
 
             <ImageButton
                 android:id="@+id/information"
-                android:layout_width="347dp"
+                android:layout_width="350dp"
                 android:layout_height="75dp"
                 android:background="@drawable/information_image"
                 android:scaleType="fitXY" />
@@ -120,25 +120,24 @@
             <View
                 android:id="@+id/view"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="20dp"
                 android:background="#00000000" />
 
             <ImageButton
                 android:id="@+id/implementaion"
-                android:layout_width="347dp"
+                android:layout_width="350dp"
                 android:layout_height="75dp"
-
                 android:background="@drawable/implementation_image"
                 android:scaleType="fitXY" />
             <View
-                android:layout_height="10dp"
+                android:layout_height="20dp"
                 android:layout_width="match_parent"
                 android:background="#00000000"
                 />
 
             <ImageButton
                 android:id="@+id/setting"
-                android:layout_width="347dp"
+                android:layout_width="350dp"
                 android:layout_height="75dp"
                 android:background="@drawable/settings_image"
                 android:scaleType="fitXY"

@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#004e90"
+        android:background="@android:color/white"
 
         />
 
@@ -37,7 +37,7 @@
             android:shadowDy="5"
             android:shadowRadius="0.01"
             android:text="Please let us know your conditions"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorHint"
             android:textSize="30sp"
 
             />
@@ -48,7 +48,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="horizontal"
-            android:textColor="@android:color/white">
+            android:textColor="@color/colorHint">
 
 
             <TextView
@@ -58,8 +58,10 @@
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
                 android:text="Condition 1:"
-                android:textColor="@android:color/white"
-                android:textSize="15dp" />
+                android:textColor="@color/colorHint"
+                android:textSize="15dp"
+
+                />
 
             <Spinner
                 android:id="@+id/condition1"
@@ -69,9 +71,10 @@
                 android:layout_marginEnd="20dp"
                 android:entries="@array/diease_name"
                 android:gravity="center"
+
                 android:prompt="@string/choose_conditions"
                 android:spinnerMode="dropdown"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,7 +83,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="horizontal"
-            android:textColor="@android:color/white">
+            android:textColor="@color/colorHint">
 
             <TextView
                 android:id="@+id/textView5"
@@ -89,7 +92,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
                 android:text="Condition 2:"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorHint" />
 
             <Spinner
                 android:id="@+id/condition2"
@@ -102,7 +105,7 @@
                 android:gravity="center"
                 android:prompt="@string/choose_conditions"
                 android:spinnerMode="dropdown"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorHint" />
         </LinearLayout>
 
         <LinearLayout
@@ -120,7 +123,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
                 android:text="Condition 3:"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorHint" />
 
             <EditText
                 android:id="@+id/condition3"
@@ -133,8 +136,8 @@
                 android:gravity="center"
                 android:hint="Please enter your condition"
                 android:inputType="textPersonName"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@color/colorHint"
+                android:textColorHint="@android:color/darker_gray" />
         </LinearLayout>
 
         <LinearLayout
@@ -151,7 +154,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
                 android:text="Condition 4:"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorHint" />
 
             <EditText
                 android:id="@+id/condition4"
@@ -164,8 +167,8 @@
                 android:gravity="center"
                 android:hint="Please enter your condition"
                 android:inputType="textPersonName"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@color/colorHint"
+                android:textColorHint="@android:color/darker_gray" />
         </LinearLayout>
 
         <Button
@@ -175,7 +178,10 @@
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:layout_weight=".5"
-            android:background="#004e90"
-            android:text="Update" />
+            android:background="@android:color/transparent"
+            android:text="Update"
+            android:textColor="@color/colorHint"
+
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

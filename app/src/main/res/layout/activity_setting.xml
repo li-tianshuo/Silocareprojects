@@ -4,51 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#004e90"
+    android:background="@color/colorHint"
     tools:context=".Setting">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="4">
+        android:weightSum="4"
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:weightSum="3">
+            android:weightSum="3"
+
+
+
+            >
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Setting"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Personal Information"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                />
 
             <ListView
                 android:id="@+id/setting_information"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></ListView>
+                android:layout_height="wrap_content"
+
+
+                />
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="App"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/colorHint"
+                />
 
             <ListView
                 android:id="@+id/setting_app"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></ListView>
+                android:layout_height="wrap_content"
+
+                />
 
         </LinearLayout>
 
@@ -56,7 +73,10 @@
             android:id="@+id/log_out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log out" />
+            android:text="Log out"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent"
+            />
 
     </LinearLayout>
 

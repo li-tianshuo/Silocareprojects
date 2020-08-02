@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorHint"
+    android:background="@android:color/white"
     >
 
     <LinearLayout
@@ -14,7 +14,7 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
-        android:background="@color/colorHint"
+        android:background="@android:color/white"
         >
 
         <LinearLayout
@@ -29,7 +29,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
                 android:text="Food name:"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textColor="@color/colorHint"
+                />
 
             <EditText
                 android:id="@+id/food_name"
@@ -38,7 +40,9 @@
                 android:layout_weight="1.5"
                 android:ems="10"
                 android:hint="Name of Food"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorHint"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -53,7 +57,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
                 android:text="Weight:"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textColor="@color/colorHint"
+                />
 
             <EditText
                 android:id="@+id/food_weight"
@@ -62,14 +68,18 @@
                 android:layout_weight="1.5"
                 android:ems="10"
                 android:hint="Weight of Food"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/colorHint"
+                />
 
             <TextView
                 android:id="@+id/textView42"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
-                android:text="g(grams)" />
+                android:text="g(grams)"
+                android:textColor="@color/colorHint"
+                />
         </LinearLayout>
 
     </LinearLayout>

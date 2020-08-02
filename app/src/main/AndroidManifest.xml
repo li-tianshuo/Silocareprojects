@@ -42,6 +42,7 @@
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Splash_screen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

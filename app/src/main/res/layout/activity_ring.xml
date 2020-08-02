@@ -10,9 +10,13 @@
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Success!"
+        android:layout_width="406dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="156dp"
+        android:text="We Have Successfully Added Your Selection!"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

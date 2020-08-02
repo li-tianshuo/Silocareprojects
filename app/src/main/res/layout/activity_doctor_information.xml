@@ -13,7 +13,9 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:weightSum="8">
+        android:weightSum="8"
+        android:background="@android:color/white"
+        >
 
         <TextView
             android:id="@+id/textView2"
@@ -25,7 +27,9 @@
             android:autoLink="none"
             android:gravity="center"
             android:text="Please Tell us Something About Your Doctor"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:textColor="@color/colorHint"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +44,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
-                android:text="Doctor's Name" />
+                android:text="Doctor's Name"
+                android:textColor="@color/colorHint"
+                />
 
 
             <EditText
@@ -53,7 +59,9 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Please Enter Doctor's Name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColor="@color/colorHint"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -69,7 +77,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
-                android:text="Doctor's Email" />
+                android:text="Doctor's Email"
+                android:textColor="@color/colorHint"
+                />
 
 
             <EditText
@@ -82,7 +92,9 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Please Enter Doctor's Email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorHint"
+                />
 
         </LinearLayout>
 
@@ -99,7 +111,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
-                android:text="Doctor's Phone" />
+                android:text="Doctor's Phone"
+                android:textColor="@color/colorHint"
+                />
 
             <EditText
                 android:id="@+id/dphone"
@@ -111,7 +125,9 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Please Enter Doctor's Phone"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:textColor="@color/colorHint"
+                />
         </LinearLayout>
 
         <Button
@@ -122,7 +138,8 @@
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
             android:text="Set Attending Physician"
-            android:background="@color/colorHint"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorHint"
             />
 
         <Button
@@ -133,7 +150,9 @@
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
             android:text="Add a new doctor"
-            android:background="#004e90"/>
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorHint"
+            />
 
         <Button
             android:id="@+id/update_doc"
@@ -143,7 +162,9 @@
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
             android:text="Update Doctor Information"
-            android:background="#004e90"/>
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorHint"
+            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

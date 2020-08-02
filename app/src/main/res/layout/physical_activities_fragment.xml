@@ -21,7 +21,9 @@
                 android:id="@+id/list_pa"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.25">
+                android:layout_weight="1.25"
+                android:background="@android:color/white"
+                >
 
             </ListView>
 
@@ -33,70 +35,97 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@android:color/white"
+                    >
 
                     <TextView
                         android:id="@+id/textView18"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textStyle="italic"
                         android:text="Activity Benefit"
-                        android:textSize="24sp" />
+                        android:textSize="24sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                     <TextView
                         android:id="@+id/textView19"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:text="Jogging"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                     <TextView
                         android:id="@+id/textView29"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="    help to build strong bones, as it is a weight bearing exercise strengthen muscles improve cardiovascular fitness burn plenty of kilojoules help maintain a healthy weight."
-                        android:textSize="18sp" />
+                        android:textStyle="italic"
+                        android:text="    Help to build strong bones, as it is a weight bearing exercise strengthen muscles improve cardiovascular fitness burn plenty of kilojoules help maintain a healthy weight."
+                        android:textSize="18sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                     <TextView
                         android:id="@+id/textView30"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:text="Running"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                     <TextView
                         android:id="@+id/textView31"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="    help to build strong bones, as it is a weight bearing exercise strengthen muscles improve cardiovascular fitness burn plenty of kilojoules help maintain a healthy weight."
-                        android:textSize="18sp" />
+                        android:textStyle="italic"
+                        android:text="    Help to build strong bones, as it is a weight bearing exercise strengthen muscles improve cardiovascular fitness burn plenty of kilojoules help maintain a healthy weight."
+                        android:textSize="18sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                     <TextView
                         android:id="@+id/textView34"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:text="Swimming"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                     <TextView
                         android:id="@+id/textView33"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textStyle="italic"
                         android:text="    keeps your heart rate up but takes some of the impact stress off your body. builds endurance, muscle strength and cardiovascular fitness. helps maintain a healthy weight, healthy heart and lungs. tones muscles and builds strength"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                     <TextView
                         android:id="@+id/textView32"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cycling"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                     <TextView
                         android:id="@+id/textView35"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="    increased cardiovascular fitness increased muscle strength and flexibility improved joint mobility decreased stress levels improved posture and coordination strengthened bones decreased body fat levels prevention or management of disease reduced anxiety and depression."
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textColor="@android:color/darker_gray"
+                        />
 
                 </LinearLayout>
             </ScrollView>

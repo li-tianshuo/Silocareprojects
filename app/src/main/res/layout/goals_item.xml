@@ -20,7 +20,7 @@
             android:id="@+id/goal_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#004e90"
+            android:background="@android:color/white"
             tools:ignore="MissingConstraints">
 
             <TextView
@@ -28,7 +28,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
-                android:layout_marginTop="20sp" />
+                android:layout_marginTop="20sp"
+                android:textColor="@color/colorHint"
+                />
 
             <Button
                 android:id="@+id/goals_view"
@@ -37,9 +39,11 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="10sp"
                 android:layout_marginEnd="20sp"
-                android:background="#004e90"
+                android:background="@android:color/transparent"
                 android:focusable="false"
-                android:text="View" />
+                android:text="View"
+                android:textColor="@color/colorHint"
+                />
 
             <Button
                 android:id="@+id/goals_update"
@@ -48,9 +52,11 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="60sp"
                 android:layout_marginEnd="20sp"
-                android:background="#004e90"
+                android:background="@android:color/transparent"
                 android:focusable="false"
-                android:text="Update" />
+                android:text="Update"
+                android:textColor="@color/colorHint"
+                />
 
             <View
                 android:id="@+id/view4"
