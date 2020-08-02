@@ -153,6 +153,9 @@ public class diet_information extends AppCompatActivity {
         final Spinner diet_type=findViewById(R.id.diet_type);
         final Button update_diet=findViewById(R.id.update_diet);
         final EditText diet_date=findViewById(R.id.diet_date);
+        ArrayAdapter diet_type_adapter = ArrayAdapter.createFromResource(this,  R.array.diet_type,R.layout.spinner_text);
+        diet_type_adapter.setDropDownViewResource(R.layout.spinner_drop);
+        diet_type.setAdapter(diet_type_adapter);
         int id = getIntent().getIntExtra("status",0);
         String mode=getIntent().getStringExtra("diet");
         diet_type.setSelection(((ArrayAdapter) diet_type.getAdapter()).getPosition(mode));

@@ -105,13 +105,16 @@ public class pre_information extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_information);
-
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,  R.array.diease_name,R.layout.spinner_text);
+        adapter.setDropDownViewResource(R.layout.spinner_drop);
         condition1_layout=findViewById(R.id.condition1);
+
         condition2_layout=findViewById(R.id.condition2);
         condition3_layout=findViewById(R.id.condition3);
         condition4_layout=findViewById(R.id.condition4);
         update=findViewById(R.id.update_information);
-
+        condition1_layout.setAdapter(adapter);
+        condition2_layout.setAdapter(adapter);
         update.setEnabled(false);
         update.setClickable(false);
         update.setText("Please wait");
