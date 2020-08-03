@@ -132,7 +132,19 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
                     View checkView = layoutInflater.inflate(R.layout.food_list, null);
                     ListView listView = checkView.findViewById(R.id.food_listview);
 
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(checkView.getContext(), android.R.layout.simple_list_item_1, mDatas.get(position).get_description_array());
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(checkView.getContext(), android.R.layout.simple_list_item_1, mDatas.get(position).get_description_array())
+                    {
+                        @Override
+                        public View getView(int position, View convertView, ViewGroup parent) {
+                            View view = super.getView(position, convertView, parent);
+
+                            TextView textView = (TextView) view.findViewById(android.R.id.text1);
+
+                            textView.setTextColor(ContextCompat.getColor(context, R.color.colorHint));
+
+                            return view;
+                        }
+                    };
                     listView.setAdapter(adapter);
                     View testcheckView = layoutInflater.inflate(R.layout.symptoms_goals_fragment, null);
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(checkView.getContext());

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 
@@ -105,7 +107,19 @@ public class my_adapter_diet extends BaseAdapter {
             }
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(checkView.getContext(), android.R.layout.simple_list_item_1, viewlist);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(checkView.getContext(), android.R.layout.simple_list_item_1, viewlist)
+        {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view =super.getView(position, convertView, parent);
+
+                TextView textView=(TextView) view.findViewById(android.R.id.text1);
+
+                textView.setTextColor(ContextCompat.getColor(context, R.color.colorHint));
+
+                return view;
+            }
+        };
         listView.setAdapter(adapter);
         View testcheckView = layoutInflater.inflate(R.layout.list_meal, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(checkView.getContext());
