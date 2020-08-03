@@ -20,6 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -74,19 +75,19 @@ public class goal_adapter extends RecyclerView.Adapter<goal_adapter.MyViewHolder
         {
             case 0:
                 goal_background.setBackgroundColor(Color.parseColor("#aa2e25"));
-                title.setTextColor(Color.parseColor("#ffffff"));
+                title.setTextColor(ContextCompat.getColor(context, R.color.colorHint));
                 break;
             case 1:
                 goal_background.setBackgroundColor(Color.parseColor("#e91e63"));
-                title.setTextColor(Color.parseColor("#ffffff"));
+                title.setTextColor(ContextCompat.getColor(context, R.color.colorHint));
                 break;
             case 2:
                 goal_background.setBackgroundColor(Color.parseColor("#9c27b0"));
-                title.setTextColor(Color.parseColor("#ffffff"));
+                title.setTextColor(ContextCompat.getColor(context, R.color.colorHint));
                 break;
             case 3:
                 goal_background.setBackgroundColor(Color.parseColor("#673ab7"));
-                title.setTextColor(Color.parseColor("#ffffff"));
+                title.setTextColor(ContextCompat.getColor(context, R.color.colorHint));
                 break;
         }
 
