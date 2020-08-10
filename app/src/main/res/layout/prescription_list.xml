@@ -41,7 +41,7 @@
             android:layout_marginEnd="20dp"
             android:text="Update"
             android:textColor="@color/colorHint"
-            android:background="@android:color/white"
+            android:background="@android:color/transparent"
             />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
