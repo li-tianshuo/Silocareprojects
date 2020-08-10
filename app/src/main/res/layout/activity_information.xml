@@ -43,28 +43,29 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="0.85"
-            android:background="#004e90"
-            app:srcCompat="@drawable/avatar" />
+            android:background="@android:color/white"
+            app:srcCompat="@drawable/avatar"
+            />
 
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.15"
-            android:background="#004e90"
+            android:background="@android:color/white"
             android:gravity="center"
             android:text="TextView"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/colorHint"
             android:textSize="18sp" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:background="#004e90"
-            app:tabIndicatorColor="#FFFFFF"
-            app:tabSelectedTextColor="#7C7979"
-            app:tabTextColor="#FFFFFF">
+            android:background="@android:color/white"
+            app:tabIndicatorColor="@color/colorHint"
+            app:tabSelectedTextColor="@color/colorHint"
+            app:tabTextColor="@android:color/darker_gray">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
