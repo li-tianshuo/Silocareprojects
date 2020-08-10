@@ -662,6 +662,7 @@ public class doctor_information extends AppCompatActivity {
 
                                     }
                                 });
+                                startActivity(new Intent(doctor_information.this,information.class));
                                 finish();
                             }else{
                                 final String uid=UUID.randomUUID().toString();
@@ -724,7 +725,7 @@ public class doctor_information extends AppCompatActivity {
 
                                     }
                                 });
-
+                                startActivity(new Intent(doctor_information.this,information.class));
                                 finish();
                             }
                         }
@@ -826,6 +827,7 @@ public class doctor_information extends AppCompatActivity {
                                                 Log.w("Status", "Error updating document", e);
                                             }
                                         });
+                                startActivity(new Intent(doctor_information.this,information.class));
                                 finish();
                             }else{
                                 String uid=UUID.randomUUID().toString();
@@ -864,6 +866,7 @@ public class doctor_information extends AppCompatActivity {
                                                 Log.w("Status", "Error updating document", e);
                                             }
                                         });
+                                startActivity(new Intent(doctor_information.this,information.class));
                                 finish();
                             }
                         }
