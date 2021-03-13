@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UIdesign.iml" filepath="$PROJECT_DIR$/UIdesign.iml" group="UIdesign" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="UIdesign/app" />
+      <module fileurl="file://$PROJECT_DIR$/UIdesign.iml" filepath="$PROJECT_DIR$/UIdesign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/UIdesign.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/UIdesign.app.iml" />
     </modules>
   </component>
 </project>

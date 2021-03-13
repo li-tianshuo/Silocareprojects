@@ -118,7 +118,7 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
         ImageButton ongoing_pa=findViewById(R.id.ongoing_pa);
         ImageButton ongoing_ma=findViewById(R.id.ongoing_ma);
         ImageButton ongoing_diet=findViewById(R.id.ongoing_diet);
-
+        Button ongoing_export=findViewById(R.id.ongoing_export);
 
         ongoing_ma.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,7 +156,14 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
             }
         });
 
-
+        ongoing_export.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ongoing_main_menu.this,exportdata.class);
+                intent.putExtra("mode",2);
+                startActivity(intent);
+            }
+        });
     }
 
 }
