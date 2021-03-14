@@ -223,8 +223,8 @@ public class event_selection extends AppCompatActivity {
                 end_time.setText(end_hour+":"+event_selection.this.end_minute);
             }
 
-            start_time_date.setText(start_month+"/"+start_day+"/"+start_year);
-            end_time_date.setText(end_month+"/"+end_day+"/"+end_year);
+            start_time_date.setText(start_month+1+"/"+start_day+"/"+start_year);
+            end_time_date.setText(end_month+1+"/"+end_day+"/"+end_year);
 
             start_time_date.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -235,7 +235,7 @@ public class event_selection extends AppCompatActivity {
                             event_selection.this.start_year=year;
                             event_selection.this.start_month=month;
                             start_day=dayOfMonth;
-                            start_time_date.setText(start_month+"/"+start_day+"/"+start_year);
+                            start_time_date.setText((start_month+1)+"/"+start_day+"/"+start_year);
                         }
                     },start_year,start_month,start_day).show();
                 }
@@ -266,7 +266,7 @@ public class event_selection extends AppCompatActivity {
                             event_selection.this.end_year=year;
                             event_selection.this.end_month=month;
                             end_day=dayOfMonth;
-                            end_time_date.setText(end_month+"/"+end_day+"/"+end_year);
+                            end_time_date.setText(end_month+1+"/"+end_day+"/"+end_year);
                         }
                     },end_year,end_month,end_day).show();
                 }
