@@ -28,10 +28,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
@@ -44,7 +54,348 @@ public class exportdata extends AppCompatActivity {
     private int end_day;
     private long timestampstart;
     private long timestampend;
+    private Calendar begin;
+    private Calendar end;
+    private Calendar temp;
+    private String diet;
+    private String goal;
+    private String symptoms;
+    private String mentalactivity;
+    private String physicalactivity;
+    private String px;
+    private String user_information;
+    private FirebaseAuth mAuth;
+    private int i;
+
     private static final int PERMISSION_REQUEST_CODE = 200;
+    private void getsymptoms(final callback oncallbackString)
+    {
+        symptoms="Symptoms Record:"+"\r\n";
+        i=0;
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("goal")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                if ("Symptom".equals(doc.getString("type"))) {
+                                    temp = Calendar.getInstance();
+                                    temp.set(Integer.parseInt(doc.get("year").toString()), Integer.parseInt(doc.get("month").toString()), Integer.parseInt(doc.get("day").toString()));
+                                    if (!temp.after(begin) && !temp.before(end)) {
+                                        symptoms=symptoms+String.valueOf(String.valueOf(doc.get("month"))+"/"+String.valueOf(doc.get("day"))+"/"+doc.get("year"))
+                                                +" "+doc.get("hour")+":"+doc.get("minute")
+                                                +"\r\n"+"Note:"+"\r\n";
+                                        i++;
+                                        for (int b = 0; b >= 0; b++) {
+                                            if (doc.getString("Description " + b) == null) {
+                                                Log.e("success", "break");
+                                                if (i==0)
+                                                {
+                                                    symptoms=symptoms+"None";
+                                                }
+                                                break;
+                                            } else {
+                                                symptoms=symptoms+"Note title:"+doc.getString("Description " + b)+
+                                                        "\r\n"+"Note:" + String.valueOf(doc.get("Note " + b)+"\r\n");
+                                            }
+                                        }
+
+                                    }
+                                }
+                                Log.d("Status", "Success on get Document", task.getException());
+                            }
+                            if (i==0)
+                            {
+                                symptoms=symptoms+"None";
+                            }
+                            symptoms=symptoms+"\r\n";
+                            oncallbackString.onCallback(symptoms);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
+    private void getgoal(final callback oncallbackString)
+    {
+        goal="Goal Record:"+"\r\n";
+        i=0;
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("goal")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                if ("Goal".equals(doc.getString("type"))) {
+                                    temp = Calendar.getInstance();
+                                    temp.set(Integer.parseInt(doc.get("year").toString()), Integer.parseInt(doc.get("month").toString()), Integer.parseInt(doc.get("day").toString()));
+                                    if (!temp.after(begin) && !temp.before(end)) {
+                                        goal=goal+String.valueOf(String.valueOf(doc.get("month"))+"/"+String.valueOf(doc.get("day"))+"/"+doc.get("year"))
+                                                +" "+doc.get("hour")+":"+doc.get("minute")
+                                                +"\r\n"+"Note:"+"\r\n";
+                                        i++;
+                                        for (int b = 0; b >= 0; b++) {
+                                            if (doc.getString("Description " + b) == null) {
+                                                Log.e("success", "break");
+                                                if (i==0)
+                                                {
+                                                    goal=goal+"None";
+                                                }
+                                                break;
+                                            } else {
+                                                goal=goal+"Note title:"+doc.getString("Description " + b)+
+                                                        "\r\n"+"Note:" + String.valueOf(doc.get("Note " + b)+"\r\n");
+                                            }
+                                        }
+
+                                    }
+                                }
+                                Log.d("Status", "Success on get Document", task.getException());
+                            }
+                            if (i==0)
+                            {
+                                goal=goal+"None";
+                            }
+                            goal=goal+"\r\n";
+                            oncallbackString.onCallback(goal);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
+    private void getpx(final callback oncallbackString)
+    {
+        i=0;
+        px="Prescription Record:"+"\r\n";
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("px")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                temp=Calendar.getInstance();
+                                temp.set(Integer.parseInt(doc.get("Event year").toString()), Integer.parseInt(doc.get("Event month").toString()), Integer.parseInt( doc.get("Event day").toString()));
+
+                                if (!temp.after(begin) && !temp.before(end)) {
+
+                                    px=px+"Prescription:"+"Time:"+String.valueOf(String.valueOf(doc.get("Event month"))+"/"+String.valueOf(doc.get("Event day"))+"/"+doc.get("Event year"))
+                                            +" "+doc.get("Event hour")+":"+doc.get("Event minute") +"\r\n"+doc.getString("Event note")+"\r\n";
+
+                                    i++;
+                                }
+
+                                Log.d("Status", "Success on get Document", task.getException());
+                            }
+                            if (i==0)
+                            {
+                                px=px+"None";
+                            }
+                            px=px+"\r\n";
+                            oncallbackString.onCallback(px);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
+    private void getpa(final callback oncallbackString)
+    {
+        i=0;
+        physicalactivity="Physical Ativity Record:"+"\r\n";
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("physicalactivity")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                temp=Calendar.getInstance();
+                                temp.set(Integer.parseInt(doc.get("Event start year").toString()), Integer.parseInt(doc.get("Event start month").toString()), Integer.parseInt( doc.get("Event start day").toString()));
+
+                                if (!temp.after(begin) && !temp.before(end)) {
+
+                                    physicalactivity=physicalactivity+"Menal Activity:"+doc.getString("Event")+"\r\n"+"Start Time:"+String.valueOf(String.valueOf(doc.get("Event start month"))+"/"+String.valueOf(doc.get("Event start day"))+"/"+doc.get("Event start year"))
+                                            +" "+doc.get("Event start hour")+":"+doc.get("Event start minute")
+                                            +"-"+"End Date:"+String.valueOf(String.valueOf(doc.get("Event end month"))+"/"+String.valueOf(doc.get("Event end day"))+"/"+doc.get("Event end year"))
+                                            +" "+doc.get("Event start hour")+":"+doc.get("Event start minute")
+                                            +"\r\n";
+
+                                    i++;
+                                }
+
+                                Log.d("Status", "Success on get Document", task.getException());
+                            }
+                            if (i==0)
+                            {
+                                physicalactivity=physicalactivity+"None";
+                            }
+                            physicalactivity=physicalactivity+"\r\n";
+                            oncallbackString.onCallback(physicalactivity);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
+    private void getma(final callback oncallbackString)
+    {
+        i=0;
+        mentalactivity="Mentala Ativity Record:"+"\r\n";
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("mentalactivity")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                temp=Calendar.getInstance();
+                                temp.set(Integer.parseInt(doc.get("Event start year").toString()), Integer.parseInt(doc.get("Event start month").toString()), Integer.parseInt( doc.get("Event start day").toString()));
+
+                                if (!temp.after(begin) && !temp.before(end)) {
+
+                                    mentalactivity=mentalactivity+"Menal Activity:"+doc.getString("Event")+"\r\n"+"Start Time:"+String.valueOf(String.valueOf(doc.get("Event start month"))+"/"+String.valueOf(doc.get("Event start day"))+"/"+doc.get("Event start year"))
+                                            +" "+doc.get("Event start hour")+":"+doc.get("Event start minute")
+                                            +"-"+"End Date:"+String.valueOf(String.valueOf(doc.get("Event end month"))+"/"+String.valueOf(doc.get("Event end day"))+"/"+doc.get("Event end year"))
+                                            +" "+doc.get("Event start hour")+":"+doc.get("Event start minute")
+                                            +"\r\n";
+
+                                    i++;
+                                }
+
+                                Log.d("Status", "Success on get Document", task.getException());
+                            }
+                            if (i==0)
+                            {
+                                mentalactivity=mentalactivity+"None";
+                            }
+                            mentalactivity=mentalactivity+"\r\n";
+                            oncallbackString.onCallback(mentalactivity);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
+
+
+    public void getdiet(final callback oncallbackString)
+    {
+        i=0;
+        diet="Diet record:" +"\r\n";;
+        mAuth= FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("diet")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                temp=Calendar.getInstance();
+                                temp.set(Integer.parseInt(doc.get("Diet year").toString()), Integer.parseInt(doc.get("Diet month").toString()), Integer.parseInt( doc.get("Diet day").toString()));
+                                if (!temp.after(begin) && !temp.before(end)) {
+                                    diet=diet+String.valueOf(String.valueOf(doc.get("Diet month"))+"/"+String.valueOf(doc.get("Diet day"))+"/"+doc.get("Diet year"))
+                                    +"\r\n"+doc.getString("Diet type")+"\r\n"+"Food:"+"\r\n";
+                                    for (int b = 0;b>=0;b++) {
+                                        if (doc.getString("Food name " + b)==null) {
+                                            Log.e("success","break");
+                                            if (b==0)
+                                            {
+                                                diet=diet+"None"+"\r\n";
+                                            }
+                                            break;
+                                        }else{
+                                            diet=diet+"Food name:"+doc.getString("Food name " + String.valueOf(b))+
+                                                    "\r\n"+"Food Weight:" + String.valueOf(doc.get("Food Weight " + String.valueOf(b))+"\r\n");
+
+                                        }
+                                    }
+                                    i++;
+                                }
+
+                                Log.d("Status", "Success on get Document", task.getException());
+                            }
+                            if (i==0)
+                            {
+                                diet=diet+"None";
+                            }
+                            diet=diet+"\r\n";
+                            oncallbackString.onCallback(diet);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+    }
+
+    private void get_user_information(final callback oncallback)
+    {
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String value=user.getUid();
+        db.collection("users")
+                .whereEqualTo("uid", value)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for(DocumentSnapshot doc : task.getResult()) {
+                                user_information="Name:"+doc.getString("First Name")+" "+doc.getString("Last Name")+"\r\n"
+                                        +"Condition 1:"+doc.getString("Condition 1")+"\r\n" +"Condition 2:"+doc.getString("Condition 2")+"\r\n"
+                                        +"Condition 3:"+doc.getString("Condition 3")+"\r\n"+ "Condition 4:"+doc.getString("Condition 4")+"\r\n";
+                            }
+                            user_information=user_information+"\r\n";
+                            oncallback.onCallback(user_information);
+                        } else {
+                            Log.d("Status", "Error getting documents: ", task.getException());
+                        }
+                    }
+
+                });
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,14 +468,13 @@ public class exportdata extends AppCompatActivity {
     }
 
     private void checkdate() {
-        final Calendar start=Calendar.getInstance();
-        start.set(start_year,start_month,start_day,0,0);
-        timestampstart=start.getTimeInMillis();
-        final Calendar end=Calendar.getInstance();
-        start.set(end_year,end_month,end_day,23,59);
+        begin=Calendar.getInstance();
+        begin.set(start_year,start_month,start_day,0,0);
+        timestampstart=begin.getTimeInMillis();
+        end=Calendar.getInstance();
+        begin.set(end_year,end_month,end_day,23,59);
         timestampend=end.getTimeInMillis();
-        Log.e(String.valueOf(timestampstart),"timestamp start");
-        Log.e(String.valueOf(timestampend),"timestamp end");
+
 
         if (timestampstart>timestampend)
         {
@@ -138,9 +488,192 @@ public class exportdata extends AppCompatActivity {
     }
 
     private void getdata() {
+        get_user_information(new callback() {
+            @Override
+            public void onCallback(String string) {
+                user_information=string;
+                getdiet(new callback() {
+                    @Override
+                    public void onCallback(String string) {
+                        diet=string;
+                        getma(new callback() {
+                            @Override
+                            public void onCallback(String string) {
+                                mentalactivity=string;
+                                getpa(new callback() {
+                                    @Override
+                                    public void onCallback(String string) {
+                                        physicalactivity=string;
+                                        getpx(new callback() {
+                                            @Override
+                                            public void onCallback(String string) {
+                                                px=string;
+                                                getgoal(new callback() {
+                                                    @Override
+                                                    public void onCallback(String string) {
+                                                        goal=string;
+                                                        getsymptoms(new callback() {
+                                                            @Override
+                                                            public void onCallback(String string) {
+                                                                symptoms=string;
+                                                                createpdf();
+                                                            }
+
+                                                            @Override
+                                                            public void onCallbacknumber(int i) {
+
+                                                            }
+
+                                                            @Override
+                                                            public void onCallbackList(ArrayList<String> list) {
+
+                                                            }
+
+                                                            @Override
+                                                            public void onCallbackListstring(String[][] data) {
+
+                                                            }
+
+                                                            @Override
+                                                            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                                            }
+                                                        });
+                                                    }
+
+                                                    @Override
+                                                    public void onCallbacknumber(int i) {
+
+                                                    }
+
+                                                    @Override
+                                                    public void onCallbackList(ArrayList<String> list) {
+
+                                                    }
+
+                                                    @Override
+                                                    public void onCallbackListstring(String[][] data) {
+
+                                                    }
+
+                                                    @Override
+                                                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                                    }
+                                                });
+                                            }
+
+                                            @Override
+                                            public void onCallbacknumber(int i) {
+
+                                            }
+
+                                            @Override
+                                            public void onCallbackList(ArrayList<String> list) {
+
+                                            }
+
+                                            @Override
+                                            public void onCallbackListstring(String[][] data) {
+
+                                            }
+
+                                            @Override
+                                            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                            }
+                                        });
+
+                                    }
+
+                                    @Override
+                                    public void onCallbacknumber(int i) {
+
+                                    }
+
+                                    @Override
+                                    public void onCallbackList(ArrayList<String> list) {
+
+                                    }
+
+                                    @Override
+                                    public void onCallbackListstring(String[][] data) {
+
+                                    }
+
+                                    @Override
+                                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onCallbacknumber(int i) {
+
+                            }
+
+                            @Override
+                            public void onCallbackList(ArrayList<String> list) {
+
+                            }
+
+                            @Override
+                            public void onCallbackListstring(String[][] data) {
+
+                            }
+
+                            @Override
+                            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onCallbacknumber(int i) {
+
+                    }
+
+                    @Override
+                    public void onCallbackList(ArrayList<String> list) {
+
+                    }
+
+                    @Override
+                    public void onCallbackListstring(String[][] data) {
+
+                    }
+
+                    @Override
+                    public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onCallbacknumber(int i) {
+
+            }
+
+            @Override
+            public void onCallbackList(ArrayList<String> list) {
+
+            }
+
+            @Override
+            public void onCallbackListstring(String[][] data) {
+
+            }
+
+            @Override
+            public void onCallbacklistdiet(String[][] data, food[][] foods) {
+
+            }
+        });
 
 
-        createpdf();
         //shareFile(this,"/storage/emulated/0/report.pdf");
     }
 
@@ -160,17 +693,42 @@ public class exportdata extends AppCompatActivity {
         // create a page description
         PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(595, 842, 1).create();
 
+        String total= user_information+goal+symptoms+diet+px+mentalactivity+physicalactivity;
+        String[] lines = total.split("\r\n");
+        boolean isfull=false;
+        PdfDocument.Page page=document.startPage(pageInfo);
+        int a=0;
+        Paint title=new Paint();
+        int i=0;
+        while(a<lines.length)
+        {
+
+            Canvas canvas = page.getCanvas();
+            if (!isfull){
+                canvas.drawText(lines[a], 100, 80+20*i, title);
+                a++;
+                i++;
+                if (80+i*20>=820)
+                {
+                    i=0;
+                    isfull=true;
+                }
+            }else{
+                document.finishPage(page);
+                page=document.startPage(pageInfo);
+                isfull=false;
+            }
+
+        }
+        document.finishPage(page);
         // start a page
-        PdfDocument.Page page = document.startPage(pageInfo);
+
 
         // draw something on the page
-        Paint title=new Paint();
-        Canvas canvas = page.getCanvas();
 
-        canvas.drawText("This is a test page", 209, 100, title);
-        canvas.drawText("Test", 209, 80, title);
+
         // finish the page
-        document.finishPage(page);
+
 
         // add more pages
 
@@ -191,6 +749,7 @@ public class exportdata extends AppCompatActivity {
 
         // close the document
         document.close();
+        shareFile(this,"/storage/emulated/0/report.pdf");
     }
 
 
