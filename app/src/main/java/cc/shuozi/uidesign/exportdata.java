@@ -87,7 +87,8 @@ public class exportdata extends AppCompatActivity {
                                 if ("Symptom".equals(doc.getString("type"))) {
                                     temp = Calendar.getInstance();
                                     temp.set(Integer.parseInt(doc.get("year").toString()), Integer.parseInt(doc.get("month").toString()), Integer.parseInt(doc.get("day").toString()));
-                                    if (!temp.after(begin) && !temp.before(end)) {
+
+                                    if (temp.getTimeInMillis()>begin.getTimeInMillis() && temp.getTimeInMillis()<end.getTimeInMillis()) {
                                         symptoms=symptoms+String.valueOf(String.valueOf(doc.get("month"))+"/"+String.valueOf(doc.get("day"))+"/"+doc.get("year"))
                                                 +" "+doc.get("hour")+":"+doc.get("minute")
                                                 +"\r\n"+"Note:"+"\r\n";
@@ -142,7 +143,8 @@ public class exportdata extends AppCompatActivity {
                                 if ("Goal".equals(doc.getString("type"))) {
                                     temp = Calendar.getInstance();
                                     temp.set(Integer.parseInt(doc.get("year").toString()), Integer.parseInt(doc.get("month").toString()), Integer.parseInt(doc.get("day").toString()));
-                                    if (!temp.after(begin) && !temp.before(end)) {
+
+                                    if (temp.getTimeInMillis()>begin.getTimeInMillis() && temp.getTimeInMillis()<end.getTimeInMillis()) {
                                         goal=goal+String.valueOf(String.valueOf(doc.get("month"))+"/"+String.valueOf(doc.get("day"))+"/"+doc.get("year"))
                                                 +" "+doc.get("hour")+":"+doc.get("minute")
                                                 +"\r\n"+"Note:"+"\r\n";
@@ -197,7 +199,7 @@ public class exportdata extends AppCompatActivity {
                                 temp=Calendar.getInstance();
                                 temp.set(Integer.parseInt(doc.get("Event year").toString()), Integer.parseInt(doc.get("Event month").toString()), Integer.parseInt( doc.get("Event day").toString()));
 
-                                if (!temp.after(begin) && !temp.before(end)) {
+                                if (temp.getTimeInMillis()>begin.getTimeInMillis() && temp.getTimeInMillis()<end.getTimeInMillis()) {
 
                                     px=px+"Prescription:"+"Time:"+String.valueOf(String.valueOf(doc.get("Event month"))+"/"+String.valueOf(doc.get("Event day"))+"/"+doc.get("Event year"))
                                             +" "+doc.get("Event hour")+":"+doc.get("Event minute") +"\r\n"+doc.getString("Event note")+"\r\n";
@@ -239,7 +241,7 @@ public class exportdata extends AppCompatActivity {
                                 temp=Calendar.getInstance();
                                 temp.set(Integer.parseInt(doc.get("Event start year").toString()), Integer.parseInt(doc.get("Event start month").toString()), Integer.parseInt( doc.get("Event start day").toString()));
 
-                                if (!temp.after(begin) && !temp.before(end)) {
+                                if (temp.getTimeInMillis()>begin.getTimeInMillis() && temp.getTimeInMillis()<end.getTimeInMillis()) {
 
                                     physicalactivity=physicalactivity+"Menal Activity:"+doc.getString("Event")+"\r\n"+"Start Time:"+String.valueOf(String.valueOf(doc.get("Event start month"))+"/"+String.valueOf(doc.get("Event start day"))+"/"+doc.get("Event start year"))
                                             +" "+doc.get("Event start hour")+":"+doc.get("Event start minute")
@@ -284,7 +286,7 @@ public class exportdata extends AppCompatActivity {
                                 temp=Calendar.getInstance();
                                 temp.set(Integer.parseInt(doc.get("Event start year").toString()), Integer.parseInt(doc.get("Event start month").toString()), Integer.parseInt( doc.get("Event start day").toString()));
 
-                                if (!temp.after(begin) && !temp.before(end)) {
+                                if (temp.getTimeInMillis()>begin.getTimeInMillis() && temp.getTimeInMillis()<end.getTimeInMillis()) {
 
                                     mentalactivity=mentalactivity+"Menal Activity:"+doc.getString("Event")+"\r\n"+"Start Time:"+String.valueOf(String.valueOf(doc.get("Event start month"))+"/"+String.valueOf(doc.get("Event start day"))+"/"+doc.get("Event start year"))
                                             +" "+doc.get("Event start hour")+":"+doc.get("Event start minute")
@@ -330,7 +332,7 @@ public class exportdata extends AppCompatActivity {
                             for(DocumentSnapshot doc : task.getResult()) {
                                 temp=Calendar.getInstance();
                                 temp.set(Integer.parseInt(doc.get("Diet year").toString()), Integer.parseInt(doc.get("Diet month").toString()), Integer.parseInt( doc.get("Diet day").toString()));
-                                if (!temp.after(begin) && !temp.before(end)) {
+                                if (temp.getTimeInMillis()>begin.getTimeInMillis() && temp.getTimeInMillis()<end.getTimeInMillis()) {
                                     diet=diet+String.valueOf(String.valueOf(doc.get("Diet month"))+"/"+String.valueOf(doc.get("Diet day"))+"/"+doc.get("Diet year"))
                                     +"\r\n"+doc.getString("Diet type")+"\r\n"+"Food:"+"\r\n";
                                     for (int b = 0;b>=0;b++) {
@@ -472,7 +474,7 @@ public class exportdata extends AppCompatActivity {
         begin.set(start_year,start_month,start_day,0,0);
         timestampstart=begin.getTimeInMillis();
         end=Calendar.getInstance();
-        begin.set(end_year,end_month,end_day,23,59);
+        end.set(end_year,end_month,end_day,23,59);
         timestampend=end.getTimeInMillis();
 
 
@@ -776,9 +778,9 @@ public class exportdata extends AppCompatActivity {
                 boolean readStorage = grantResults[1] == PackageManager.PERMISSION_GRANTED;
 
                 if (writeStorage && readStorage) {
-                    Toast.makeText(this, "Permission Granted..", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, "Permission Granted..", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "Permission Denined.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, "Permission Denined.", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }
