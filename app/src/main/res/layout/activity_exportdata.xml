@@ -51,7 +51,56 @@
                 android:editable="false"
                 android:ems="10"
                 android:inputType="date" />
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Output the part you want" />
+
+        <CheckBox
+            android:id="@+id/goal_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Goal" />
+
+        <CheckBox
+            android:id="@+id/sym_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Symptoms" />
+
+        <CheckBox
+            android:id="@+id/diet_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Diet" />
+
+        <CheckBox
+            android:id="@+id/px_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Px" />
+
+        <CheckBox
+            android:id="@+id/mental_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Mental Activity" />
+
+        <CheckBox
+            android:id="@+id/physical_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Physical Activity" />
 
         <Button
             android:id="@+id/export_data_button"

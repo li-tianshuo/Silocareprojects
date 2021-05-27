@@ -23,6 +23,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -65,6 +66,12 @@ public class exportdata extends AppCompatActivity {
     private String px;
     private String user_information;
     private FirebaseAuth mAuth;
+    private boolean goal_check=false;
+    private boolean diet_check=false;
+    private boolean px_check=false;
+    private boolean sym_check=false;
+    private boolean mental_check=false;
+    private boolean physical_check=false;
     private int i;
 
     private static final int PERMISSION_REQUEST_CODE = 200;
@@ -225,7 +232,7 @@ public class exportdata extends AppCompatActivity {
     private void getpa(final callback oncallbackString)
     {
         i=0;
-        physicalactivity="Physical Ativity Record:"+"\r\n";
+        physicalactivity="Physical Activity Record:"+"\r\n";
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -270,7 +277,7 @@ public class exportdata extends AppCompatActivity {
     private void getma(final callback oncallbackString)
     {
         i=0;
-        mentalactivity="Mentala Ativity Record:"+"\r\n";
+        mentalactivity="Mental Activity Record:"+"\r\n";
         mAuth= FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -407,6 +414,14 @@ public class exportdata extends AppCompatActivity {
         final EditText  export_start_time_selection=findViewById(R.id.export_start_time_selection);
         final EditText  export_end_time_selection=findViewById(R.id.export_end_time_selection);
 
+        final CheckBox goal_checkbox=findViewById(R.id.goal_checkbox);
+        final CheckBox px_checkbox=findViewById(R.id.px_checkbox);
+        final CheckBox sym_checkbox=findViewById(R.id.sym_checkbox);
+        final CheckBox mental_checkbox=findViewById(R.id.mental_checkbox);
+        final CheckBox phy_checkbox=findViewById(R.id.physical_checkbox);
+        final CheckBox diet_checkbox=findViewById(R.id.diet_checkbox);
+
+
         Button export_data_button=findViewById(R.id.export_data_button);
 
         final Calendar calendar=Calendar.getInstance();
@@ -462,6 +477,13 @@ public class exportdata extends AppCompatActivity {
         export_data_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                goal_check=goal_checkbox.isChecked();
+                diet_check=diet_checkbox.isChecked();
+                sym_check=sym_checkbox.isChecked();
+                mental_check=mental_checkbox.isChecked();
+                physical_check=phy_checkbox.isChecked();
+                px_check=px_checkbox.isChecked();
+
                 checkdate();
 
 
@@ -695,7 +717,27 @@ public class exportdata extends AppCompatActivity {
         // create a page description
         PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(595, 842, 1).create();
 
-        String total= user_information+goal+symptoms+diet+px+mentalactivity+physicalactivity;
+        String total= user_information;
+
+        if (goal_check) {
+            total = total + goal;
+        }
+        if (sym_check) {
+            total = total + symptoms;
+        }
+        if (diet_check) {
+            total = total + diet;
+        }
+        if (px_check) {
+            total = total + px;
+        }
+        if (mental_check) {
+            total = total + mentalactivity;
+        }
+        if (physical_check) {
+            total = total + physicalactivity;
+        }
+
         String[] lines = total.split("\r\n");
         boolean isfull=false;
         PdfDocument.Page page=document.startPage(pageInfo);
@@ -736,7 +778,7 @@ public class exportdata extends AppCompatActivity {
 
         // write the document content
         if (checkPermission()) {
-            Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
         } else {
             requestPermission();
         }
