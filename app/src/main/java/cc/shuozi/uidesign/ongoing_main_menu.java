@@ -8,18 +8,23 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.File;
 
 public class ongoing_main_menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
+    private ImageView avator_ongoing;
     private void initdrawer() {
         drawerLayout=findViewById(R.id.drawerlayout_main);
         toolbar=findViewById(R.id.toolbar_main);
@@ -119,7 +124,12 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
         ImageButton ongoing_ma=findViewById(R.id.ongoing_ma);
         ImageButton ongoing_diet=findViewById(R.id.ongoing_diet);
         Button ongoing_export=findViewById(R.id.ongoing_export);
-
+        avator_ongoing= findViewById(R.id.avator_ongoing_main);
+        if (avatorExists())
+        {
+            Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
+            avator_ongoing.setImageURI(imgUri);
+        }
         ongoing_ma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,5 +175,24 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
             }
         });
     }
+    public boolean avatorExists()
+    {
+        try
+        {
+            File f=new File("avator.jpg");
+            if(!f.exists())
+            {
+                return true;
+            }
+
+        }
+        catch (Exception e)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 
 }

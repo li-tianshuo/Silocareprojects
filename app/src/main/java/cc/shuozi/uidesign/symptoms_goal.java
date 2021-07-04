@@ -9,14 +9,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.File;
 
 public class symptoms_goal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
@@ -24,6 +28,7 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
     private ViewPager2 viewPager;
     private ActionBarDrawerToggle drawerToggle;
     private BottomNavigationView bottomNavigationView;
+    private ImageView avator_symtoms;
     private void initdrawer() {
         drawerLayout=findViewById(R.id.drawer_goals);
         toolbar=findViewById(R.id.toolbar_symptoms_goals);
@@ -76,7 +81,12 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symptoms_goal);
         NavigationView navigationView=findViewById(R.id.main_side);
-
+        avator_symtoms= findViewById(R.id.avatar__symptoms_goals);
+        if (avatorExists())
+        {
+            Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
+            avator_symtoms.setImageURI(imgUri);
+        }
         viewPager=findViewById(R.id.goals_viewpage);
         bottomNavigationView=findViewById(R.id.goals_bottom_tab);
         initdrawer();
@@ -158,4 +168,23 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
         }
         return false;
     }
+    public boolean avatorExists()
+    {
+        try
+        {
+            File f=new File("avator.jpg");
+            if(!f.exists())
+            {
+                return true;
+            }
+
+        }
+        catch (Exception e)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 }

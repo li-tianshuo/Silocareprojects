@@ -9,13 +9,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.File;
 
 public class decision_making extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawerLayout;
@@ -23,7 +27,7 @@ public class decision_making extends AppCompatActivity implements NavigationView
     private ActionBarDrawerToggle drawerToggle;
     private ViewPager2 viewPager;
     private BottomNavigationView bottomNavigationView;
-
+    private ImageView  avator_decision_making_9;
     private void initdrawer() {
         drawerLayout=findViewById(R.id.drawerlayout_decision_making);
         toolbar=findViewById(R.id.toolbar_decision_making);
@@ -78,6 +82,15 @@ public class decision_making extends AppCompatActivity implements NavigationView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decision_making);
         NavigationView navigationView=findViewById(R.id.main_side);
+
+        avator_decision_making_9= findViewById(R.id.avatar_decision_making_1);
+        if (avatorExists())
+        {
+            Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
+            avator_decision_making_9.setImageURI(imgUri);
+        }
+
+
         viewPager=findViewById(R.id.decison_viewpage);
         bottomNavigationView=findViewById(R.id.decision_making_bottom_menu);
         bottomNavigationView.setItemIconTintList(null);
@@ -180,4 +193,23 @@ public class decision_making extends AppCompatActivity implements NavigationView
         }
         return false;
     }
+    public boolean avatorExists()
+    {
+        try
+        {
+            File f=new File("avator.jpg");
+            if(!f.exists())
+            {
+                return true;
+            }
+
+        }
+        catch (Exception e)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 }

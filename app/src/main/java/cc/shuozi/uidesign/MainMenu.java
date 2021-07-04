@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,7 +57,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
-
+    private ImageView avator_main;
 
     public void getmessage()
     {
@@ -251,6 +253,12 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         implementation_button=findViewById(R.id.implementaion);
         setting_button=findViewById(R.id.setting);
         username=findViewById(R.id.textView);
+        avator_main= findViewById(R.id.avator_main);
+        if (avatorExists())
+        {
+            Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
+            avator_main.setImageURI(imgUri);
+        }
         initdrawer();
         Intent intent = getIntent();
 
@@ -326,6 +334,24 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         navigationView.setNavigationItemSelectedListener(this);
 
 
+    }
+    public boolean avatorExists()
+    {
+        try
+        {
+            File f=new File("avator.jpg");
+            if(!f.exists())
+            {
+                return true;
+            }
+
+        }
+        catch (Exception e)
+        {
+            return true;
+        }
+
+        return false;
     }
 
 

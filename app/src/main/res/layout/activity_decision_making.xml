@@ -30,7 +30,7 @@
                 app:title="Decision Making">
 
                 <ImageView
-                    android:id="@+id/avatar_decision_making"
+                    android:id="@+id/avatar_decision_making_1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="right|center_vertical"

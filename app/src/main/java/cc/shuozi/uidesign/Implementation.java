@@ -8,10 +8,12 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +25,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -40,6 +43,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
     private String[][] information;
     private String[][] padata;
     private String[][] madata;
+    private ImageView avator_implmentation;
     private void getmanum(final callback oncallbackString)
     {
         a=0;
@@ -382,6 +386,14 @@ public class Implementation extends AppCompatActivity implements NavigationView.
         NavigationView navigationView=findViewById(R.id.main_side);
         initdrawer();
         navigationView.setNavigationItemSelectedListener(this);
+
+        avator_implmentation= findViewById(R.id.avatar_implentation);
+        if (avatorExists())
+        {
+            Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
+            avator_implmentation.setImageURI(imgUri);
+        }
+
         final ListView list=findViewById(R.id.list_view_implementation);
         my_adapter_imp sc = new my_adapter_imp(this, data);
         list.setAdapter(sc);
@@ -679,4 +691,23 @@ public class Implementation extends AppCompatActivity implements NavigationView.
         }
         return false;
     }
+    public boolean avatorExists()
+    {
+        try
+        {
+            File f=new File("avator.jpg");
+            if(!f.exists())
+            {
+                return true;
+            }
+
+        }
+        catch (Exception e)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 }

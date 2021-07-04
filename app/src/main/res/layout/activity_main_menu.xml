@@ -69,7 +69,7 @@
             android:weightSum="1">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/avator_main"
                 android:layout_width="match_parent"
                 android:layout_height="143dp"
                 android:layout_weight="0.85"

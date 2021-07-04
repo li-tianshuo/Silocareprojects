@@ -17,16 +17,22 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -39,6 +45,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +63,8 @@ public class information extends AppCompatActivity implements NavigationView.OnN
     private ActionBarDrawerToggle drawerToggle;
     private ViewPager2 viewPager;
     private BottomNavigationView bottomNavigationView;
+    private ImageView avator_information_1;
+    private ImageView avator_information_2;
 
     private void initdrawer() {
         drawerLayout=findViewById(R.id.information_drawer);
@@ -142,6 +151,24 @@ public class information extends AppCompatActivity implements NavigationView.OnN
         user_name=findViewById(R.id.name);
         tablayout = findViewById(R.id.tablayout);
         frameLayout=(FrameLayout)findViewById(R.id.frameLayout);
+        avator_information_1 = findViewById(R.id.avator_information);
+        avator_information_2= findViewById(R.id.avatar_decision_making);
+        if (avatorExists())
+        {
+            Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
+            avator_information_1.setImageURI(imgUri);
+            avator_information_2.setImageURI(imgUri);
+        }
+        /*
+        avator_information.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopMenu(v);
+            }
+        });
+*/
+
+
         fragment = new ListFragment();
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -205,7 +232,33 @@ public class information extends AppCompatActivity implements NavigationView.OnN
         });
 
     }
+    /*
+    private void showPopMenu(View v) {
 
+        PopupMenu menu = new PopupMenu(getApplicationContext(),v);
+
+        menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.s_from_c:
+                        Toast.makeText(getApplicationContext(), "Select from camera", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.s_from_g:
+                        Toast.makeText(getApplicationContext(), "Select from gallery", Toast.LENGTH_SHORT).show();
+                        break;
+
+                }
+
+                menu.getMenuInflater().inflate(R.menu.avator,menu.getMenu());
+                menu.show();
+                return false;
+            }
+        });
+
+    }
+*/
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId())
@@ -243,4 +296,24 @@ public class information extends AppCompatActivity implements NavigationView.OnN
         }
         return false;
     }
+
+    public boolean avatorExists()
+    {
+        try
+        {
+            File f=new File("avator.jpg");
+            if(!f.exists())
+            {
+                return true;
+            }
+
+        }
+        catch (Exception e)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 }

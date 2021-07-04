@@ -42,7 +42,7 @@
                         app:title="Main Menu">
 
                         <ImageView
-                            android:id="@+id/imageView7"
+                            android:id="@+id/avator_ongoing_main"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="right|center_vertical"
