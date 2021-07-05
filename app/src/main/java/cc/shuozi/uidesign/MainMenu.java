@@ -309,6 +309,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, Setting.class));
+                finish();
             }
         });
 
