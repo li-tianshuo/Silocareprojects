@@ -3,6 +3,7 @@ package cc.shuozi.uidesign;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.Editable;
@@ -103,9 +104,18 @@ public class signup extends AppCompatActivity {
     {
         if (user!=null)
         {
-            Intent intent=new Intent(signup.this, MainMenu.class);
-            intent.putExtra("uid",user.getUid());
+            SharedPreferences sharedPreferences = getSharedPreferences("a", MODE_PRIVATE);
+            boolean b = sharedPreferences.getBoolean("key", false);
+            Intent intent;
+            if (b)
+            {
+                intent = new Intent(signup.this, ongoing_main_menu.class);
+            }else
+            {
+                intent = new Intent(signup.this, onboarding.class);
+            }
             startActivity(intent);
+            finish();
         }
     }
     @Override

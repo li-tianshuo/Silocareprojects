@@ -1,10 +1,12 @@
 package cc.shuozi.uidesign;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -143,18 +145,32 @@ public class MainActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+        /*
         if(currentUser!=null){
-            Intent intent = new Intent(getApplicationContext(),MainMenu.class);
+            Intent intent = new Intent(getApplicationContext(),onboarding.class);
             startActivity(intent);
 
         }
+        */
+
     }
 
     private void updateUI(FirebaseUser currentUser) {
         if (currentUser!=null) {
-            Intent intent = new Intent(MainActivity.this, MainMenu.class);
+            SharedPreferences sharedPreferences = getSharedPreferences("a", MODE_PRIVATE);
+            boolean b = sharedPreferences.getBoolean("key", false);
+            Intent intent;
+            Log.e("b", String.valueOf(b));
+            if (b)
+            {
+                intent = new Intent(MainActivity.this, ongoing_main_menu.class);
+            }else
+            {
+                intent = new Intent(MainActivity.this, onboarding.class);
+            }
             intent.putExtra("uid", currentUser.getUid());
             startActivity(intent);
+
         }
     }
 

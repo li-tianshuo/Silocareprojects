@@ -172,7 +172,7 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
     {
         try
         {
-            File f=new File("avator.jpg");
+            File f=new File("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             if(!f.exists())
             {
                 return true;

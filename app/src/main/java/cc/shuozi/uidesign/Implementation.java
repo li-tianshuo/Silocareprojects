@@ -695,7 +695,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
     {
         try
         {
-            File f=new File("avator.jpg");
+            File f=new File("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             if(!f.exists())
             {
                 return true;

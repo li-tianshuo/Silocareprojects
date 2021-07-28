@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -125,6 +126,7 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
         ImageButton ongoing_diet=findViewById(R.id.ongoing_diet);
         Button ongoing_export=findViewById(R.id.ongoing_export);
         avator_ongoing= findViewById(R.id.avator_ongoing_main);
+        Log.e("!",String.valueOf(avatorExists()));
         if (avatorExists())
         {
             Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
@@ -179,7 +181,7 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
     {
         try
         {
-            File f=new File("avator.jpg");
+            File f=new File("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             if(!f.exists())
             {
                 return true;

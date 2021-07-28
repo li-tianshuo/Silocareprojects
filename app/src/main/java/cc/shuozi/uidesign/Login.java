@@ -128,9 +128,20 @@ public class Login extends AppCompatActivity {
     private void updateUI(FirebaseUser user) {
         if (user!=null)
         {
-            Intent intent=new Intent(Login.this, MainMenu.class);
-            intent.putExtra("uid",user.getUid());
+            SharedPreferences sharedPreferences = getSharedPreferences("a", MODE_PRIVATE);
+            boolean b = sharedPreferences.getBoolean("key", false);
+            Log.e("b", String.valueOf(b));
+            Intent intent;
+            if (b)
+            {
+                intent = new Intent(Login.this, ongoing_main_menu.class);
+            }else
+            {
+                intent = new Intent(Login.this, onboarding.class);
+            }
             startActivity(intent);
+            finish();
+
         }
     }
 }

@@ -309,7 +309,6 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, Setting.class));
-                finish();
             }
         });
 
@@ -340,7 +339,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     {
         try
         {
-            File f=new File("avator.jpg");
+            File f=new File("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             if(!f.exists())
             {
                 return true;

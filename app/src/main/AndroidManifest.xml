@@ -59,6 +59,7 @@
         <activity android:name=".signup" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".onboarding" android:noHistory="true"/>
         <activity android:name=".Splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
