@@ -58,6 +58,7 @@
         <activity android:name=".DataBase" />
         <activity android:name=".signup" />
         <activity android:name=".Login" />
+        <activity android:name=".data_education" />
         <activity android:name=".MainActivity" />
         <activity android:name=".onboarding" android:noHistory="true"/>
         <activity android:name=".Splash_screen">

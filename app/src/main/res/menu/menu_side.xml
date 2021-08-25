@@ -18,6 +18,9 @@
         android:id="@+id/goal_menu"
         android:title="Symptoms and Goals" />
     <item
+        android:id="@+id/data_e_menu"
+        android:title="Data and Education" />
+    <item
         android:id="@+id/side_setting"
         android:title="Setting" />
 </menu>

@@ -65,7 +65,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="15dp"
                 android:background="#00000000" />
 
             <ImageButton
@@ -89,7 +89,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="15dp"
                 android:background="#00000000" />
 
             <ImageButton
@@ -101,7 +101,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="15dp"
                 android:background="#00000000" />
 
             <ImageButton
@@ -114,7 +114,7 @@
             <View
                 android:id="@+id/view7"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="15dp"
                 android:background="#00000000" />
 
 
@@ -123,6 +123,19 @@
                 android:layout_width="350dp"
                 android:layout_height="75dp"
                 android:text="Export Page" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="#00000000" />
+
+
+            <Button
+                android:id="@+id/data_education"
+                android:layout_width="350dp"
+                android:layout_height="75dp"
+                android:text="Data Education" />
 
         </LinearLayout>
     </LinearLayout>

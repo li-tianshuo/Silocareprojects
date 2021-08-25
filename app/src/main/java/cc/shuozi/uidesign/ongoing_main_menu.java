@@ -104,9 +104,14 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
                 startActivity(main5);
                 finish();
                 return true;
-            case R.id.information_menu:
-                Intent main6=new Intent(ongoing_main_menu.this, information.class);
+            case R.id.data_e_menu:
+                Intent main6=new Intent(ongoing_main_menu.this, data_education.class);
                 startActivity(main6);
+                finish();
+                return true;
+            case R.id.information_menu:
+                Intent main7=new Intent(ongoing_main_menu.this, information.class);
+                startActivity(main7);
                 finish();
                 return true;
         }
@@ -125,6 +130,7 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
         ImageButton ongoing_ma=findViewById(R.id.ongoing_ma);
         ImageButton ongoing_diet=findViewById(R.id.ongoing_diet);
         Button ongoing_export=findViewById(R.id.ongoing_export);
+        Button data_education=findViewById(R.id.data_education);
         avator_ongoing= findViewById(R.id.avator_ongoing_main);
         Log.e("!",String.valueOf(avatorExists()));
         if (avatorExists())
@@ -173,6 +179,13 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
             public void onClick(View v) {
                 Intent intent = new Intent(ongoing_main_menu.this,exportdata.class);
                 intent.putExtra("mode",2);
+                startActivity(intent);
+            }
+        });
+        data_education.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ongoing_main_menu.this,data_education.class);
                 startActivity(intent);
             }
         });
