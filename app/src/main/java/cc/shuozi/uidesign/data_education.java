@@ -114,7 +114,7 @@ public class data_education extends AppCompatActivity implements NavigationView.
                 finish();
                 return true;
             case R.id.data_e_menu:
-                Intent main6=new Intent(data_education.this, data_education.class);
+                Intent main6=new Intent(data_education.this, health_video.class);
                 startActivity(main6);
                 finish();
                 return true;

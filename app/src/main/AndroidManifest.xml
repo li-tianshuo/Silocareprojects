@@ -25,6 +25,7 @@
         <activity android:name=".diet_information" />
         <activity android:name=".event_selection" />
 
+
         <receiver
             android:name=".RingReceived"
             android:process=":remote">
@@ -59,6 +60,11 @@
         <activity android:name=".signup" />
         <activity android:name=".Login" />
         <activity android:name=".data_education" />
+        <activity android:name=".health_video" />
+        <activity android:name=".watch_video"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize"
+            />
         <activity android:name=".MainActivity" />
         <activity android:name=".onboarding" android:noHistory="true"/>
         <activity android:name=".Splash_screen">
