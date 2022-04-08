@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -58,6 +61,8 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
     private ImageView avator_main;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter customAdapter;
 
     public void getmessage()
     {
@@ -161,6 +166,18 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     private void initdrawer() {
         drawerLayout=findViewById(R.id.drawerlayout);
         toolbar=findViewById(R.id.toolbar);
+        /*
+        recyclerView=(RecyclerView)findViewById(R.id.animated_list);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        String[] data={"Main Menu", "Information"};
+        customAdapter=new CustomAdapter();
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setAdapter(customAdapter);
+
+         */
+        //recyclerView.setItemAnimator(new DefaultItemAnimator());
+        //recyclerView.addItemDecoration(mDividerItemDecoration);
+
 
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
@@ -212,17 +229,17 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         switch(item.getItemId())
         {
             case R.id.side_mainmenu:
-                Intent main1=new Intent(MainMenu.this, ongoing_main_menu.class);
+                Intent main1=new Intent(MainMenu.this, MainMenu.class);
                 startActivity(main1);
                 finish();
                 return true;
             case R.id.side_setting:
-                Intent main2=new Intent(MainMenu.this, MainMenu.class);
+                Intent main2=new Intent(MainMenu.this, Setting.class);
                 startActivity(main2);
                 finish();
                 return true;
             case R.id.side_implementation:
-                Intent main3=new Intent(MainMenu.this, Implementation.class);
+                Intent main3=new Intent(MainMenu.this, symptoms_goal.class);
                 startActivity(main3);
                 finish();
                 return true;
@@ -231,11 +248,14 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(main4);
                 finish();
                 return true;
+                /*
             case R.id.goal_menu:
                 Intent main5=new Intent(MainMenu.this, symptoms_goal.class);
                 startActivity(main5);
                 finish();
                 return true;
+
+                 */
             case R.id.information_menu:
                 Intent main6=new Intent(MainMenu.this, information.class);
                 startActivity(main6);
@@ -254,12 +274,14 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         setting_button=findViewById(R.id.setting);
         username=findViewById(R.id.textView);
         avator_main= findViewById(R.id.avator_main);
+        Log.e("!!", String.valueOf(avatorExists()));
         if (avatorExists())
         {
             Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             avator_main.setImageURI(imgUri);
         }
         initdrawer();
+
         Intent intent = getIntent();
 
         if (intent != null) {
@@ -342,7 +364,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
             File f=new File("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             if(!f.exists())
             {
-                return true;
+                return false;
             }
 
         }

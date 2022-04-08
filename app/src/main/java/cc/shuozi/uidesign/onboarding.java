@@ -41,7 +41,7 @@ public class onboarding extends FragmentActivity {
             boolean b = sharedPreferences.getBoolean("key", false);
             if (b)
             {
-                Intent intent = new Intent(onboarding.this, ongoing_main_menu.class);
+                Intent intent = new Intent(onboarding.this, MainMenu.class);
                 startActivity(intent);
                 finish();
             }

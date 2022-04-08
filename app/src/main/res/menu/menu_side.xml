@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
     <item
         android:id="@+id/side_mainmenu"
-        android:title="Main Menu" ></item>
+        android:icon="@mipmap/icons8_settings_32"
+        android:title="Main Menu"
+        app:showAsAction="always|withText"></item>
     <item
         android:id="@+id/information_menu"
-        android:title="Information" />
+        android:icon="@mipmap/icons8_settings_32"
+        android:title="Information"
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/side_implementation"
-        android:title="Implementation" />
+        android:icon="@mipmap/icons8_settings_32"
+        android:title="Implementation"
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/side_decision"
-        android:title="Decision Making" />
+        android:icon="@mipmap/icons8_settings_32"
+        android:title="Decision Making"
+        app:showAsAction="always|withText" />
+    <!--
     <item
         android:id="@+id/goal_menu"
-        android:title="Symptoms and Goals" />
+        android:icon="@mipmap/icons8_settings_32"
+        android:title="Symptoms and Goals"
+        app:showAsAction="always|withText" />
     <item
         android:id="@+id/data_e_menu"
-        android:title="Data and Education" />
+        android:icon="@mipmap/icons8_settings_32"
+        android:title="Data and Education"
+        app:showAsAction="always|withText" />
+        -->
     <item
         android:id="@+id/side_setting"
-        android:title="Setting" />
+        android:icon="@mipmap/icons8_settings_32"
+        android:title="Setting"
+        app:showAsAction="always|withText" />
 </menu>

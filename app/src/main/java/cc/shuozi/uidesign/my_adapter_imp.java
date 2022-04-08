@@ -68,6 +68,12 @@ public class my_adapter_imp extends BaseAdapter {
                     Intent intent = new Intent(parent.getContext(),decision_making.class);
                     intent.putExtra("mode",3);
                     parent.getContext().startActivity(intent);
+                }else if("Health Feed".equals(text1.getText())) {
+                    Intent intent = new Intent(parent.getContext(),rss_main.class);
+                    parent.getContext().startActivity(intent);
+                }else if("Health Video".equals(text1.getText())) {
+                    Intent intent = new Intent(parent.getContext(),health_video.class);
+                    parent.getContext().startActivity(intent);
                 }
             }
         });
@@ -89,6 +95,12 @@ public class my_adapter_imp extends BaseAdapter {
                 }else if ("Physical Activity".equals(text1.getText())) {
                     Intent intent = new Intent(parent.getContext(),event_selection.class);
                     intent.putExtra("status",2);
+                    parent.getContext().startActivity(intent);
+                }else if("Health Feed".equals(text1.getText())) {
+                    Intent intent = new Intent(parent.getContext(),rss_main.class);
+                    parent.getContext().startActivity(intent);
+                }else if("Health Video".equals(text1.getText())) {
+                    Intent intent = new Intent(parent.getContext(),health_video.class);
                     parent.getContext().startActivity(intent);
                 }
             }

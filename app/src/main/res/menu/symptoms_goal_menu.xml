@@ -2,6 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/summary_item"
+        android:title="Summary" />
+    <item
         android:id="@+id/symptoms_item"
         android:icon="@drawable/symptoms_1"
         android:title="Symptoms" />

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
 
 import android.app.DatePickerDialog;
 import android.content.ActivityNotFoundException;
@@ -21,7 +22,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
@@ -46,7 +49,7 @@ import java.util.ArrayList;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-public class exportdata extends AppCompatActivity {
+public class exportdata extends Fragment {
     private int start_year;
     private int start_month;
     private int start_day;
@@ -404,25 +407,27 @@ public class exportdata extends AppCompatActivity {
 
     }
 
-
+    public exportdata() {
+        // Required empty public constructor
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exportdata);
-        TextView export_start_time=findViewById(R.id.export_start_time);
-        final TextView export_end_time=findViewById(R.id.export_end_time);
-        final EditText  export_start_time_selection=findViewById(R.id.export_start_time_selection);
-        final EditText  export_end_time_selection=findViewById(R.id.export_end_time_selection);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                Bundle savedInstanceState) {
+        final View rootView = inflater.inflate(R.layout.activity_exportdata,container, false);
+        TextView export_start_time=rootView.findViewById(R.id.export_start_time);
+        final TextView export_end_time=rootView.findViewById(R.id.export_end_time);
+        final EditText  export_start_time_selection=rootView.findViewById(R.id.export_start_time_selection);
+        final EditText  export_end_time_selection=rootView.findViewById(R.id.export_end_time_selection);
 
-        final CheckBox goal_checkbox=findViewById(R.id.goal_checkbox);
-        final CheckBox px_checkbox=findViewById(R.id.px_checkbox);
-        final CheckBox sym_checkbox=findViewById(R.id.sym_checkbox);
-        final CheckBox mental_checkbox=findViewById(R.id.mental_checkbox);
-        final CheckBox phy_checkbox=findViewById(R.id.physical_checkbox);
-        final CheckBox diet_checkbox=findViewById(R.id.diet_checkbox);
+        final CheckBox goal_checkbox=rootView.findViewById(R.id.goal_checkbox);
+        final CheckBox px_checkbox=rootView.findViewById(R.id.px_checkbox);
+        final CheckBox sym_checkbox=rootView.findViewById(R.id.sym_checkbox);
+        final CheckBox mental_checkbox=rootView.findViewById(R.id.mental_checkbox);
+        final CheckBox phy_checkbox=rootView.findViewById(R.id.physical_checkbox);
+        final CheckBox diet_checkbox=rootView.findViewById(R.id.diet_checkbox);
 
 
-        Button export_data_button=findViewById(R.id.export_data_button);
+        Button export_data_button=rootView.findViewById(R.id.export_data_button);
 
         final Calendar calendar=Calendar.getInstance();
         start_year= calendar.get(Calendar.YEAR);
@@ -443,7 +448,7 @@ public class exportdata extends AppCompatActivity {
         export_start_time_selection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(exportdata.this, new DatePickerDialog.OnDateSetListener() {
+                new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         exportdata.this.start_year=year;
@@ -459,7 +464,7 @@ public class exportdata extends AppCompatActivity {
         export_end_time_selection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(exportdata.this, new DatePickerDialog.OnDateSetListener() {
+                new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         exportdata.this.end_year=year;
@@ -489,6 +494,7 @@ public class exportdata extends AppCompatActivity {
 
             }
         });
+        return rootView;
     }
 
     private void checkdate() {
@@ -502,7 +508,7 @@ public class exportdata extends AppCompatActivity {
 
         if (timestampstart>timestampend)
         {
-            Toast.makeText(this, "Something wrong with this part...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Something wrong with this part...", Toast.LENGTH_SHORT).show();
         }else
         {
             getdata();
@@ -793,20 +799,20 @@ public class exportdata extends AppCompatActivity {
 
         // close the document
         document.close();
-        shareFile(this,"/storage/emulated/0/report.pdf");
+        shareFile(getActivity(),"/storage/emulated/0/report.pdf");
     }
 
 
     private boolean checkPermission() {
         // checking of permissions.
-        int permission1 = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
-        int permission2 = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+        int permission1 = ContextCompat.checkSelfPermission(getContext(), WRITE_EXTERNAL_STORAGE);
+        int permission2 = ContextCompat.checkSelfPermission(getContext(), READ_EXTERNAL_STORAGE);
         return permission1 == PackageManager.PERMISSION_GRANTED && permission2 == PackageManager.PERMISSION_GRANTED;
         }
 
         private void requestPermission() {
         // requesting permissions if not provided.
-        ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+        ActivityCompat.requestPermissions(getActivity(), new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
         }
 
         @Override
@@ -822,8 +828,8 @@ public class exportdata extends AppCompatActivity {
                 if (writeStorage && readStorage) {
                     //Toast.makeText(this, "Permission Granted..", Toast.LENGTH_SHORT).show();
                 } else {
-                    //Toast.makeText(this, "Permission Denined.", Toast.LENGTH_SHORT).show();
-                    finish();
+                    Toast.makeText(getActivity(), "Permission Denined.", Toast.LENGTH_SHORT).show();
+                    //rootView.finish();
                 }
             }
         }

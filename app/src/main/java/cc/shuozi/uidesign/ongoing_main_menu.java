@@ -1,11 +1,15 @@
 package cc.shuozi.uidesign;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -26,21 +30,45 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
     private ImageView avator_ongoing;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private CustomAdapter customAdapter;
     private void initdrawer() {
         drawerLayout=findViewById(R.id.drawerlayout_main);
         toolbar=findViewById(R.id.toolbar_main);
 
 
 
+
+
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
+
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
+
+                /*
+                recyclerView = (RecyclerView) findViewById(R.id.animated_list);
+                mLayoutManager = new LinearLayoutManager(drawerView.getContext(), LinearLayoutManager.VERTICAL, false);
+
+                customAdapter = new CustomAdapter();
+
+                recyclerView.setLayoutManager(mLayoutManager);
+                recyclerView.setAdapter(customAdapter);
+
+                 */
+                //recyclerView.addItemDecoration(new DividerItemDecoration(drawerView.getContext(), DividerItemDecoration.VERTICAL));
+
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
+                //customAdapter=new CustomAdapter(new String[]{""});
+                /*
+                recyclerView.setAdapter(null);
+                recyclerView.clearAnimation();
+                */
             }
 
             @Override
@@ -61,7 +89,6 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
 
 
         setSupportActionBar(toolbar);
-
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +117,7 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
                 finish();
                 return true;
             case R.id.side_implementation:
-                Intent main3=new Intent(ongoing_main_menu.this, Implementation.class);
+                Intent main3=new Intent(ongoing_main_menu.this, symptoms_goal.class);
                 startActivity(main3);
                 finish();
                 return true;
@@ -99,16 +126,19 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
                 startActivity(main4);
                 finish();
                 return true;
+                /*
             case R.id.goal_menu:
                 Intent main5=new Intent(ongoing_main_menu.this, symptoms_goal.class);
                 startActivity(main5);
                 finish();
                 return true;
             case R.id.data_e_menu:
-                Intent main6=new Intent(ongoing_main_menu.this, data_education.class);
+                Intent main6=new Intent(ongoing_main_menu.this, rss_main.class);
                 startActivity(main6);
                 finish();
                 return true;
+
+                 */
             case R.id.information_menu:
                 Intent main7=new Intent(ongoing_main_menu.this, information.class);
                 startActivity(main7);
@@ -125,6 +155,7 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
         NavigationView navigationView=findViewById(R.id.main_side);
         initdrawer();
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().getItem(0).setIcon(R.mipmap.icons8_settings_32);
         ImageButton ongoing_px=findViewById(R.id.ongoing_px);
         ImageButton ongoing_pa=findViewById(R.id.ongoing_pa);
         ImageButton ongoing_ma=findViewById(R.id.ongoing_ma);
@@ -190,6 +221,49 @@ public class ongoing_main_menu extends AppCompatActivity implements NavigationVi
             }
         });
     }
+    public void myItemClick(View view){
+        int position = recyclerView.getChildAdapterPosition(view);
+        switch(position)
+        {
+            case 0:
+                Intent main1=new Intent(ongoing_main_menu.this, ongoing_main_menu.class);
+                startActivity(main1);
+                finish();
+                break;
+            case 1:
+                Intent main7=new Intent(ongoing_main_menu.this, information.class);
+                startActivity(main7);
+                finish();
+                break;
+            case 2:
+                Intent main3=new Intent(ongoing_main_menu.this, Implementation.class);
+                startActivity(main3);
+                finish();
+                break;
+            case 3:
+                Intent main4=new Intent(ongoing_main_menu.this, decision_making.class);
+                startActivity(main4);
+                finish();
+                break;
+            case 4:
+                Intent main5=new Intent(ongoing_main_menu.this, symptoms_goal.class);
+                startActivity(main5);
+                finish();
+                break;
+            case 5:
+                Intent main6=new Intent(ongoing_main_menu.this, data_education.class);
+                startActivity(main6);
+                finish();
+                break;
+            case 6:
+                Intent main2=new Intent(ongoing_main_menu.this, MainMenu.class);
+                startActivity(main2);
+                finish();
+                break;
+
+        }
+    }
+
     public boolean avatorExists()
     {
         try

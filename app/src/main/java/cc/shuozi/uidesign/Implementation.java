@@ -6,13 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -30,12 +33,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Implementation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Implementation extends Fragment {//implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
-    private String[][] data={{"Px"," "},{"Diet"," "},{"Physical Activity"," "}, {"Mental Activity"," "}};
+    private String[][] data={{"Px"," "},{"Diet"," "},{"Physical Activity"," "}, {"Mental Activity"," "},{"Health Feed",""},{"Health Video",""}};
     private FirebaseAuth mAuth;
     private int i=0;
     private String[][] pxdata;
@@ -329,7 +332,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
                 });
     }
-
+/*
     private void initdrawer() {
         drawerLayout=findViewById(R.id.drawerlayout_implementation);
         toolbar=findViewById(R.id.toolbar_implementation);
@@ -379,24 +382,31 @@ public class Implementation extends AppCompatActivity implements NavigationView.
         });
 
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_implementation);
-        NavigationView navigationView=findViewById(R.id.main_side);
-        initdrawer();
-        navigationView.setNavigationItemSelectedListener(this);
 
-        avator_implmentation= findViewById(R.id.avatar_implentation);
+ */
+    public Implementation()
+    {
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        final View rootview = inflater.inflate(R.layout.activity_implementation, container, false);
+        //setContentView(R.layout.activity_implementation);
+        //NavigationView navigationView=rootview.findViewById(R.id.main_side);
+        //initdrawer();
+        //navigationView.setNavigationItemSelectedListener(this);
+
+        //avator_implmentation= rootview.findViewById(R.id.avatar_implentation);
+        /*
         if (avatorExists())
         {
             Uri imgUri=Uri.parse("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             avator_implmentation.setImageURI(imgUri);
         }
-
-        final ListView list=findViewById(R.id.list_view_implementation);
-        my_adapter_imp sc = new my_adapter_imp(this, data);
-        list.setAdapter(sc);
+*/
+        final ListView list=rootview.findViewById(R.id.list_view_implementation);
+        my_adapter_imp sc = new my_adapter_imp(getContext(), data);
+        //list.setAdapter(sc);
         getpxnum(new callback() {
             @Override
             public void onCallback(String string) {
@@ -553,7 +563,7 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
 
                                                                          }
-                                                                        my_adapter_imp sc = new my_adapter_imp(Implementation.this, data);
+                                                                        my_adapter_imp sc = new my_adapter_imp(getActivity(), data);
                                                                         list.setAdapter(sc);
                                                                     }
 
@@ -651,20 +661,21 @@ public class Implementation extends AppCompatActivity implements NavigationView.
 
             }
         });
-
+        return rootview;
     }
 
+/*
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId())
         {
             case R.id.side_mainmenu:
-                Intent main1=new Intent(Implementation.this, ongoing_main_menu.class);
+                Intent main1=new Intent(Implementation.this, MainMenu.class);
                 startActivity(main1);
                 finish();
                 return true;
             case R.id.side_setting:
-                Intent main2=new Intent(Implementation.this, MainMenu.class);
+                Intent main2=new Intent(Implementation.this, Setting.class);
                 startActivity(main2);
                 finish();
                 return true;
@@ -691,6 +702,8 @@ public class Implementation extends AppCompatActivity implements NavigationView.
         }
         return false;
     }
+
+ */
     public boolean avatorExists()
     {
         try

@@ -12,15 +12,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-
+<!--
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/animated_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+            android:background="#00000000"
+-->
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/main_side"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:menu="@menu/menu_side"
             android:background="@android:color/white"
+            app:menu="@menu/menu_side"
             app:itemTextColor="@color/colorHint"
             />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,16 +20,19 @@
                 android:id="@+id/export_start_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Start Date" />
+                android:text="Start Date"
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/export_start_time_selection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="false"
+                android:backgroundTint="@android:color/black"
                 android:editable="false"
                 android:ems="10"
-                android:inputType="date" />
+                android:focusable="false"
+                android:inputType="date"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -41,16 +44,19 @@
                 android:id="@+id/export_end_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" End Date  " />
+                android:text=" End Date  "
+                android:textColor="@android:color/black" />
 
             <EditText
                 android:id="@+id/export_end_time_selection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="false"
+                android:backgroundTint="@android:color/black"
                 android:editable="false"
                 android:ems="10"
-                android:inputType="date" />
+                android:focusable="false"
+                android:inputType="date"
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
@@ -58,49 +64,56 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Output the part you want" />
+            android:text="Output the part you want"
+            android:textColor="@android:color/black" />
 
         <CheckBox
             android:id="@+id/goal_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Goal" />
+            android:text="Goal"
+            android:textColor="@android:color/black" />
 
         <CheckBox
             android:id="@+id/sym_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Symptoms" />
+            android:text="Symptoms"
+            android:textColor="@android:color/black" />
 
         <CheckBox
             android:id="@+id/diet_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Diet" />
+            android:text="Diet"
+            android:textColor="@android:color/black" />
 
         <CheckBox
             android:id="@+id/px_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Px" />
+            android:text="Px"
+            android:textColor="@android:color/black" />
 
         <CheckBox
             android:id="@+id/mental_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Mental Activity" />
+            android:text="Mental Activity"
+            android:textColor="@android:color/black" />
 
         <CheckBox
             android:id="@+id/physical_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Physical Activity" />
+            android:text="Physical Activity"
+            android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/export_data_button"

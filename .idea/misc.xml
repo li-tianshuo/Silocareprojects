@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_browerrss.xml" value="0.2359375" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_exportdata.xml" value="0.264" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_implementation.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_information.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_main_menu.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_ongoing_main_menu.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_rss_feed.xml" value="0.2359375" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_rss_item_list_row.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_rss_main.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_symptoms_goal.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/implementation_list_view.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/information_fragment.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/information_fragment_doc.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/itlist_item_doc.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/mental_activities_fragment.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/symptoms_goals_fragment.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/menu/menu_side.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/menu/symptoms_goal_menu.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

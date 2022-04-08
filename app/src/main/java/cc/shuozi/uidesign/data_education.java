@@ -89,17 +89,17 @@ public class data_education extends AppCompatActivity implements NavigationView.
         switch(item.getItemId())
         {
             case R.id.side_mainmenu:
-                Intent main1=new Intent(data_education.this, ongoing_main_menu.class);
+                Intent main1=new Intent(data_education.this, MainMenu.class);
                 startActivity(main1);
                 finish();
                 return true;
             case R.id.side_setting:
-                Intent main2=new Intent(data_education.this, MainMenu.class);
+                Intent main2=new Intent(data_education.this, Setting.class);
                 startActivity(main2);
                 finish();
                 return true;
             case R.id.side_implementation:
-                Intent main3=new Intent(data_education.this, Implementation.class);
+                Intent main3=new Intent(data_education.this, symptoms_goal.class);
                 startActivity(main3);
                 finish();
                 return true;
@@ -108,6 +108,7 @@ public class data_education extends AppCompatActivity implements NavigationView.
                 startActivity(main4);
                 finish();
                 return true;
+                /*
             case R.id.goal_menu:
                 Intent main5=new Intent(data_education.this, symptoms_goal.class);
                 startActivity(main5);
@@ -118,6 +119,7 @@ public class data_education extends AppCompatActivity implements NavigationView.
                 startActivity(main6);
                 finish();
                 return true;
+                 */
             case R.id.information_menu:
                 Intent main7=new Intent(data_education.this, information.class);
                 startActivity(main7);
@@ -178,7 +180,7 @@ public class data_education extends AppCompatActivity implements NavigationView.
             File f=new File("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             if(!f.exists())
             {
-                return true;
+                return false;
             }
 
         }

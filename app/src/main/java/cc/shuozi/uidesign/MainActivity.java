@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
             Log.e("b", String.valueOf(b));
             if (b)
             {
-                intent = new Intent(MainActivity.this, ongoing_main_menu.class);
+                intent = new Intent(MainActivity.this, MainMenu.class);
             }else
             {
                 intent = new Intent(MainActivity.this, onboarding.class);

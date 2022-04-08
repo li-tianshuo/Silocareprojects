@@ -94,7 +94,7 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
         bottomNavigationView.setItemIconTintList(null);
         decision_ViewPagerAdapter goals_viewpageradapter=new decision_ViewPagerAdapter(getSupportFragmentManager(),getLifecycle());
-
+        goals_viewpageradapter.addFragment(new Implementation());
         goals_viewpageradapter.addFragment(new Symptoms_fragment());
         goals_viewpageradapter.addFragment(new Goals_fragment());
         bottomNavigationView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_SELECTED);
@@ -103,11 +103,14 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId())
                 {
-                    case R.id.symptoms_item:
+                    case R.id.summary_item:
                         viewPager.setCurrentItem(0);
                         break;
-                    case R.id.goal_item:
+                    case R.id.symptoms_item:
                         viewPager.setCurrentItem(1);
+                        break;
+                    case R.id.goal_item:
+                        viewPager.setCurrentItem(2);
                         break;
                 }
                 return true;
@@ -146,7 +149,7 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
                 finish();
                 return true;
             case R.id.side_implementation:
-                Intent main3=new Intent(symptoms_goal.this, Implementation.class);
+                Intent main3=new Intent(symptoms_goal.this, symptoms_goal.class);
                 startActivity(main3);
                 finish();
                 return true;
@@ -155,11 +158,14 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
                 startActivity(main4);
                 finish();
                 return true;
+                /*
             case R.id.goal_menu:
                 Intent main5=new Intent(symptoms_goal.this, symptoms_goal.class);
                 startActivity(main5);
                 finish();
                 return true;
+
+                 */
             case R.id.information_menu:
                 Intent main6=new Intent(symptoms_goal.this, information.class);
                 startActivity(main6);
@@ -175,7 +181,7 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
             File f=new File("file:///data/data/cc.shuozi.uidesign/avator.jpg");
             if(!f.exists())
             {
-                return true;
+                return false;
             }
 
         }

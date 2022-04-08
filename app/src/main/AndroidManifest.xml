@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="cc.shuozi.uidesign">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -10,24 +11,35 @@
 
     <application
         android:allowBackup="true"
+        android:grantUriPermissions="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
-        android:requestLegacyExternalStorage="true"
-        android:grantUriPermissions="true"
-        >
-
-        <activity android:name=".exportdata"></activity>
+        android:usesCleartextTraffic="true">
+        <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="false" />
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity
+            android:name=".Browerrss"
+            android:exported="false" />
+        <activity
+            android:name=".rss_feed"
+            android:exported="false" />
+        <activity
+            android:name=".rss_main"
+            android:exported="false" />
+        <activity android:name=".exportdata" />
         <activity android:name=".add_goal" />
         <activity android:name=".symptoms_goal" />
         <activity android:name=".diet_information" />
         <activity android:name=".event_selection" />
 
-
         <receiver
             android:name=".RingReceived"
+            android:exported="false"
             android:process=":remote">
             <intent-filter>
                 <action android:name="cc.shuozi.uidesign.Ring" />
@@ -35,16 +47,14 @@
         </receiver>
 
         <provider
-            android:name= "androidx.core.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="cc.shuozi.uidesign.fileprovider"
-            android:grantUriPermissions="true"
-            android:exported="false">
+            android:exported="false"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths"/>
+                android:resource="@xml/filepaths" />
         </provider>
-
-
 
         <activity android:name=".RingActivity" />
         <activity android:name=".alarm_information" />
@@ -61,13 +71,16 @@
         <activity android:name=".Login" />
         <activity android:name=".data_education" />
         <activity android:name=".health_video" />
-        <activity android:name=".watch_video"
-            android:screenOrientation="landscape"
-            android:configChanges="orientation|screenSize"
-            />
+        <activity
+            android:name=".watch_video"
+            android:screenOrientation="landscape" /> <!-- android:configChanges="orientation|screenSize" -->
         <activity android:name=".MainActivity" />
-        <activity android:name=".onboarding" android:noHistory="true"/>
-        <activity android:name=".Splash_screen">
+        <activity
+            android:name=".onboarding"
+            android:noHistory="true" />
+        <activity
+            android:name=".Splash_screen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
