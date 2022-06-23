@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_add_goal.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_add_rss_link.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_browerrss.xml" value="0.2359375" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_exportdata.xml" value="0.264" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_implementation.xml" value="0.25" />
@@ -13,6 +15,8 @@
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_rss_item_list_row.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_rss_main.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_symptoms_goal.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/data_education.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/diet_fragment.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/implementation_list_view.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/information_fragment.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/information_fragment_doc.xml" value="0.25" />

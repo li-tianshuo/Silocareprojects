@@ -343,7 +343,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         implementation_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainMenu.this, Implementation.class));
+                startActivity(new Intent(MainMenu.this, symptoms_goal.class));
             }
         });
         decision_making_button.setOnClickListener(new View.OnClickListener() {

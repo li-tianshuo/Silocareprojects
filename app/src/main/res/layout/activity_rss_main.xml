@@ -6,8 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".rss_main">
 
-    <ListView
-        android:id="@+id/rss_main_list"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_rss_link_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:foregroundGravity="bottom|right"
+            app:srcCompat="@drawable/add" />
+
+        <ListView
+            android:id="@+id/rss_main_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:longClickable="true" />
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

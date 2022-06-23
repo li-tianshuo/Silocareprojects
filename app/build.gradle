@@ -4,7 +4,6 @@ apply plugin: 'com.google.gms.google-services'
 android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion 31
-    buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "cc.shuozi.uidesign"
@@ -48,6 +47,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
     implementation platform('com.google.firebase:firebase-bom:28.2.0')
     implementation 'com.google.firebase:firebase-storage'
+
     def multidex_version = "2.0.1"
     implementation "androidx.multidex:multidex:$multidex_version"
 

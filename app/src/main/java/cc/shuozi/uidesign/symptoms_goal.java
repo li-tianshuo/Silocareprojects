@@ -139,12 +139,12 @@ public class symptoms_goal extends AppCompatActivity implements NavigationView.O
         switch(item.getItemId())
         {
             case R.id.side_mainmenu:
-                Intent main1=new Intent(symptoms_goal.this, ongoing_main_menu.class);
+                Intent main1=new Intent(symptoms_goal.this, MainMenu.class);
                 startActivity(main1);
                 finish();
                 return true;
             case R.id.side_setting:
-                Intent main2=new Intent(symptoms_goal.this, MainMenu.class);
+                Intent main2=new Intent(symptoms_goal.this, Setting.class);
                 startActivity(main2);
                 finish();
                 return true;
