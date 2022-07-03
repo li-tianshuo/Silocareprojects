@@ -29,7 +29,7 @@
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@mipmap/ic_menu"
                 android:background="#004e90"
-                app:title="Main Menu" />
+                app:title="@string/main_menu" />
 
         </LinearLayout>
 

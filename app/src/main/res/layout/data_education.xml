@@ -38,7 +38,7 @@
                         android:theme="?attr/actionBarTheme"
                         app:navigationIcon="@mipmap/ic_menu"
 
-                        app:title="Data Education">
+                        app:title="@string/d_e">
                         <!--
                         <ImageView
                             android:id="@+id/avator_data_education"

@@ -28,7 +28,7 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@mipmap/ic_menu"
-                app:title="Symptoms and Goals">
+                app:title="@string/s_g">
 
                 <ImageView
                     android:id="@+id/avatar__symptoms_goals"

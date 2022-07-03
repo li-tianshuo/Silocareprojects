@@ -26,7 +26,7 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@mipmap/ic_menu"
-                app:title="Information">
+                app:title="@string/information">
 
                 <ImageView
                     android:id="@+id/avatar_decision_making"
@@ -71,21 +71,21 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Condition"
+                android:text="@string/condition"
 
                 />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Doctor"
+                android:text="@string/doctor"
 
                 />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Export Data" />
+                android:text="@string/export_data" />
         </com.google.android.material.tabs.TabLayout>
 
         <FrameLayout

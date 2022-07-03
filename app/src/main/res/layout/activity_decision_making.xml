@@ -27,7 +27,7 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@mipmap/ic_menu"
-                app:title="Decision Making">
+                app:title="@string/activity_decision_making_title">
 
                 <ImageView
                     android:id="@+id/avatar_decision_making_1"

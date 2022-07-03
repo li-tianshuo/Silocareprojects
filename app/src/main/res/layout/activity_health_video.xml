@@ -16,7 +16,7 @@
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:title="Health Video"
+            app:title="@string/health_video"
             />
 
         <ListView

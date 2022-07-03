@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="  Set both short term and long term goals to improve your life today and down the road"
+            android:text="@string/ob3"
             android:textColor="#000000"
             android:textSize="20sp" />
     </LinearLayout>

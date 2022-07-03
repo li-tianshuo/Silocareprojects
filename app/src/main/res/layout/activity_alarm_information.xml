@@ -20,7 +20,7 @@
             android:id="@+id/textView20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prescription Set"
+            android:text="@string/activity_alarm_information_title"
             android:textColor="@color/colorHint"
             android:textSize="30sp" />
 
@@ -28,7 +28,7 @@
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Please tell us the time you want to take prescripton"
+            android:text="@string/activity_alarm_information_describe"
             android:textColor="@color/colorHint"
             android:textSize="20sp" />
 
@@ -46,7 +46,7 @@
             android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date"
+            android:text="@string/activity_alarm_information_date"
             android:textColor="@color/colorHint"
             android:textSize="20sp" />
 
@@ -65,7 +65,7 @@
             android:id="@+id/textView24"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prescription Note "
+            android:text="@string/activity_alarm_information_note_title"
             android:textColor="@color/colorHint"
             android:hint=""
             android:textSize="20sp" />
@@ -81,7 +81,7 @@
             android:inputType="textMultiLine"
 
             android:textColorHint="@android:color/darker_gray"
-            android:hint="Add Note Here"
+            android:hint="@string/activity_alarm_information_add_note"
             android:textColor="@color/colorHint"
             />
 
@@ -91,7 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@android:color/transparent"
-            android:text="Update Prescription"
+            android:text="@string/activity_alarm_information_update"
             android:textColor="@color/colorHint"
             />
 
@@ -100,7 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:background="@android:color/transparent"
-            android:text="Add a Prescription"
+            android:text="@string/activity_alarm_information_add"
             android:textColor="@color/colorHint"
             />
 

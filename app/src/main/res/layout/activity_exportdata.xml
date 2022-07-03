@@ -20,7 +20,7 @@
                 android:id="@+id/export_start_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Start Date"
+                android:text="@string/activity_export_data_start"
                 android:textColor="@android:color/black" />
 
             <EditText
@@ -44,7 +44,7 @@
                 android:id="@+id/export_end_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" End Date  "
+                android:text="@string/activity_export_data_end"
                 android:textColor="@android:color/black" />
 
             <EditText
@@ -64,7 +64,7 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Output the part you want"
+            android:text="@string/activity_export_data_sub_title"
             android:textColor="@android:color/black" />
 
         <CheckBox
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Goal"
+            android:text="@string/goal"
             android:textColor="@android:color/black" />
 
         <CheckBox
@@ -80,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Symptoms"
+            android:text="@string/symptoms"
             android:textColor="@android:color/black" />
 
         <CheckBox
@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Diet"
+            android:text="@string/diet"
             android:textColor="@android:color/black" />
 
         <CheckBox
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Px"
+            android:text="@string/px"
             android:textColor="@android:color/black" />
 
         <CheckBox
@@ -104,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Mental Activity"
+            android:text="@string/ma"
             android:textColor="@android:color/black" />
 
         <CheckBox
@@ -112,14 +112,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Physical Activity"
+            android:text="@string/pa"
             android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/export_data_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Generate PDF" />
+            android:text="@string/activity_export_data_button" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

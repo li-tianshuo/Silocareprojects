@@ -29,7 +29,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Setting"
+                android:text="@string/setting"
                 android:textSize="30sp"
                 android:textColor="@android:color/white"
                 />
@@ -38,7 +38,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Personal Information"
+                android:text="@string/ps"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"
                 />
@@ -73,7 +73,7 @@
             android:id="@+id/log_out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log out"
+            android:text="@string/logout"
             android:textColor="@android:color/white"
             android:background="@android:color/transparent"
             />

@@ -52,7 +52,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@android:color/transparent"
-            android:text="UPDATE"
+            android:text="@string/update"
             android:textColor="@color/colorHint"
             />
     </RelativeLayout>

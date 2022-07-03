@@ -5,23 +5,54 @@
       <map>
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_add_goal.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_add_rss_link.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_alarm_information.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_browerrss.xml" value="0.2359375" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_decision_making.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_diet_information.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_doctor_information.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_event_selection.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_exportdata.xml" value="0.264" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_health_video.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_implementation.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_information.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_main_menu.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_ongoing_main_menu.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_pre_information.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_ring.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_rss_feed.xml" value="0.2359375" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_rss_item_list_row.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_rss_main.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_setting.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/activity_symptoms_goal.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/data_education.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/diet_fragment.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/food_list.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/food_select_list.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/food_selection.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/goal_selection.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/goals_item.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/implementation_list_view.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/information_fragment.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/information_fragment_doc.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/itlist_item.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/itlist_item_doc.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/list_activity.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/list_meal.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/list_meal_item.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/mental_activities_fragment.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/onboarding.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/onboarding_1.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/physical_activities_fragment.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/prescription_fragment.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/prescription_list.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/recyclerview_list.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/side.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/spinner_drop.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/spinner_text.xml" value="0.25" />
+        <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/splash_activity.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/layout/symptoms_goals_fragment.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/menu/menu_side.xml" value="0.25" />
         <entry key="..\:/Project/Silocareprojects/app/src/main/res/menu/symptoms_goal_menu.xml" value="0.25" />

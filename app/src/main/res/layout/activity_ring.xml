@@ -14,7 +14,7 @@
         android:layout_height="109dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="156dp"
-        android:text="We Have Successfully Added Your Selection!"
+        android:text="@string/activity_ring"
         android:textColor="@android:color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"

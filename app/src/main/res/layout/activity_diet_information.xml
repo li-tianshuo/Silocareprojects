@@ -29,7 +29,7 @@
                     android:id="@+id/textView36"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Diet Page"
+                    android:text="@string/activity_diet_information_title"
                     android:textSize="30sp"
                     android:textColor="@color/colorHint"
 
@@ -39,7 +39,7 @@
                     android:id="@+id/textView39"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Food(Enter button to add)"
+                    android:text="@string/activity_diet_information_sub_title"
                     android:textSize="24sp"
                     android:textColor="@color/colorHint"
                     />
@@ -58,7 +58,7 @@
                     android:id="@+id/textView38"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Diet Type"
+                    android:text="@string/activity_diet_information_diet_type"
                     android:textSize="24sp"
                     android:textColor="@color/colorHint"
                     />
@@ -87,10 +87,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="80dp"
-                        android:text="Click to add"
-                        android:textSize="24sp"
+                        android:text="@string/click_to_add"
                         android:textColor="@color/colorHint"
-                        />
+                        android:textSize="24sp" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/add_food"
@@ -125,7 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:text="Update Diet"
+                    android:text="@string/activity_diet_information_update"
                     android:textColor="@color/colorHint"
                     />
 
@@ -134,7 +133,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:text="Add a diet menu"
+                    android:text="@string/activity_diet_information_add"
                     android:textColor="@color/colorHint"
 
                     />

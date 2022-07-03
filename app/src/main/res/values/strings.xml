@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UIdesign</string>
+    <string name="app_name">Silos Care &amp; Design</string>
 
     <string name="title_activity_setup">Setup</string>
     <string name="dummy_button">Dummy Button</string>
@@ -10,10 +10,158 @@
     <string name="user_name">User Name</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="logout">Log out</string>
     <string name="where_health_tracking_is_made_easy">Where Health Tracking is Made Easy!</string>
     <string name="sign_up">Sign Up</string>
     <string name="choose_conditions">Please choose your conditions</string>
+    <string name="enter_conditions">Please enter your conditions</string>
     <string name="silos_care_amp_design"><![CDATA[Silos Care & Design]]></string>
+    <string name="logo">By Silos Care and Design \n 2020 All Rights Reserved </string>
+
+
+    <string name="click_to_add">Click to add</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="setting">Setting</string>
+    <string name="ps">Personal Information</string>
+    <string name="app">APP</string>
+    <string name="update">Update</string>
+    <string name="goal">Goal</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="diet">Diet</string>
+    <string name="px">Px</string>
+    <string name="ma">Mental Activity</string>
+    <string name="pa">Physical Activity</string>
+    <string name="health_video">Health Video</string>
+    <string name="information">Information</string>
+    <string name="condition">Condition</string>
+    <string name="doctor">Doctor</string>
+    <string name="export_data">Export Data</string>
+    <string name="s_g">Symptoms and Goals</string>
+    <string name="d_e">Data Education</string>
+    <string name="fn">First Name</string>
+    <string name="ln">Last Name</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="snacks">Snacks</string>
+    <string name="dinner">Dinner</string>
+    <string name="delete">Delete</string>
+    <string name="food_name">Food Name:</string>
+    <string name="n_f">Name of Food</string>
+    <string name="weight">Weight</string>
+    <string name="w_f">Weight of Food</string>
+    <string name="gram">g(grams)</string>
+    <string name="title">Title</string>
+    <string name="note">Note</string>
+    <string name="view">View</string>
+    <string name="banner_word">Health  Tracking Made Easy!</string>
+
+    <string name="activity_add_goal_title">Add Symptoms or Goals Here</string>
+    <string name="activity_add_goal_edit_text_goal_name">Please enter the Symptoms or Goals\' name</string>
+    <string name="activity_add_goal_edit_text_goal_date">Enter a time </string>
+    <string name="activity_add_goal_edit_text_add_something">Click the Button right to Add something </string>
+    <string name="activity_add_goal_edit_text_add_goal">Add goal </string>
+    <string name="activity_add_goal_edit_text_add_symptom">Add Symptoms </string>
+
+    <string name="activity_add_rss_link_title">Feed Name </string>
+    <string name="activity_add_rss_link_url">Feed URL </string>
+    <string name="activity_add_rss_link_hint_name">Name </string>
+    <string name="activity_add_rss_link_hint_url">URL </string>
+    <string name="activity_add_rss_link_hint_button">Add it </string>
+
+    <string name="activity_alarm_information_title">Prescription Set </string>
+    <string name="activity_alarm_information_describe">Please tell us the time you want to take prescription </string>
+    <string name="activity_alarm_information_date">Date </string>
+    <string name="activity_alarm_information_note_title">Prescription Note </string>
+    <string name="activity_alarm_information_add_note">Add Note Here </string>
+    <string name="activity_alarm_information_add">Add a Prescription </string>
+    <string name="activity_alarm_information_update">Update Prescription </string>
+
+    <string name="activity_decision_making_title">Decision Making </string>
+
+    <string name="activity_diet_information_title">Diet Page </string>
+    <string name="activity_diet_information_sub_title">Food(Enter button to add) </string>
+    <string name="activity_diet_information_diet_type">Diet Type </string>
+    <string name="activity_diet_information_update">Update Diet </string>
+    <string name="activity_diet_information_add">Add a diet menu </string>
+
+    <string name="activity_doctor_information_title">Please Tell us Something About Your Doctor </string>
+    <string name="activity_doctor_information_doctor_name">Doctor\'s Name </string>
+    <string name="activity_doctor_information_doctor_edit_name">Please Enter Doctor\'s Name </string>
+    <string name="activity_doctor_information_doctor_email">Doctor\'s Email </string>
+    <string name="activity_doctor_information_doctor_edit_email">Please Enter Doctor\'s Email </string>
+    <string name="activity_doctor_information_doctor_phone">Doctor\'s Phone </string>
+    <string name="activity_doctor_information_doctor_edit_phone">Please Enter Doctor\'s Phone </string>
+    <string name="activity_doctor_information_button_set">Set Attending Physician </string>
+    <string name="activity_doctor_information_button_add">Add a new doctor </string>
+    <string name="activity_doctor_information_button_update">Update Doctor Information </string>
+
+    <string name="activity_event_selection_title">Add a activity </string>
+    <string name="activity_event_selection_start_time">Start Time </string>
+    <string name="activity_event_selection_end_time">End Time </string>
+    <string name="activity_event_selection_type">Type of Activity </string>
+    <string name="activity_event_selection_add_ma">Add a Mental Activity </string>
+    <string name="activity_event_selection_update_ma">Update a Mental Activity </string>
+    <string name="activity_event_selection_add_pa">Add a Physical Activity </string>
+    <string name="activity_event_selection_update_pa">Update a Physical Activity </string>
+
+    <string name="activity_export_data_start">Start Date </string>
+    <string name="activity_export_data_end">End Date </string>
+    <string name="activity_export_data_sub_title">Output the part you want </string>
+    <string name="activity_export_data_button">Generate PDF </string>
+
+    <string name="activity_pre_information_title">Please let us know your conditions </string>
+    <string name="activity_pre_information_c1">Condition 1: </string>
+    <string name="activity_pre_information_c2">Condition 2: </string>
+    <string name="activity_pre_information_c3">Condition 3: </string>
+    <string name="activity_pre_information_c4">Condition 4: </string>
+
+    <string name="activity_ring">We Have Successfully Added Your Selection! </string>
+
+    <string name="activity_signup_title">Welcome!</string>
+    <string name="activity_signup_describe">We need some information to complete your registration.</string>
+    <string name="activity_signup_enter_email">Enter your Email</string>
+    <string name="activity_signup_enter_passwd">Please Enter your Password</string>
+    <string name="activity_signup_button">Sign up now!</string>
+
+    <string name="mental_activity_fragment_intro">Activity Benefit</string>
+    <string name="mental_activity_fragment_ac1">Sleep</string>
+    <string name="mental_activity_fragment_ac1_d">It may seem obvious that sleep is beneficial.
+        Even without fully grasping what sleep does for us, we know that going without sleep for too long makes us feel terrible,
+        and that getting a good night\'s sleep can make us feel ready to take on the world.
+    </string>
+    <string name="mental_activity_fragment_ac2">Yoga</string>
+    <string name="mental_activity_fragment_ac2_d">Increased flexibility. increased muscle strength and tone.
+        improved respiration, energy and vitality. maintaining a balanced metabolism. weight reduction.
+        cardio and circulatory health. improved athletic performance. protection from injury.
+    </string>
+
+    <string name="physical_activity_fragment_ac1">Jogging</string>
+    <string name="physical_activity_fragment_ac1_d">Help to build strong bones,
+        as it is a weight bearing exercise strengthen muscles improve cardiovascular
+        fitness burn plenty of kilojoules help maintain a healthy weight.
+    </string>
+    <string name="physical_activity_fragment_ac2">Running</string>
+    <string name="physical_activity_fragment_ac2_d">Help to build strong bones,
+        as it is a weight bearing exercise strengthen muscles improve cardiovascular
+        fitness burn plenty of kilojoules help maintain a healthy weight.
+    </string>
+    <string name="physical_activity_fragment_ac3">Swimming</string>
+    <string name="physical_activity_fragment_ac3_d">keeps your heart rate up but takes some of the impact stress off your body.
+        builds endurance, muscle strength and cardiovascular fitness. helps maintain a healthy weight, healthy heart and lungs.
+        tones muscles and builds strength
+    </string>
+    <string name="physical_activity_fragment_ac4">Cycling</string>
+    <string name="physical_activity_fragment_ac4_d">increased cardiovascular fitness increased muscle strength and
+        flexibility improved joint mobility decreased stress levels improved posture and
+        coordination strengthened bones decreased body fat levels prevention or management of disease reduced anxiety and depression.
+    </string>
+
+
+    <string name="ob1"> Keep track of all of your health data directly in the app.
+        Enter your activity, symtoms and diet in their respective pages</string>
+    <string name="ob2"> View your health data and see how you are processing all in the same place</string>
+    <string name="ob3"> Set both short term and long term goals to improve your life today and down the road</string>
+    <string name="ob4"> Set both short term and long term goals to improve your life today and down the road</string>
 
     <string-array name="diease_name">
         <item>Please choose your conditions</item>

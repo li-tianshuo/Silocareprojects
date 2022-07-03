@@ -26,7 +26,7 @@
             android:layout_weight="1"
             android:autoLink="none"
             android:gravity="center"
-            android:text="Please Tell us Something About Your Doctor"
+            android:text="@string/activity_doctor_information_title"
             android:textSize="22sp"
             android:textColor="@color/colorHint"
             />
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
-                android:text="Doctor's Name"
+                android:text="@string/activity_doctor_information_doctor_name"
                 android:textColor="@color/colorHint"
                 />
 
@@ -58,7 +58,7 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="Please Enter Doctor's Name"
+                android:hint="@string/activity_doctor_information_doctor_edit_name"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorHint"
                 />
@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
-                android:text="Doctor's Email"
+                android:text="@string/activity_doctor_information_doctor_email"
                 android:textColor="@color/colorHint"
                 />
 
@@ -91,7 +91,7 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="Please Enter Doctor's Email"
+                android:hint="@string/activity_doctor_information_doctor_edit_email"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/colorHint"
                 />
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_weight="0"
-                android:text="Doctor's Phone"
+                android:text="@string/activity_doctor_information_doctor_phone"
                 android:textColor="@color/colorHint"
                 />
 
@@ -124,7 +124,7 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="Please Enter Doctor's Phone"
+                android:hint="@string/activity_doctor_information_doctor_edit_phone"
                 android:inputType="phone"
                 android:textColor="@color/colorHint"
                 />
@@ -137,7 +137,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
-            android:text="Set Attending Physician"
+            android:text="@string/activity_doctor_information_button_set"
             android:background="@android:color/transparent"
             android:textColor="@color/colorHint"
             />
@@ -149,7 +149,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
-            android:text="Add a new doctor"
+            android:text="@string/activity_doctor_information_button_add"
             android:background="@android:color/transparent"
             android:textColor="@color/colorHint"
             />
@@ -161,7 +161,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:layout_weight="0.5"
-            android:text="Update Doctor Information"
+            android:text="@string/activity_doctor_information_button_update"
             android:background="@android:color/transparent"
             android:textColor="@color/colorHint"
             />

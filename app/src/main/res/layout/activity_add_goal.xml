@@ -32,7 +32,7 @@
                         android:id="@+id/symptom_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Add Symptoms or Goals Here"
+                        android:text="@string/activity_add_goal_title"
                         android:textSize="24sp"
                         android:textColor="@android:color/white"
                         />
@@ -42,7 +42,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Please enter the Symptoms or Goals' name"
+                        android:hint="@string/activity_add_goal_edit_text_goal_name"
                         android:inputType="textPersonName"
                         android:textColor="@android:color/white"
                         />
@@ -62,7 +62,7 @@
                         android:focusable="false"
                         android:inputType="date"
                         android:textColor="@android:color/white"
-                        android:hint="Enter a time "
+                        android:hint="@string/activity_add_goal_edit_text_goal_date"
                         />
 
                     <EditText
@@ -95,7 +95,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="80dp"
-                            android:text="Click the Button right to Add something"
+                            android:text="@string/activity_add_goal_edit_text_add_something"
                             android:textSize="24sp"
                             android:textColor="@color/colorHint"
                             />
@@ -129,7 +129,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
-                        android:text="Add goal"
+                        android:text="@string/activity_add_goal_edit_text_add_goal"
                         android:textColor="@android:color/white"
                         />
 
@@ -138,7 +138,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
-                        android:text="Add Symptoms"
+                        android:text="@string/activity_add_goal_edit_text_add_symptom"
                         android:textColor="@android:color/white"
                         />
                 </LinearLayout>

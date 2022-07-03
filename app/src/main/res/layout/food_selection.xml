@@ -28,7 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
-                android:text="Food name:"
+                android:text="@string/food_name"
                 android:textSize="14sp"
                 android:textColor="@color/colorHint"
                 />
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:ems="10"
-                android:hint="Name of Food"
+                android:hint="@string/n_f"
                 android:inputType="textPersonName"
                 android:textColor="@color/colorHint"
                 />
@@ -56,7 +56,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
-                android:text="Weight:"
+                android:text="@string/weight"
                 android:textSize="14sp"
                 android:textColor="@color/colorHint"
                 />
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:ems="10"
-                android:hint="Weight of Food"
+                android:hint="@string/w_f"
                 android:inputType="number"
                 android:textColor="@color/colorHint"
                 />
@@ -77,7 +77,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.75"
-                android:text="g(grams)"
+                android:text="@string/gram"
                 android:textColor="@color/colorHint"
                 />
         </LinearLayout>

@@ -42,7 +42,7 @@
             android:focusable="false"
             android:background="@android:color/transparent"
             android:textColor="@color/colorHint"
-            android:text="View" />
+            android:text="@string/view" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/imp_float_button"

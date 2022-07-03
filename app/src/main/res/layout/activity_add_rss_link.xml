@@ -15,7 +15,7 @@
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Feed Name"
+            android:text="@string/activity_add_rss_link_title"
             android:textSize="20sp" />
 
         <EditText
@@ -24,13 +24,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="@string/activity_add_rss_link_hint_name" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Feed URL"
+            android:text="@string/activity_add_rss_link_url"
             android:textSize="20sp" />
 
         <EditText
@@ -39,13 +39,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="URL" />
+            android:text="@string/activity_add_rss_link_hint_url" />
 
         <Button
             android:id="@+id/add_rss_link_b"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/activity_add_rss_link_hint_button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

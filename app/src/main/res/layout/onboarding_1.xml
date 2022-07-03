@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="  Keep track of all of your health data directly in the app. Enter your activity, symtoms and diet in their respective pages"
+            android:text="@string/ob1"
             android:textColor="#000000"
             android:textSize="20sp" />
 

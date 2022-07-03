@@ -44,7 +44,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="italic"
-                        android:text="Activity Benefit"
+                        android:text="@string/mental_activity_fragment_intro"
                         android:textSize="24sp"
                         android:textColor="@android:color/darker_gray"
                         />
@@ -54,7 +54,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Jogging"
+                        android:text="@string/physical_activity_fragment_ac1"
                         android:textSize="20sp"
                         android:textColor="@android:color/darker_gray"
                         />
@@ -64,7 +64,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="italic"
-                        android:text="    Help to build strong bones, as it is a weight bearing exercise strengthen muscles improve cardiovascular fitness burn plenty of kilojoules help maintain a healthy weight."
+                        android:text=""
                         android:textSize="18sp"
                         android:textColor="@android:color/darker_gray"
                         />
@@ -74,7 +74,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Running"
+                        android:text="@string/physical_activity_fragment_ac2"
                         android:textSize="20sp"
                         android:textColor="@android:color/darker_gray"
                         />
@@ -84,7 +84,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="italic"
-                        android:text="    Help to build strong bones, as it is a weight bearing exercise strengthen muscles improve cardiovascular fitness burn plenty of kilojoules help maintain a healthy weight."
+                        android:text=""
                         android:textSize="18sp"
                         android:textColor="@android:color/darker_gray"
                         />
@@ -94,7 +94,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Swimming"
+                        android:text="@string/physical_activity_fragment_ac3"
                         android:textSize="20sp"
                         android:textColor="@android:color/darker_gray"
                         />
@@ -104,7 +104,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="italic"
-                        android:text="    keeps your heart rate up but takes some of the impact stress off your body. builds endurance, muscle strength and cardiovascular fitness. helps maintain a healthy weight, healthy heart and lungs. tones muscles and builds strength"
+                        android:text="@string/physical_activity_fragment_ac3_d"
                         android:textSize="18sp"
                         android:textColor="@android:color/darker_gray"
                         />
@@ -113,7 +113,7 @@
                         android:id="@+id/textView32"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cycling"
+                        android:text="@string/physical_activity_fragment_ac4"
                         android:textSize="20sp"
                         android:textColor="@android:color/darker_gray"
                         />
@@ -122,7 +122,7 @@
                         android:id="@+id/textView35"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="    increased cardiovascular fitness increased muscle strength and flexibility improved joint mobility decreased stress levels improved posture and coordination strengthened bones decreased body fat levels prevention or management of disease reduced anxiety and depression."
+                        android:text="@string/physical_activity_fragment_ac4_d"
                         android:textSize="18sp"
                         android:textColor="@android:color/darker_gray"
                         />
